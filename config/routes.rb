@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resource :dashboard, :controller => 'dashboard'
 
     admin.resources :posts, :new => {:preview => :post}
+    admin.resources :works
     admin.resources :pages, :new => {:preview => :post}
     admin.resources :comments, :member => {:mark_as_spam => :put, :mark_as_ham => :put}
     admin.resources :tags
@@ -17,8 +18,10 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/admin/api', :controller => 'admin/api', :action => 'index'
   map.archives '/archives', :controller => 'archives', :action => 'index'
 
-  map.root :controller => 'posts', :action => 'index'
+  map.root :controller => 'pages', :action => 'show', :id => "home"
   map.resources :posts
+
+  map.resources :works
 
   map.resources :pages
 

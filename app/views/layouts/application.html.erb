@@ -7,45 +7,180 @@
 <head>
   <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
   <title><%= yield(:page_title) || h(config[:title]) %></title>
-  <%= stylesheet_link_tag 'application' %>
+  <%# stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'site' %>
   <%= javascript_include_tag 'jquery' %>
   <%= open_id_delegation_link_tags(h(config[:open_id_delegation, :server]), h(config[:open_id_delegation, :delegate])) if config[:open_id_delegation] %>
   <%= yield(:head) %>
 </head>
-<body>
-  <div id="page_container">
-    <h1 id="page_heading"><a href="<%=h config[:url] %>"><%=h config[:title] %></a></h1>
+<%
+on_home_page = (request.path == "/")
 
-    <div id="main">
-      <%= yield %>
-    </div>
+body_class = on_home_page ? "home" : ""
+%>
+<body class="<%=body_class%>">
+	
+	
+		<div id="wrapper">
+			&nbsp;
+			
+			<% if on_home_page %>
+				<div class="featured">
+				</div>
 
-    <div id="navigation">
-      <h2>Pages</h2>
-      <ul>
-        <% page_links_for_navigation.each do |link| -%>
-          <li><%= link_to(h(link.name), link.url) %></li>
-        <% end -%>
-      </ul>
-      <% unless category_links_for_navigation.empty? -%>
-        <h2>Categories</h2>
-        <ul>
-          <% category_links_for_navigation.each do |link| -%>
-            <li><%= link_to(h(link.name), link.url) %></li>
-          <% end -%>
-        </ul>
-      <% end -%>
-      <form method="get" id="sform" action="http://www.google.com/search">
-        <div>
-          <h2><label for="q">Search</label></h2>
+				<div class="top">			
+					<div class="logo">
+					</div>
+					<div class="quote">
+						hello, my name is <strong>Julie-Ann Burkhart</strong>
+						<br>
+						<br>
+						i am very passionate about web &amp; graphic design<br>
+						and brand &amp; identity
+					</div>		
 
-          <input type="text" id="q" value="" name="q" />
-          <input type="hidden" name="sitesearch" value="<%=h config[:url] %>" />
-        </div>
-      </form>
-    </div>    
-    
-    <div id="footer"><%=h config[:title] %> &#169; <%=h config[:author, :name] %>. Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> and <%= link_to "ATOM", "http://feedvalidator.org/check.cgi?url=#{h(config[:url])}/posts.atom" %>. Powered by <a href="http://www.enkiblog.com" title="A Ruby on Rails blogging app for the fashionable developer">Enki</a>.</div>
-  </div>
+				</div>
+			<% else %>
+				<div class="top">			
+					<div class="logo">
+					</div>
+					<div class="freebird">
+					</div>
+				</div>	
+			<% end %>
+
+			<div class="sun">
+				</div>
+
+
+			<div class="main">
+				<ul class="top_nav">
+					<% home_class = on_home_page ? "selected" : "" %>
+					<li><%= link_to("home", "/", :class => home_class) %></li>
+			        
+			        <% page_links_for_navigation.each do |link| 
+						link_class = if (@page && @page.title == link.name) || 
+										request.path.to_s.index(link.url.to_s)
+								"selected"
+							else
+								""
+							end
+					%>					
+			          <li><%= link_to(h(link.name), link.url, :class => link_class) %></li>
+					<% end -%>
+					<!-- <li><a href="index.html">home</a></li>
+					<li><a href="bio.html" class="selected">bio</a></li>
+					<li><a href="work.html">work</a></li>
+					<li><a href="blog.html">blog</a></li>
+					<li><a href="contact.html">contact</a></li> -->
+				</ul>	
+
+				<div class="right_nav">
+
+					<ul>
+
+						<li><a href="http://www.linkedin.com/in/julieannburkhart" target="_blank"><img src="/images/linkedin.gif"/></a></li>
+
+						<li><a href="http://twitter.com/jotapajaro" target="_blank"><img src="/images/twitter.gif"/></a></li>
+
+						<li><a href="http://www.facebook.com/home.php?#/profile.php?id=1801054&ref=profile" target="_blank"><img src="/images/facebook.gif"/></a></li>
+
+						<li><a href="/julieannburkhart_resume.pdf"><img src="/images/pdfresume.gif"/></a></li>
+
+					</ul>
+
+					<div class="recent_posts">
+						<div class="rp_top">
+							
+							<% @recent_posts = Post.find_recent(:limit => 5) %>
+
+							<ul>
+							<% @recent_posts.each do |post| 
+								post_css_class = (post == @recent_posts.last) ? "last" : ""
+								%>
+								<li><%= link_to(h(post.title), post_path(post), :class => post_css_class) %></li>
+							<% end %>
+							</ul>
+
+
+						<div class="rp_bottom"></div>
+						</div>
+
+						<div class="view_blog"><%=link_to("view blog", posts_path)%></div>
+					</div>
+
+
+				</div>
+
+
+									    
+
+			      <%= yield %>
+			
+							
+
+
+
+				<div class="surfergirl">
+				</div>
+
+				<br class="clear"/>
+
+			</div>
+
+
+			<div class="compensate"></div>		
+		</div>
+
+		<div id="bottom">
+			<table class="notes">
+				<tr>
+					<td class="note_left">
+						<h2>jotapajaro updates</h2>
+
+						<ul>
+							<li>launched new jotapajaro site</li>
+							<li>completed Dan C. Hill site</li>
+							<li>attended FOWD 2008</li>
+							<li>attended AFTA w/ AIGA</li>
+							<li class="last">completed Trader Joe's Sales kit</li>
+						</ul>
+
+					</td>
+					<td class="note_center">
+						<h2>favorite links</h2>
+
+						<ul>
+							<li><a href="http://boston.aiga.org/" target="_blank">boston aiga</li>
+							<li><a href="http://alistapart.com/" target="_blank">a list apart</li>
+							<li><a href="http://webdesignledger.com/" target="_blank">web design ledger</li>
+							<li><a href="http://www.techcrunch.com/" target="_blank">tech crunch</li>
+							<li class="last"><a href="http://freelanceswitch.com/" target="_blank">freelance switch</li>
+						</ul>
+
+						<div id="view_links"><a href="http://delicious.com/surfingbirdy">view all links</a></div>
+
+					</td>
+					<td class="note_right">
+						<h2>contact me</h2>
+						<p>mobile: <br/>
+						   603.303.3189</p>
+
+						<p>email: <br/>
+							<a href="mailto:jburkhart@jotapajaro.com">jburkhart@jotapajaro.com</a></p>
+
+						<p>address: <br/>
+							139 Wildwood Aveune <br/>
+							Arlington, MA 02476</p>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	
+	
+
+
+
 </body>
 </html>

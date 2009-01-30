@@ -1,0 +1,31 @@
+<% content_for(:head) do -%>
+  <%= javascript_include_tag 'admin/edit-preview' %>
+<% end -%>
+
+<% form.input_field_set do -%>
+  <%= form.input :title %>
+  <%= form.input :category %>
+  <%= form.input :sort_number %>
+  <%= form.input :body_html %>
+
+
+<p><label>Preview Image:</label>
+	<% if @work.preview.file? %>
+		<%= image_tag @work.preview.url(:medium) %>
+	<% else %>
+  		<%= form.file_field :preview %>	
+	<% end %>
+</p>
+
+<p>
+	<% if @work.largeview.file? %>
+		<%= image_tag @work.largeview.url(:medium) %>
+	<% else %>
+		Full Size Image: <%= form.file_field :largeview %>
+		<br/>
+		OR 
+		<br/>
+		External Link: <%= form.text_field :largeview_url %></p>
+	<% end %>
+	
+<% end -%>
