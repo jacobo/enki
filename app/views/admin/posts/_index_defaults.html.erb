@@ -1,0 +1,13 @@
+<% content_for(:listing_headers) do %>
+		<th>Published At</th>
+	    <th>Title</th>
+	    <th>Excerpt</th>
+	    <th>Comments</th>
+<% end %>
+
+<% content_for_object(:listing_each) do |post| %>
+	  <td><%= post.published_at.strftime('%d %b, %Y') %></td>
+	  <td><%= link_to (post.title == '' ? '[Untitled]' : h(truncate(post.title, :length => 30))), admin_post_path(post) %></td>
+	  <td><% tmpc = h(truncate(post.body, :length => 55)) %><%= (tmpc != '' ? tmpc : '&nbsp;') %></td>
+	  <td><%= post.approved_comments.size %></td>
+<% end %>

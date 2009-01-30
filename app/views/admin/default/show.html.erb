@@ -1,0 +1,10 @@
+<% object_name = current_object.respond_to?(:title) ? current_object.title : "#{object.id}" %>
+<% object_public_url = self.send("#{current_model.name.underscore}_path", current_object) %>
+<h1>Editing <%=current_model.name%> - <%= link_to(h(object_name), object_public_url) %></h1>
+
+<% semantic_form_for([:admin, current_object], :html => { :multipart => true }) do |form| -%>
+  <%= render :partial => 'form', :locals => {:form => form} %>
+  <% form.button_field_set do -%>
+    <%= form.commit_button("Save") -%>
+  <% end -%>
+<% end -%>

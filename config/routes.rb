@@ -11,6 +11,12 @@ Enki::Application.routes.draw do
     end
 
     match 'health(/:action)' => 'health', :action => 'index', :as => :health
+    # admin.resources :posts, :new => {:preview => :post}
+    resources :works
+    # admin.resources :pages, :new => {:preview => :post}
+    # admin.resources :comments, :member => {:mark_as_spam => :put, :mark_as_ham => :put}
+    # admin.resources :tags
+    # admin.resources :undo_items, :member => {:undo => :post}
 
     root :to => 'dashboard#show'
   end
@@ -28,6 +34,15 @@ Enki::Application.routes.draw do
     get 'posts.:format', :as => :formatted_posts
     get '(:tag)', :as => :posts
   end
+
+  # map.root :controller => 'pages', :action => 'show', :id => "home"
+  # map.resources :posts
+  # 
+  works_in_category '/work/:category', :controller => 'works', :action => 'show'
+  work 'work/:category/:id', :controller => 'works', :action => 'show'
+  works '/work', :controller => 'works', :action => 'index'
+  # 
+  # map.resources :pages
 
   root :to => 'posts#index'
 end

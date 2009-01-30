@@ -4,4 +4,5 @@ module PostsHelper
   def more_content?
     @posts.size == Post::DEFAULT_LIMIT
   end
+
 end
