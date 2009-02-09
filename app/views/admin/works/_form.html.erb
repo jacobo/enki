@@ -6,26 +6,35 @@
   <%= form.input :title %>
   <%= form.input :category %>
   <%= form.input :sort_number %>
-  <%= form.input :body_html %>
+  <%= form.input :explanation_html %>
+  <%= form.input :responsibilities_html %>
 
 
-<p><label>Preview Image:</label>
-	<% if @work.preview.file? %>
-		<%= image_tag @work.preview.url(:medium) %>
+<p><label>Featured Image:</label>
+	<% if @work.featuredview.file? %>
+		<%= image_tag @work.featuredview.url(:preview) %>
 	<% else %>
-  		<%= form.file_field :preview %>	
+  		<%= form.file_field :featuredview %>	
+	<% end %>
+</p>
+
+<p><label>Large Image:</label>
+	<% if @work.largeview.file? %>
+		<%= image_tag @work.largeview.url(:preview) %>
+	<% else %>
+  		<%= form.file_field :largeview %>	
 	<% end %>
 </p>
 
 <p>
-	<% if @work.largeview.file? %>
-		<%= image_tag @work.largeview.url(:medium) %>
+	<% if @work.fullsizeview.file? %>
+		<%= image_tag @work.fullsizeview.url(:preview) %>
 	<% else %>
-		Full Size Image: <%= form.file_field :largeview %>
+		Full Size Image: <%= form.file_field :fullsizeview %>
 		<br/>
 		OR 
 		<br/>
-		External Link: <%= form.text_field :largeview_url %></p>
+		External Link: <%= form.text_field :fullsizeview_url %></p>
 	<% end %>
 	
 <% end -%>

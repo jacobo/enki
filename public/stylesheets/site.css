@@ -191,27 +191,63 @@ body.home #wrapper .top{
 
 #wrapper .bluebox {
 	width: 596px;
-	height: 440px;
 	background: #06648E;
-	margin-left: 52px;
 	position: relative;
+	padding-bottom: 10px;
+	color: #fff;
+	font-size: 12px;
+}
+
+#wrapper .bluebox .fullview {
+	background: url(../images/button_brown.gif) no-repeat;
+	height: 16px;
+	padding: 2px;
+	width: 54px;
+	padding-left: 8px;
+	padding-right: 2px;
+	font-size:13px;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+
+#wrapper .bluebox .explanation {
+  position: relative;
+  left: 17px;
+  width: 400px;
+  top: 8px;
+}
+
+#wrapper .bluebox .responsibilities {
+  float: right;
+  top: 19px;
+  position: relative;
+  width: 170px;
+  margin-right: 5px;
+}
+
+#wrapper .bluebox .responsibilities ul {
+  padding-left: 10px;
 }
 
 #wrapper .purplebox {
-	width: 563px;
-	height: 288px;
+	width: 564px;
+	height: 292px;
 	background: #9A90BF;
 	margin-left: 17px;
 	position: relative;
 	top: 5px;
 }
 
-#wrapper .workimage {
-	width: 555px;
-	height: 180px;
+#wrapper img.workimage {
+	width: 556px;
+	height: 282px;
+	padding: 0;
+	margin: 0;
 	background: #FFF;
-	margin-left: 4px;
-	top: 5px;
+  margin-left: 4px;
+  top: 5px;
 	position: relative;
 }
 
@@ -297,6 +333,12 @@ body #wrapper .below_post ol.commentlist li {
 		font-size: 14px;
 		color: #06648E;
 		font-weight: bold;
+}
+
+#wrapper .main .content .bluebox h3 {
+  color: #fff;
+  padding-top: 9px;
+  margin-bottom: 5px;
 }
 
 body.home #wrapper .main .content{
