@@ -85,7 +85,12 @@ class Admin::PostsController < Admin::BaseController
 
   protected
 
+  def current_model
+    Post
+  end
+
   def find_post
     @post = Post.find(params[:id])
   end
+    
 end

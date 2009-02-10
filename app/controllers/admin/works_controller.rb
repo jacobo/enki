@@ -85,6 +85,10 @@ class Admin::WorksController < Admin::BaseController
 
   protected
 
+  def current_model
+    Work
+  end
+
   def find_work
     @work = Work.find(params[:id])
   end

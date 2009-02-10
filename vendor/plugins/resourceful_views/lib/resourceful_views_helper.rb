@@ -116,6 +116,30 @@ module ResourcefulViewsHelper
     # puts "yielding #{view}, content should be " + eval("@content_for_#{view.to_s}").inspect
     concat(eval("yield :#{view.to_s}", block.binding))
   end
+
+  def default_content_for_object(view, *objects, &block)
+    if @content_for_object_blocks && @content_for_object_blocks[view.to_sym]
+      concat(get_content_for_object(view, *objects))
+    else
+      to_output = if(objects.size == 1 && block.arity == 1)
+        capture(objects[0], &block)
+      else
+        capture(objects, &block)
+      end      
+      concat(to_output)
+    end
+    # if get_content_for_object(view, *objects).blank?
+    #   # puts "content blank"
+    #   to_output = if(objects.size == 1 && block.arity == 1)
+    #     capture(objects[0], &block)
+    #   else
+    #     capture(objects, &block)
+    #   end      
+    #   eval "@content_for_#{view.to_s} = to_output"
+    # end
+    # # puts "yielding #{view}, content should be " + eval("@content_for_#{view.to_s}").inspect
+    # concat(eval("yield :#{view.to_s}", block.binding))
+  end
     
   # Basically the equivalent of 
   #    <%=yield :thing%>

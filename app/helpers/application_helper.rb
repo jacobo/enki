@@ -18,4 +18,17 @@ module ApplicationHelper
       'base'   => error.last
     }[error.first]
   end
+  
+  def current_model
+    controller.send(:current_model)
+  end
+  
+  def current_objects
+    controller.send(:current_objects)
+  end
+  
+  def current_object
+    controller.send(:current_object)
+  end
+  
 end

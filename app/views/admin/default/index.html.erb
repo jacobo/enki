@@ -1,0 +1,53 @@
+<% default_content_for(:onready_js) do -%>
+	<script>
+		$(document).ready(destroyAndUndoBehaviour('<%=current_model.name.underscore.pluralize%>'));
+	</script>
+<% end %>
+
+<h1>Your <%=current_model.name.pluralize%></h1>
+<table cellspacing="0" cellpadding="0">
+  <thead>
+	    <tr>
+			<% default_content_for :listing_headers do %>
+	      	<th>Created At</th>
+	      	<th>Title</th>
+			<% end %>
+		  	<th>Actions</th>
+		</tr>
+  </thead>
+
+  <tbody>
+    <% if current_objects.empty? -%>
+      <tr><td colspan="5">There are no <%=current_model.name.pluralize%> at this time.</td></tr>
+    <% else -%>
+		<%- current_objects.each do |obj| %>
+		<tr class="<%= cycle('', 'alt') %>">
+			<% object_url = url_for(:action => 'show', :id => obj) %>
+			<%- default_content_for_object(:listing_each, obj) do |object| %>
+				<% object_name = object.respond_to?(:title) ? object.title : "#{object.id}" %>
+				<td><%= object.created_at.strftime('%d %b, %Y') %></td>
+		  		<td><%= link_to "#{current_model.name}: #{object_name}", object_url %></td>		  
+			<% end -%>
+				<td>
+				    <%= link_to(image_tag('silk/pencil.png', :alt => 'edit'), object_url) %>
+				    <%- form_for(current_model.name.underscore.to_sym, obj, 
+						:url => object_url, 
+						:html => {:class => 'delete-item', :method => :delete}) do |form| -%>
+				      <%= image_submit_tag("silk/delete.png") %>
+				    <% end -%>
+				</td>
+		</tr>
+		<% end -%>
+    <% end -%>
+  </tbody>  
+
+  <tfoot>
+    <% if current_objects.total_pages > 1 -%>
+      <tr class="pagination">
+        <td colspan="5">
+          <%= will_paginate(current_objects, :previous_label => '« Newer', :next_label => 'Older »') %>
+        </td>
+      </tr>
+    <% end -%>
+  </tfoot>  
+</table>
