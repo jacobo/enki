@@ -1,8 +1,0 @@
-<h1>Editing work - <%= link_to(h(@work.title), work_path(@work)) %></h1>
-
-<% semantic_form_for([:admin, @work], :html => { :multipart => true }) do |form| -%>
-  <%= render :partial => 'form', :locals => {:form => form} %>
-  <% form.button_field_set do -%>
-    <%= form.commit_button("Save") -%>                             
-  <% end -%>  
-<% end -%>
