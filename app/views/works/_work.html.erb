@@ -1,0 +1,22 @@
+<div class="purplebox">
+
+	<%= image_tag @work.largeview.url(:display), :class => "workimage" %>
+
+</div>
+
+	<div class="responsibilities">
+		<%=@work.responsibilities_html%>
+	</div>
+		
+	<div class="explanation">
+		<%=@work.explanation_html%>
+	
+		<br/><br/>
+	
+		<div class="fullview">
+			<a href="#">full view</a>
+		</div>		
+	</div>
+
+	<br style="clear: both;"/>
+

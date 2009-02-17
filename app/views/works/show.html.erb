@@ -1,31 +1,58 @@
+<% content_for(:right_nav) do %>
+	<div class="right_nav">
+		category links here
+	</div>
+<% end %>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var selected_work_id = "#work_details_1"
+		$('.numbers a').click(function(event){
+			var target_div_id = '#work_details_' + this.href.split("#")[1];
+			if(target_div_id != selected_work_id){
+				$(selected_work_id).addClass("fixed");
+				$(selected_work_id + " .responsibilities").hide();
+				$(selected_work_id + " .explanation").hide();
+				$(selected_work_id).fadeOut(2000, function(){
+					$(selected_work_id).removeClass("fixed");
+					selected_work_id = target_div_id;		
+				});
+				
+				$(target_div_id + " .responsibilities").fadeIn(2000);
+				$(target_div_id + " .explanation").fadeIn(2000);
+				$(target_div_id).fadeIn(2000);				
+			}
+		});
+	});
+</script>
+
 <div class="content">
 
 	<h4>jotapajaro's work</h4>
 
-	<div class="bluebox">
-		<h3><%=@work.title%></h3>
-		<div class="purplebox">
-			
-			<%= image_tag @work.largeview.url(:display), :class => "workimage" %>
-
+	<div class="bluebox">		
+		<div class="numbers">
+			<% @works.each_with_index do |other_work, index| %>				
+				<a href="#<%=index + 1%>"><%=index + 1%></a>
+			<% end %>
+		</div>		
+		<div class="arrows">
+				&lt;
+				&gt;
 		</div>
 		
-		<div class="responsibilities">
-			<%=@work.responsibilities_html%>
-		</div>
+		<% @works.each_with_index do |w, index| 
+			div_attributes = %Q{ id="work_details_#{index+1}" }
+			div_attributes += %Q{ style="display: none;" } if index != 0
+			# div_attributes += %Q{ class="fixed" } unless index == 0
+			@work = w %>
+			<div <%=div_attributes%>>
+				<h3><%=@work.title%></h3>
 				
-		<div class="explanation">
-			<%=@work.explanation_html%>
-			
-			<br/><br/>
-			
-			<div class="fullview">
-				<a href="#">full view</a>
-			</div>		
-		</div>
+				<%=render :partial => 'work'%>
+			</div>
+		<% end %>
 		
-		<br style="clear: both;"/>
-								
 	</div>
 	
 	<br/><br/>

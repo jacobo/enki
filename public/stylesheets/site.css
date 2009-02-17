@@ -198,6 +198,29 @@ body.home #wrapper .top{
 	font-size: 12px;
 }
 
+#wrapper .bluebox .numbers a {
+  color: #aaa;
+  padding-left: 7px;  
+}
+
+#wrapper .bluebox .arrows a {
+  color: #fff;
+}
+
+#wrapper .bluebox .numbers {
+  position: absolute;
+  right: 44px;
+	font-size: 14px;
+  top: 8px;
+}
+
+#wrapper .bluebox .arrows {
+  position: absolute;  
+  right: 14px;
+	font-size: 14px;
+  top: 8px;
+}
+
 #wrapper .bluebox .fullview {
 	background: url(../images/button_brown.gif) no-repeat;
 	height: 16px;
@@ -229,6 +252,11 @@ body.home #wrapper .top{
 
 #wrapper .bluebox .responsibilities ul {
   padding-left: 10px;
+}
+
+#wrapper .bluebox .fixed {
+  position: absolute;
+  top: -14px;
 }
 
 #wrapper .purplebox {
