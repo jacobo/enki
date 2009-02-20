@@ -21,10 +21,10 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'pages', :action => 'show', :id => "home"
   map.resources :posts
 
-  # map.resources :works
   map.connect '/work/:category', :controller => 'works', :action => 'show'
-  map.work '/work', :controller => 'works', :action => 'index'
-
+  map.work 'work/:category/:id', :controller => 'works', :action => 'show'
+  map.works '/work', :controller => 'works', :action => 'index'
+  
   map.resources :pages
 
   map.connect ':year/:month/:day/:slug/comments', :controller => 'comments', :action => 'index'
