@@ -12,7 +12,7 @@ module NavigationHelper
     end
     [
       page_link.call("bio"),
-      link.new("work", work_path),
+      link.new("work", works_path),
       link.new("blog", posts_path),
       page_link.call("contact")
     ]

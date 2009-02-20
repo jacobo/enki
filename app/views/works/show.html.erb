@@ -1,27 +1,92 @@
 <% content_for(:right_nav) do %>
-	<div class="right_nav">
-		category links here
-	</div>
+<div class="right_nav">
+	<uL class="works_right_nav">
+	<% Work.all_categories.each do |cat| %>
+		<li><%=link_to cat, url_for(:category => cat)%></li>
+	<% end %>
+	</ul>		
+	<div class="recent_posts">
+		<div class="rp_top">
+		<ul class="works_in_category">
+			<% @works.each_with_index do |other_work, index| %>
+				<% if index == 0%>
+					<li><a href="#1" class="selected">
+						<%=index+1%>. <%=other_work.title%>
+						</a>
+					</li>
+				<% else %>
+					<li><a href="#<%=index + 1%>">
+						<%=index+1%>. <%=other_work.title%>
+						</a>
+					</li>
+				<% end %>
+			<% end %>
+		</ul>
+		<div class="rp_bottom"></div>
+		</div>
+	</div>		
+</div>
 <% end %>
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		var selected_work_id = "#work_details_1"
-		$('.numbers a').click(function(event){
-			var target_div_id = '#work_details_' + this.href.split("#")[1];
+		var selected_work_id = "#work_details_1";
+		function setSelectable(){
+			var selectedIndex = $('.numbers a').index($('.numbers a.selected'));
+			if(selectedIndex == 0){
+				$('.arrows a.left').removeClass("selectable");
+			}else{
+				$('.arrows a.left').addClass("selectable");				
+			}
+			if(selectedIndex == $('.numbers a').length - 1){
+				$('.arrows a.right').removeClass("selectable");
+			}else{
+				$('.arrows a.right').addClass("selectable");				
+			}
+		}
+		function showWork(at_index){
+			var target_div_id = '#work_details_' + at_index;
 			if(target_div_id != selected_work_id){
 				$(selected_work_id).addClass("fixed");
 				$(selected_work_id + " .responsibilities").hide();
 				$(selected_work_id + " .explanation").hide();
 				$(selected_work_id).fadeOut(2000, function(){
 					$(selected_work_id).removeClass("fixed");
-					selected_work_id = target_div_id;		
+					selected_work_id = target_div_id;
 				});
 				
 				$(target_div_id + " .responsibilities").fadeIn(2000);
 				$(target_div_id + " .explanation").fadeIn(2000);
-				$(target_div_id).fadeIn(2000);				
+				$(target_div_id).fadeIn(2000);
 			}
+		}
+		$('.works_in_category a').click(function(event){
+			$('.works_in_category a').removeClass("selected");
+			$('.numbers a').removeClass("selected");
+			var selectedIndex = this.href.split("#")[1];
+			$($('.works_in_category a')[selectedIndex - 1]).addClass("selected");
+			$($('.numbers a')[selectedIndex - 1]).addClass("selected");
+			showWork(selectedIndex);
+			setSelectable();
+		});
+		$('.numbers a').click(function(event){
+			$('.works_in_category a').removeClass("selected");
+			$('.numbers a').removeClass("selected");
+			var selectedIndex = this.href.split("#")[1];
+			$($('.works_in_category a')[selectedIndex - 1]).addClass("selected");
+			$($('.numbers a')[selectedIndex - 1]).addClass("selected");
+			showWork(selectedIndex);
+			setSelectable();
+		});
+		$('.arrows a.left').click(function(event){
+			var selectedIndex = $('.numbers a').index($('.numbers a.selected'));			
+			$($('.numbers a')[selectedIndex - 1]).click();
+			setSelectable();
+		});
+		$('.arrows a.right').click(function(event){
+			var selectedIndex = $('.numbers a').index($('.numbers a.selected'));
+			$($('.numbers a')[selectedIndex + 1]).click();
+			setSelectable();
 		});
 	});
 </script>
@@ -32,13 +97,17 @@
 
 	<div class="bluebox">		
 		<div class="numbers">
-			<% @works.each_with_index do |other_work, index| %>				
-				<a href="#<%=index + 1%>"><%=index + 1%></a>
+			<% @works.each_with_index do |other_work, index| %>
+				<% if index == 0%>
+					<a href="#1" class="selected">1</a>
+				<% else %>
+					<a href="#<%=index + 1%>"><%=index + 1%></a>					
+				<% end %>
 			<% end %>
 		</div>		
 		<div class="arrows">
-				&lt;
-				&gt;
+				<a href="#" class="left">&lt;</a>
+				<a href="#" class="right selectable">&gt;</a>
 		</div>
 		
 		<% @works.each_with_index do |w, index| 

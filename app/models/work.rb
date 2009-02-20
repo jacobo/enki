@@ -15,4 +15,8 @@ class Work < ActiveRecord::Base
     Work.find(:all, :conditions => ["category = ?", category], :order => "sort_number")
   end
   
+  def self.all_categories
+    @@all_categories ||= Work.find(:all).collect{ |w| w.category }.uniq
+  end
+  
 end

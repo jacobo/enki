@@ -202,8 +202,21 @@ body.home #wrapper .top{
   color: #aaa;
   padding-left: 7px;  
 }
-
+#wrapper .bluebox .numbers a.selected {
+  font-weight: bold;
+  color: #fff;
+}
+#wrapper .bluebox .numbers a.selected:hover {
+  text-decoration: none;
+}
 #wrapper .bluebox .arrows a {
+  color: #aaa;
+}
+#wrapper .bluebox .arrows a:hover {
+  text-decoration: none;
+}
+#wrapper .bluebox .arrows a.selectable:hover {
+  font-weight: bold;
   color: #fff;
 }
 
@@ -352,8 +365,7 @@ body #wrapper .below_post ol.commentlist li {
 	color: #06648E;
 	font-weight: normal;
 	padding-bottom: 2px;
-	border-bottom: 1px solid #06648E;
-	
+	border-bottom: 1px solid #06648E;	
 }
 
 #wrapper .main .content h3 {
@@ -368,6 +380,18 @@ body #wrapper .below_post ol.commentlist li {
   padding-top: 9px;
   margin-bottom: 5px;
 }
+#wrapper .main .right_nav ul.works_right_nav {
+  margin-top: 35px;
+}
+#wrapper .main .right_nav ul.works_right_nav li a{
+  font-size: 16px;
+}
+#wrapper .main .right_nav ul.works_in_category li a.selected{
+  font-weight: bold;
+}
+#wrapper .main .right_nav ul.works_in_category li a.selected:hover{
+  text-decoration: none;
+}
 
 body.home #wrapper .main .content{
 	font-size: 18px;
@@ -379,7 +403,7 @@ body.home #wrapper .main .content{
 }
 
 
-#wrapper .main .right_nav{
+.main .right_nav{
 	background: url(../images/socialbox.gif) no-repeat 0px 0px;
 	position: absolute;
 	height: 430px;
@@ -388,7 +412,7 @@ body.home #wrapper .main .content{
 	top: -4px;
 }
 
-#wrapper .main .right_nav ul{
+.main .right_nav ul{
 	list-style-image:none;
 	list-style-position:outside;
 	list-style-type:none;
