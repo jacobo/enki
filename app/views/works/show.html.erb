@@ -1,29 +1,36 @@
 <% content_for(:right_nav) do %>
-<div class="right_nav">
-	<uL class="works_right_nav">
-	<% Work.all_categories.each do |cat| %>
-		<li><%=link_to cat, url_for(:category => cat)%></li>
+<div class="works_right_nav">
+	<uL class="categories">
+	<% Work.all_categories.each do |cat| 
+		css_class = ""
+		if @works.first.category == cat
+			css_class = "selected"
+		end
+		%>
+		<li class="<%=css_class%>"><%=link_to cat, url_for(:category => cat)%></li>
 	<% end %>
 	</ul>		
-	<div class="recent_posts">
-		<div class="rp_top">
-		<ul class="works_in_category">
-			<% @works.each_with_index do |other_work, index| %>
+	<div class="works_in_category">
+		<ul>
+			<% @works.each_with_index do |other_work, index| 
+				css_class = ""
+				if index == @works.size - 1
+					css_class = "last"
+				end
+				%>
 				<% if index == 0%>
-					<li><a href="#1" class="selected">
+					<li class="<%=css_class%>"><a href="#1" class="selected">
 						<%=index+1%>. <%=other_work.title%>
 						</a>
 					</li>
 				<% else %>
-					<li><a href="#<%=index + 1%>">
+					<li class="<%=css_class%>"><a href="#<%=index + 1%>">
 						<%=index+1%>. <%=other_work.title%>
 						</a>
 					</li>
 				<% end %>
 			<% end %>
 		</ul>
-		<div class="rp_bottom"></div>
-		</div>
 	</div>		
 </div>
 <% end %>
@@ -31,6 +38,11 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		var selected_work_id = "#work_details_1";
+		var animating_work_show = false;
+		if(window.location.hash){
+			var selectedIndex = window.location.hash.substring(1);
+			showWork(selectedIndex);
+		}
 		function setSelectable(){
 			var selectedIndex = $('.numbers a').index($('.numbers a.selected'));
 			if(selectedIndex == 0){
@@ -45,46 +57,48 @@
 			}
 		}
 		function showWork(at_index){
+			$('.works_in_category a').removeClass("selected");
+			$('.numbers a').removeClass("selected");
+			$($('.works_in_category a')[at_index - 1]).addClass("selected");
+			$($('.numbers a')[at_index - 1]).addClass("selected");
+			
 			var target_div_id = '#work_details_' + at_index;
-			if(target_div_id != selected_work_id){
-				$(selected_work_id).addClass("fixed");
-				$(selected_work_id + " .responsibilities").hide();
-				$(selected_work_id + " .explanation").hide();
-				$(selected_work_id).fadeOut(2000, function(){
-					$(selected_work_id).removeClass("fixed");
-					selected_work_id = target_div_id;
+			if(target_div_id != selected_work_id && !animating_work_show){
+				animating_work_show = true;
+				var previously_selected_work = selected_work_id;
+				selected_work_id = target_div_id;
+								
+				$(previously_selected_work).addClass("fixed");
+				$(previously_selected_work + " .responsibilities").hide();
+				$(previously_selected_work + " .explanation").hide();
+				$(previously_selected_work).fadeOut(2000, function(){
+					$(previously_selected_work).removeClass("fixed");
+					animating_work_show = false;
 				});
 				
 				$(target_div_id + " .responsibilities").fadeIn(2000);
 				$(target_div_id + " .explanation").fadeIn(2000);
 				$(target_div_id).fadeIn(2000);
 			}
+			setSelectable();
 		}
 		$('.works_in_category a').click(function(event){
-			$('.works_in_category a').removeClass("selected");
-			$('.numbers a').removeClass("selected");
 			var selectedIndex = this.href.split("#")[1];
-			$($('.works_in_category a')[selectedIndex - 1]).addClass("selected");
-			$($('.numbers a')[selectedIndex - 1]).addClass("selected");
 			showWork(selectedIndex);
-			setSelectable();
 		});
 		$('.numbers a').click(function(event){
-			$('.works_in_category a').removeClass("selected");
-			$('.numbers a').removeClass("selected");
 			var selectedIndex = this.href.split("#")[1];
-			$($('.works_in_category a')[selectedIndex - 1]).addClass("selected");
-			$($('.numbers a')[selectedIndex - 1]).addClass("selected");
 			showWork(selectedIndex);
-			setSelectable();
 		});
 		$('.arrows a.left').click(function(event){
 			var selectedIndex = $('.numbers a').index($('.numbers a.selected'));			
+			event.preventDefault();
 			$($('.numbers a')[selectedIndex - 1]).click();
 			setSelectable();
 		});
 		$('.arrows a.right').click(function(event){
 			var selectedIndex = $('.numbers a').index($('.numbers a.selected'));
+			event.preventDefault();
 			$($('.numbers a')[selectedIndex + 1]).click();
 			setSelectable();
 		});

@@ -3,6 +3,7 @@ class CreateWorks < ActiveRecord::Migration
     create_table :works do |t|
       
       t.string   "title"
+      t.boolean  "featured"
 
       t.text     "explanation_html"
       t.text     "responsibilities_html"

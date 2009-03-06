@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'pages', :action => 'show', :id => "home"
   map.resources :posts
 
-  map.connect '/work/:category', :controller => 'works', :action => 'show'
+  map.works_in_category '/work/:category', :controller => 'works', :action => 'show'
   map.work 'work/:category/:id', :controller => 'works', :action => 'show'
   map.works '/work', :controller => 'works', :action => 'index'
   

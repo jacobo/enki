@@ -33,7 +33,7 @@
 				    <%- form_for(current_model.name.underscore.to_sym, obj, 
 						:url => object_url, 
 						:html => {:class => 'delete-item', :method => :delete}) do |form| -%>
-				      <%= image_submit_tag("silk/delete.png") %>
+				      <%= image_submit_tag("silk/delete.png", :confirm => "Are you sure you want to delete?") %>
 				    <% end -%>
 				</td>
 		</tr>

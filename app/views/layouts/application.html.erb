@@ -26,7 +26,84 @@ body_class = on_home_page ? "home" : ""
 			
 			<% if on_home_page %>
 				<div class="featured">
+					<h2 class="title_featured">
+						Featured Work:
+						<% Work.featured.each_with_index do |fwork, index| 
+							style = %Q{id = "title_#{index+1}"}
+							style += %Q{ style="display: none;"} unless index == 0
+							%>
+							<span class="title" <%=style%>><%=fwork.title%></span>
+						<% end %>
+					</h2>
+					<ul class="featured_numbers">
+						<% Work.featured.each_with_index do |fwork, index| 
+								atts = {}
+								if index == 0
+									atts.merge!(:class => "selected")
+								end
+							%>						
+							<li><%=link_to "#{index+1}", "##{index+1}", atts%></li>
+						<% end %>
+					</ul>
+					<div class="featured_arrows">
+							<a href="#" class="left">&lt;</a>
+							<a href="#" class="right selectable">&gt;</a>
+					</div>
+					<% Work.featured.each_with_index do |fwork, index| 
+						attributes = {:class => "featuredimage", :id => "featured_image_#{index+1}"}
+						if index != 0
+							attributes.merge!(:style => "display: none;")
+						end
+						%>
+						<%=link_to image_tag(fwork.featuredview.url(:display), attributes), works_in_category_url(fwork.category, :anchor => fwork.anchor_in_category) %>
+					<% end %>
+					<script type="text/javascript">
+						$(document).ready(function(){
+							var selected_work_id = "#featured_image_1";
+							function setSelectable(){
+								var selectedIndex = $('.featured_numbers a').index($('.featured_numbers a.selected'));
+								if(selectedIndex == 0){
+									$('.featured_arrows a.left').removeClass("selectable");
+								}else{
+									$('.featured_arrows a.left').addClass("selectable");				
+								}
+								if(selectedIndex == $('.featured_numbers a').length - 1){
+									$('.featured_arrows a.right').removeClass("selectable");
+								}else{
+									$('.featured_arrows a.right').addClass("selectable");				
+								}
+							}
+							function showWork(at_index){
+								$('.featured_numbers a').removeClass("selected");
+								$($('.featured_numbers a')[at_index - 1]).addClass("selected");
+								var target_div_id = '#featured_image_' + at_index;
+								if(target_div_id != selected_work_id){
+									var previously_selected_work = selected_work_id;
+									selected_work_id = target_div_id;
+									$(previously_selected_work).fadeOut(2000);
+									$(target_div_id).fadeIn(2000);
+								}
+								setSelectable();
+							}
+							$('.featured_numbers a').click(function(event){
+								var selectedIndex = this.href.split("#")[1];
+								showWork(selectedIndex);
+							});
+							$('.featured_arrows a.left').click(function(event){
+								var selectedIndex = $('.featured_numbers a').index($('.featured_numbers a.selected'));			
+								$($('.featured_numbers a')[selectedIndex - 1]).click();
+								event.preventDefault();
+							});
+							$('.featured_arrows a.right').click(function(event){
+								var selectedIndex = $('.featured_numbers a').index($('.featured_numbers a.selected'));
+								$($('.featured_numbers a')[selectedIndex + 1]).click();
+								event.preventDefault();								
+							});
+						});
+					</script>					
+					<div id="birdoverlay"></div>
 				</div>
+				
 
 				<div class="top">			
 					<div class="logo">
@@ -91,7 +168,7 @@ body_class = on_home_page ? "home" : ""
 							<% @recent_posts.each do |post| 
 								post_css_class = (post == @recent_posts.last) ? "last" : ""
 								%>
-								<li><%= link_to(h(post.title), post_path(post), :class => post_css_class) %></li>
+								<li class="<%=post_css_class%>"><%= link_to(h(post.title), post_path(post)) %></li>
 							<% end %>
 							</ul>
 

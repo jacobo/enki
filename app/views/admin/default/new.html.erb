@@ -1,6 +1,6 @@
 <h1>New <%=current_model.name%></h1>
 
-<% semantic_form_for([:admin, current_object]) do |form| -%>
+<% semantic_form_for([:admin, current_object], :html => { :multipart => true }) do |form| -%>
   <%= render :partial => 'form', :locals => {:form => form} -%>
   <% form.button_field_set do -%>                       
     <%= form.commit_button("Save") -%>                             

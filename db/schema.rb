@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20090130023846) do
 
   create_table "works", :force => true do |t|
     t.string   "title"
+    t.boolean  "featured"
     t.text     "explanation_html"
     t.text     "responsibilities_html"
     t.string   "category"
