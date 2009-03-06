@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090130023846) do
+ActiveRecord::Schema.define(:version => 20090306014248) do
+
+  create_table "authorized_users", :force => true do |t|
+    t.string   "username"
+    t.string   "password_hash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id",                      :null => false
