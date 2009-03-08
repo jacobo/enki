@@ -125,7 +125,9 @@ body.home #wrapper .top{
 	position: absolute;
 	width: 382px;
 	height: 90px;
-	background: url(../images/logo.gif);	
+}
+.top .logo img{
+  border: none;
 }
 
 .top .freebird{

@@ -111,6 +111,7 @@ body_class = on_home_page ? "home" : ""
 
 				<div class="top">			
 					<div class="logo">
+						<img src="/images/logo.gif" width="382" height="90"/>						
 					</div>
 					<div class="quote">
 						hello, my name is <strong>Julie-Ann Burkhart</strong>
@@ -121,9 +122,10 @@ body_class = on_home_page ? "home" : ""
 					</div>		
 
 				</div>
-			<% else %>
-				<div class="top">			
+			<% else #not on home page: %>
+				<div class="top">
 					<div class="logo">
+						<a href="/"><img src="/images/logo.gif" width="382" height="90"/></a>
 					</div>
 					<div class="freebird">
 					</div>
