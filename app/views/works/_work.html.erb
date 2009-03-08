@@ -13,10 +13,25 @@
 	
 		<br/><br/>
 	
-		<div class="fullview">
-			<a href="#">full view</a>
-		</div>		
+			<% if !@work.fullsizeview_url.blank? %>
+				<div class="fullview">
+					<%=link_to "full view", @work.fullsizeview_url, :target =>"_blank"%>
+				</div>
+			<% elsif !@work.fullsizeview_file_name.blank? %>
+				<div class="fullview">
+					<% if @work.fullsizeview.url.to_s.index(".pdf") %>					
+						<%=link_to "full view", @work.fullsizeview.url %>
+					<% else %>
+						<%=link_to "full view", @work.fullsizeview.url, :class => "lightbox_link" %>					
+					<% end %>
+				</div>
+			<% end %>
 	</div>
 
 	<br style="clear: both;"/>
 
+
+
+	<script type="text/javascript">
+		$(function() { $('.lightbox_link').lightBox(); });
+	</script>

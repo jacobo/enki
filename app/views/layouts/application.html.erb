@@ -10,6 +10,10 @@
   <%# stylesheet_link_tag 'application' %>
   <%= stylesheet_link_tag 'site' %>
   <%= javascript_include_tag 'jquery' %>
+
+	<script type="text/javascript" src="/jquery-lightbox/js/jquery.lightbox-0.5.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/jquery-lightbox/css/jquery.lightbox-0.5.css" media="screen" />
+
   <%= open_id_delegation_link_tags(h(config[:open_id_delegation, :server]), h(config[:open_id_delegation, :delegate])) if config[:open_id_delegation] %>
   <%= yield(:head) %>
 </head>
