@@ -54,7 +54,7 @@ body_class = on_home_page ? "home" : ""
 							attributes.merge!(:style => "display: none;")
 						end
 						%>
-						<%=link_to image_tag(fwork.featuredview.url(:display), attributes), works_in_category_url(fwork.category, :anchor => fwork.anchor_in_category) %>
+						<%=link_to image_tag(fwork.featuredview.url(:display), attributes), works_in_category_url(fwork.category.gsub(" ","_").underscore, :anchor => fwork.anchor_in_category) %>
 					<% end %>
 					<script type="text/javascript">
 						$(document).ready(function(){
@@ -209,29 +209,11 @@ body_class = on_home_page ? "home" : ""
 			<table class="notes">
 				<tr>
 					<td class="note_left">
-						<h2>jotapajaro updates</h2>
-
-						<ul>
-							<li>launched new jotapajaro site</li>
-							<li>completed Dan C. Hill site</li>
-							<li>attended FOWD 2008</li>
-							<li>attended AFTA w/ AIGA</li>
-							<li class="last">completed Trader Joe's Sales kit</li>
-						</ul>
+						<%=Page.find_by_title("jotapajaro updates").body_html rescue "TODO 'jotapajaro updates'"%>
 
 					</td>
 					<td class="note_center">
-						<h2>favorite links</h2>
-
-						<ul>
-							<li><a href="http://boston.aiga.org/" target="_blank">boston aiga</li>
-							<li><a href="http://alistapart.com/" target="_blank">a list apart</li>
-							<li><a href="http://webdesignledger.com/" target="_blank">web design ledger</li>
-							<li><a href="http://www.techcrunch.com/" target="_blank">tech crunch</li>
-							<li class="last"><a href="http://freelanceswitch.com/" target="_blank">freelance switch</li>
-						</ul>
-
-						<div id="view_links"><a href="http://delicious.com/surfingbirdy">view all links</a></div>
+						<%=Page.find_by_title("favorite links").body_html rescue "TODO 'favorite links'"%>
 
 					</td>
 					<td class="note_right">

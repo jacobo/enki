@@ -7,7 +7,7 @@
 			css_class = "selected"
 		end
 		%>
-		<li class="<%=css_class%>"><%=link_to cat, url_for(:category => cat)%></li>
+		<li class="<%=css_class%>"><%=link_to cat, url_for(:category => cat.gsub(" ","_").underscore)%></li>
 	<% end %>
 	</ul>		
 	<div class="works_in_category">
