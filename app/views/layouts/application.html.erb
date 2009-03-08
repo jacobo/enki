@@ -147,7 +147,8 @@ body_class = on_home_page ? "home" : ""
 			        
 			        <% page_links_for_navigation.each do |link| 
 						link_class = if (@page && @page.title == link.name) || 
-										request.path.to_s.index(link.url.to_s)
+										request.path.to_s.index(link.url.to_s) ||
+										(controller_name == "posts" && link.name == "blog")
 								"selected"
 							else
 								""
@@ -186,7 +187,7 @@ body_class = on_home_page ? "home" : ""
 						<div class="rp_bottom"></div>
 						</div>
 
-						<div class="view_blog"><%=link_to("view blog", posts_path)%></div>
+						<div class="view_blog"><%=link_to("archives", archives_path)%></div>
 					</div>
 				</div>
 			<% end %>
