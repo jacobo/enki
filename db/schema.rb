@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090306014248) do
+ActiveRecord::Schema.define(:version => 20090308231813) do
 
   create_table "authorized_users", :force => true do |t|
     t.string   "username"
@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20090306014248) do
     t.string   "fullsizeview_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "featured_sort"
   end
 
 end

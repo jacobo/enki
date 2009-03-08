@@ -12,7 +12,7 @@ class Work < ActiveRecord::Base
   end
   
   def self.featured
-    Work.find(:all, :conditions => ["featured = ?", true], :order => "sort_number")
+    Work.find(:all, :conditions => ["featured = ?", true], :order => "featured_sort")
   end
   
   def self.all_in_category(category)

@@ -10,6 +10,10 @@
 	<td><%= work.created_at.strftime('%d %b, %Y') %></td>
 	<td><%= link_to(h(work.title), admin_work_path(work)) %></td>
 	<td><%= work.category %></td>
-	<td><%= work.featured ? "Yes" : "No" %></td>
+	<td><%= work.featured ? "Yes" : "No" %> 
+		<% if work.featured_sort %>
+			(<%= work.featured_sort %>)
+		<% end %>
+	</td>
 	<td><%= work.sort_number %></td>
 <% end %>
