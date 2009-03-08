@@ -27,7 +27,6 @@ body_class = on_home_page ? "home" : ""
 			<% if on_home_page %>
 				<div class="featured">
 					<h2 class="title_featured">
-						Featured Work:
 						<% Work.featured.each_with_index do |fwork, index| 
 							style = %Q{id = "title_#{index+1}"}
 							style += %Q{ style="display: none;"} unless index == 0
@@ -76,6 +75,11 @@ body_class = on_home_page ? "home" : ""
 							function showWork(at_index){
 								$('.featured_numbers a').removeClass("selected");
 								$($('.featured_numbers a')[at_index - 1]).addClass("selected");
+								
+								$('.title_featured span.title').hide();
+								$('.title_featured span#title_'+at_index).show();
+								
+								
 								var target_div_id = '#featured_image_' + at_index;
 								if(target_div_id != selected_work_id){
 									var previously_selected_work = selected_work_id;
