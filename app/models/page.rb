@@ -32,4 +32,9 @@ class Page < ActiveRecord::Base
     self.slug = self.title.dup if self.slug.blank?
     self.slug.slugorize!
   end
+
+  def to_param
+    self.slug
+  end
+
 end

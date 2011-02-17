@@ -32,17 +32,20 @@ Enki::Application.routes.draw do
 
   scope :to => 'posts#index' do
     get 'posts.:format', :as => :formatted_posts
-    get '(:tag)', :as => :posts
+    get 'blog/(:tag)', :as => :posts
   end
+
+  match '/work/:category', :to => 'works#show', :as => "works_in_category"
 
   # map.root :controller => 'pages', :action => 'show', :id => "home"
   # map.resources :posts
   # 
-  works_in_category '/work/:category', :controller => 'works', :action => 'show'
-  work 'work/:category/:id', :controller => 'works', :action => 'show'
-  works '/work', :controller => 'works', :action => 'index'
+  # works_in_category '/work/:category', :controller => 'works', :action => 'show'
+  # work 'work/:category/:id', :controller => 'works', :action => 'show'
+  # works '/work', :controller => 'works', :action => 'index'
   # 
   # map.resources :pages
+  resources :works
 
-  root :to => 'posts#index'
+  root :to => 'pages#show', :id => "home"
 end

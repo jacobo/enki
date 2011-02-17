@@ -37,7 +37,7 @@
     </div>
     <div id="nav">
       <ul>
-        <li><%= nav_link_to("Dashboard", admin_dashboard_path,  :accesskey => '1') %></li>
+        <li><%= nav_link_to("Dashboard", admin_root_path,  :accesskey => '1') %></li>
         <li><%= nav_link_to("Posts",     admin_posts_path,      :accesskey => '2') %> <%= nav_link_to("(+)", new_admin_post_path, :access_key => 'n') %></li>
         <li><%= nav_link_to("Pages",     admin_pages_path,      :accesskey => '3') %> <%= nav_link_to("(+)", new_admin_page_path, :access_key => 'p') %></li>
         <li><%= nav_link_to("Work",     admin_works_path,      :accesskey => '9') %> <%= nav_link_to("(+)", new_admin_work_path, :access_key => 'w') %></li>
