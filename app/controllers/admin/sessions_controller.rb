@@ -14,10 +14,11 @@ class Admin::SessionsController < ApplicationController
 
   #create user with: AuthorizedUser.create(:username => 'admin', :password_hash => Password::encrypt_password('admin'))
   def create
+    Rails.logger.info(ENV.inspect)
     return successful_login if allow_login_bypass? && params[:bypass_login]
     if authorized_user = AuthorizedUser.find_by_username(params[:username])
       if Password::verify_password_against_hash(params[:password], authorized_user.password_hash)
-        return successful_login
+	return successful_login
       end
     end
     flash.now[:error] = "You are not authorized"

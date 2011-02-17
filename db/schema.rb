@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(:version => 20090308231813) do
   end
 
   create_table "comments", :force => true do |t|
-    t.integer  "post_id",                      :null => false
-    t.string   "author",       :default => "", :null => false
-    t.string   "author_url",   :default => "", :null => false
-    t.string   "author_email", :default => "", :null => false
-    t.text     "body",                         :null => false
-    t.text     "body_html",                    :null => false
+    t.integer  "post_id",      :null => false
+    t.string   "author",       :null => false
+    t.string   "author_url",   :null => false
+    t.string   "author_email", :null => false
+    t.text     "body",         :null => false
+    t.text     "body_html",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,16 +42,16 @@ ActiveRecord::Schema.define(:version => 20090308231813) do
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.integer "timestamp",                  :null => false
+    t.integer "timestamp",  :null => false
     t.string  "server_url"
-    t.string  "salt",       :default => "", :null => false
+    t.string  "salt",       :null => false
   end
 
   create_table "pages", :force => true do |t|
-    t.string   "title",      :default => "", :null => false
-    t.string   "slug",       :default => "", :null => false
-    t.text     "body",                       :null => false
-    t.text     "body_html",                  :null => false
+    t.string   "title",      :null => false
+    t.string   "slug",       :null => false
+    t.text     "body",       :null => false
+    t.text     "body_html",  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(:version => 20090308231813) do
   add_index "pages", ["title"], :name => "index_pages_on_title"
 
   create_table "posts", :force => true do |t|
-    t.string   "title",                   :default => "",   :null => false
-    t.string   "slug",                    :default => "",   :null => false
+    t.string   "title",                                     :null => false
+    t.string   "slug",                                      :null => false
     t.text     "body",                                      :null => false
     t.text     "body_html",                                 :null => false
     t.boolean  "active",                  :default => true, :null => false
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20090308231813) do
   add_index "posts", ["published_at"], :name => "index_posts_on_published_at"
 
   create_table "sessions", :force => true do |t|
-    t.string   "session_id", :default => "", :null => false
+    t.string   "session_id", :null => false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -102,8 +102,8 @@ ActiveRecord::Schema.define(:version => 20090308231813) do
   add_index "tags", ["name"], :name => "index_tags_on_name"
 
   create_table "undo_items", :force => true do |t|
-    t.string   "type",       :default => "", :null => false
-    t.datetime "created_at",                 :null => false
+    t.string   "type",       :null => false
+    t.datetime "created_at", :null => false
     t.text     "data"
   end
 

@@ -20,7 +20,8 @@ class Work < ActiveRecord::Base
   end
   
   def self.all_categories
-    @@all_categories ||= Work.find(:all).collect{ |w| w.category }.uniq
+    ["Interactive", "Brand Identity", "Print"]
+	#@@all_categories ||= Work.find(:all).collect{ |w| w.category }.uniq
   end
   
   def anchor_in_category

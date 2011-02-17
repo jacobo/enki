@@ -58,6 +58,8 @@ Rails::Initializer.run do |config|
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
 
+  # config.gem "bcrypt-ruby", :lib => 'bcrypt'
+
   Dir.glob(File.join(RAILS_ROOT,'vendor','*','lib')).each do |dir|
     config.load_paths += [dir]
   end

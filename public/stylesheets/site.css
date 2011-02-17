@@ -686,9 +686,11 @@ color: #321159;
 }
 
 #wrapper .main .testimonial p{
+padding-top: 0px;
+margin-top: 5px;
 padding-left: 28px;
 padding-right: 28px;
-font-size:13px;
+font-size:12px;
 color: #666;
 }
 
