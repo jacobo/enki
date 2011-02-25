@@ -86,6 +86,6 @@ class Admin::PagesController < Admin::BaseController
   protected
 
   def find_page
-    @page = Page.find(params[:id])
+    @page = Page.find_by_title(params[:id])
   end
 end

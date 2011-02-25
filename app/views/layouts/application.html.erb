@@ -1,245 +1,53 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
-  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
-  <title><%= yield(:page_title) || h(config[:title]) %></title>
-  <%# stylesheet_link_tag 'application' %>
-  <%= stylesheet_link_tag 'site' %>
-  <%= javascript_include_tag 'jquery' %>
-  <%= javascript_include_tag 'rails' %>
-
-	<script type="text/javascript" src="/jquery-lightbox/js/jquery.lightbox-0.5.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="/jquery-lightbox/css/jquery.lightbox-0.5.css" media="screen" />
-
-  <%= open_id_delegation_link_tags(h(config[:open_id_delegation, :server]), h(config[:open_id_delegation, :delegate])) if config[:open_id_delegation] %>
-  <%= yield(:head) %>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+	<title><%= yield(:page_title) || h(config[:title]) %></title>
+	<%= stylesheet_link_tag 'birdfolio' %>
+	<%= yield(:head) %>
 </head>
-<%
-on_home_page = (request.path == "/")
-
-body_class = on_home_page ? "home" : ""
-%>
-<body class="<%=body_class%>">
+<body>
 
 
-		<div id="wrapper">
-			&nbsp;
+	<div id="wrapper">
 
-			<% if on_home_page %>
-				<div class="featured">
-					<h2 class="title_featured">
-						<% Work.featured.each_with_index do |fwork, index|
-							style = %Q{id = "title_#{index+1}"}
-							style += %Q{ style="display: none;"} unless index == 0
-							%>
-							<span class="title" <%=style%>><%=fwork.title%></span>
-						<% end %>
-					</h2>
-					<ul class="featured_numbers">
-						<% Work.featured.each_with_index do |fwork, index|
-								atts = {}
-								if index == 0
-									atts.merge!(:class => "selected")
-								end
-							%>
-							<li><%=link_to "#{index+1}", "##{index+1}", atts%></li>
-						<% end %>
-					</ul>
-					<div class="featured_arrows">
-							<a href="#" class="left">&lt;</a>
-							<a href="#" class="right selectable">&gt;</a>
-					</div>
-					<% Work.featured.each_with_index do |fwork, index|
-						attributes = {:class => "featuredimage", :id => "featured_image_#{index+1}"}
-						if index != 0
-							attributes.merge!(:style => "display: none;")
-						end
-						%>
-						<%=link_to image_tag(fwork.featuredview.url(:display), attributes), works_in_category_url(fwork.category.gsub(" ","_").underscore, :anchor => fwork.anchor_in_category) %>
-					<% end %>
-					<script type="text/javascript">
-						$(document).ready(function(){
-							var selected_work_id = "#featured_image_1";
-							function setSelectable(){
-								var selectedIndex = $('.featured_numbers a').index($('.featured_numbers a.selected'));
-								if(selectedIndex == 0){
-									$('.featured_arrows a.left').removeClass("selectable");
-								}else{
-									$('.featured_arrows a.left').addClass("selectable");
-								}
-								if(selectedIndex == $('.featured_numbers a').length - 1){
-									$('.featured_arrows a.right').removeClass("selectable");
-								}else{
-									$('.featured_arrows a.right').addClass("selectable");
-								}
-							}
-							function showWork(at_index){
-								$('.featured_numbers a').removeClass("selected");
-								$($('.featured_numbers a')[at_index - 1]).addClass("selected");
+		<ul class="top_nav">
+			<li><%= link_to("home", "/") %></li>
 
-								$('.title_featured span.title').hide();
-								$('.title_featured span#title_'+at_index).show();
+			<% page_links_for_navigation.each do |link|
+				link_class = if (@page && @page.title == link.name) ||
+					request.path.to_s.index(link.url.to_s) ||
+					(controller_name == "posts" && link.name == "blog")
+					"selected"
+				else
+					""
+				end %>
+			<li><%= link_to(h(link.name), link.url, :class => link_class) %></li>
+			<% end -%>
+		</ul>
 
-
-								var target_div_id = '#featured_image_' + at_index;
-								if(target_div_id != selected_work_id){
-									var previously_selected_work = selected_work_id;
-									selected_work_id = target_div_id;
-									$(previously_selected_work).fadeOut(2000);
-									$(target_div_id).fadeIn(2000);
-								}
-								setSelectable();
-							}
-							$('.featured_numbers a').click(function(event){
-								var selectedIndex = this.href.split("#")[1];
-								showWork(selectedIndex);
-							});
-							$('.featured_arrows a.left').click(function(event){
-								var selectedIndex = $('.featured_numbers a').index($('.featured_numbers a.selected'));
-								$($('.featured_numbers a')[selectedIndex - 1]).click();
-								event.preventDefault();
-							});
-							$('.featured_arrows a.right').click(function(event){
-								var selectedIndex = $('.featured_numbers a').index($('.featured_numbers a.selected'));
-								$($('.featured_numbers a')[selectedIndex + 1]).click();
-								event.preventDefault();
-							});
-						});
-					</script>
-					<div id="birdoverlay"></div>
+		<div class="top">
+			<div class="logo">
+				<a href="/"><img src="/images/logo.gif" width="382" height="90"/></a>
+				<div class="logocaption">
+					web : print : brand identity : illustration
 				</div>
-
-
-				<div class="top">
-					<div class="logo">
-						<img src="/images/logo.gif" width="382" height="90"/>
-					</div>
-					<div class="quote">
-						hello, my name is <strong>Julie-Ann Burkhart</strong>
-						<br>
-						<br>
-						i am very passionate about web &amp; graphic design<br>
-						and brand &amp; identity
-					</div>
-
-				</div>
-			<% else #not on home page: %>
-				<div class="top">
-					<div class="logo">
-						<a href="/"><img src="/images/logo.gif" width="382" height="90"/></a>
-					</div>
-					<div class="freebird">
-					</div>
-				</div>
-			<% end %>
-
-			<div class="sun">
-				</div>
-
-
-			<div class="main">
-				<ul class="top_nav">
-					<% home_class = on_home_page ? "selected" : "" %>
-					<li><%= link_to("home", "/", :class => home_class) %></li>
-
-			        <% page_links_for_navigation.each do |link|
-						link_class = if (@page && @page.title == link.name) ||
-										request.path.to_s.index(link.url.to_s) ||
-										(controller_name == "posts" && link.name == "blog")
-								"selected"
-							else
-								""
-							end
-					%>
-			          <li><%= link_to(h(link.name), link.url, :class => link_class) %></li>
-					<% end -%>
-					<!-- <li><a href="index.html">home</a></li>
-					<li><a href="bio.html" class="selected">bio</a></li>
-					<li><a href="work.html">work</a></li>
-					<li><a href="blog.html">blog</a></li>
-					<li><a href="contact.html">contact</a></li> -->
-				</ul>
-
-			<% right_nav = Proc.new do %>
-				<div class="right_nav">
-					<ul>
-							<li><a href="http://www.linkedin.com/in/julieannburkhart" target="_blank"><img src="/images/linkedin.gif"/></a></li>
-							<li><a href="http://twitter.com/jotapajaro" target="_blank"><img src="/images/twitter.gif"/></a></li>
-							<li><a href="http://www.facebook.com/home.php?#/profile.php?id=1801054&ref=profile" target="_blank"><img src="/images/facebook.gif"/></a></li>
-							<li><a href="/julieannburkhart_resume.pdf"><img src="/images/pdfresume.gif"/></a></li>
-					</ul>
-					<div class="recent_posts">
-						<div class="rp_top">
-							<% @recent_posts = Post.find_recent(:limit => 5) %>
-
-							<ul>
-							<% @recent_posts.each do |post|
-								post_css_class = (post == @recent_posts.last) ? "last" : ""
-								%>
-								<li class="<%=post_css_class%>"><%= link_to(h(post.title), post_path(post)) %></li>
-							<% end %>
-							</ul>
-
-
-						<div class="rp_bottom"></div>
-						</div>
-
-						<div class="view_blog"><%=link_to("archives", archives_path)%></div>
-					</div>
-				</div>
-			<% end %>
-
-
-
-
-			      <%= yield %>
-
-
-
-
-
-				<div class="surfergirl">
-				</div>
-
-				<br class="clear"/>
-
 			</div>
-
-
-			<div class="compensate"></div>
 		</div>
-
-		<div id="bottom">
-			<table class="notes">
-				<tr>
-					<td class="note_left">
-						<%=Page.find_by_title("jotapajaro updates").body_html rescue "TODO 'jotapajaro updates'"%>
-
-					</td>
-					<td class="note_center">
-						<%=Page.find_by_title("favorite links").body_html rescue "TODO 'favorite links'"%>
-
-					</td>
-					<td class="note_right">
-						<h2>contact me</h2>
-						<p>mobile: <br/>
-						   603.303.3189</p>
-
-						<p>email: <br/>
-							<a href="mailto:jburkhart@jotapajaro.com">jburkhart@jotapajaro.com</a></p>
-
-						<p>address: <br/>
-							139 Wildwood Aveune <br/>
-							Arlington, MA 02476</p>
-					</td>
-				</tr>
-			</table>
-
+		<div class="main">
+			<br/>
+				<%= yield %>
+			<br class="clear"/>
+			
+			<div class="featured">
+				<a href="/works/">view all &gt;</a>
+			</div>
+			
 		</div>
-
-
-
-
+		<div class="bottom">
+			bottom stuff
+		</div>
+	</div>
 
 </body>
 </html>

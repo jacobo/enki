@@ -1,7 +1,7 @@
 body {
-  margin: 0;
+	margin: 0;
 	padding: 0;
-  text-align: center;
+	text-align: center;
 	position: relative;
 	background: #321159 url(../images/bgcanvas.jpg) repeat-x 0 -109px;
 	font-size: 13px;
@@ -132,15 +132,6 @@ body.home #wrapper .top{
 }
 .top .logo img{
   border: none;
-}
-
-.top .freebird{
-	background: url(../images/freebird.gif);
-	width: 500px;
-	height: 182px;
-	position: absolute;
-	right: -100px;
-	top: -2px;
 }
 
 /* width 382 height 130 */
