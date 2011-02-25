@@ -1,7 +1,12 @@
 class Work < ActiveRecord::Base
-  has_attached_file :featuredview, :styles => { :preview => "200x86", :display => "399x171" }
-  has_attached_file :largeview, :styles => { :preview => "278x141", :display => "556x282" }
-  has_attached_file :fullsizeview, :styles => { :preview => "300x300>" }
+  has_attached_file :featuredview
+  # , :styles => { :preview => "200x86", :display => "399x171" }
+  has_attached_file :largeview
+  # , :styles => { :preview => "278x141", :display => "556x282" }
+  has_attached_file :fullsizeview
+  # , :styles => { :preview => "300x300>" }
+
+  # default_scope :order => 'sort_number ASC'
 
   def next
     Work.find(:first, :conditions => ["sort_number > ?", self.sort_number], :order => "sort_number ASC")
@@ -12,7 +17,7 @@ class Work < ActiveRecord::Base
   end
 
   def self.featured
-    Work.find(:all, :conditions => ["featured = ?", true], :order => "featured_sort")
+    Work.find(:all, :conditions => ["featured = ?", true], :order => "featured_sort ASC")
   end
 
   def self.all_in_category(category)
@@ -20,7 +25,7 @@ class Work < ActiveRecord::Base
   end
 
   def self.all_categories
-    @@all_categories ||= Work.find(:all).collect{ |w| w.category }.uniq
+    @@all_categories ||= Work.find(:all).collect{ |w| w.category }.reject(&:blank?).uniq
   end
 
   def anchor_in_category

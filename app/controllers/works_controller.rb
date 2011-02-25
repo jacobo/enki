@@ -1,7 +1,8 @@
 class WorksController < ApplicationController
 
   def index
-    first_category = Work.find(:first, :order => "sort_number ASC").category
+    first_work = Work.order("sort_number ASC").where("category IS NOT NULL AND category <> ''").first
+    first_category = first_work.category
     redirect_to url_for(:category => first_category.gsub(" ","_").underscore, :action => 'show')
   end
 

@@ -37,6 +37,7 @@ class Admin::WorksController < Admin::BaseController
         }
       end
     else
+      puts @work.errors.full_messages.inspect
       respond_to do |format|
         format.html { render :action => 'show',        :status => :unprocessable_entity }
       end

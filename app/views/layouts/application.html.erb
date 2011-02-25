@@ -35,17 +35,38 @@
 			</div>
 		</div>
 		<div class="main">
-			<br/>
-				<%= yield %>
+			<%= yield %>
 			<br class="clear"/>
 			
 			<div class="featured">
-				<a href="/works/">view all &gt;</a>
+				<a class="view_all" href="/works/">view all &gt;</a>
+				<% Work.featured.each do |work| %>
+					<div class="featured_work">
+						<%= link_to(image_tag(work.featuredview.url(:original)), work_path(work)) %>
+					</div>
+				<% end %>
 			</div>
+			<br class="clear"/>
 			
 		</div>
 		<div class="bottom">
-			bottom stuff
+			<br class="clear"/>
+			<div class="bottom_stuff">
+				<div class="blog_posts">
+					<a class="view_archives" href="/archives/">archives &gt;</a>
+					<ul>
+						<% Post.recent.each do |post| %>
+							<li><%=link_to post.title, post_path(post) %></li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="contact">
+					<img src="/images/intouch.gif" />
+				</div>
+				<div class="copyright">
+					&copy; 2011 JotaPajaro Studios. All rights reserved.
+				</div>
+			</div>
 		</div>
 	</div>
 

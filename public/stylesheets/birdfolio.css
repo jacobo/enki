@@ -9,6 +9,9 @@ body {
 /*	url(../images/bgcanvas.jpg) repeat-x 0 -109px;*/
 	font-size: 13px;
 }
+a img {
+	border: none;
+}
 #wrapper .top {
 	padding: 5px 0 5px 0;
 	height: 120px; /* actual height 140 */
@@ -22,6 +25,7 @@ body {
 	border-top: 1px dashed #00658b;
 }
 #wrapper .top .logocaption {
+	color: #422460;
 	border-bottom: 1px dashed #00658b;	
 }
 
@@ -70,6 +74,68 @@ body {
 	color: #331256;
 	font-size: 19px;
 	margin-bottom: 0;
+	text-align: center;
+}
+
+#wrapper div.bottom_stuff {
+	position: relative;	
+	text-align: left;
+	margin: auto;
+	width: 910px;
+	height: 250px;
+	font-size: 13px;
+}
+
+#wrapper div.bottom_stuff .copyright{
+	position: absolute;
+	bottom: 10px;
+	left: 350px;
+	color: #422460;
+}
+
+#wrapper div.bottom .blog_posts {
+	position: absolute;
+	top: 30px;
+	left: 110px;
+	text-align: left;
+	font-size: 13px;
+}
+
+#wrapper div.bottom .blog_posts ul {
+	margin-left: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	padding-top: 5px;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;	
+}
+
+#wrapper div.bottom .blog_posts ul li {
+	padding: 5px 0px 5px 0px;
+	border-bottom: 1px dashed #00658B;
+}
+
+#wrapper div.bottom .blog_posts ul li a {
+	color: #422460;
+	text-decoration: none;
+}
+
+#wrapper div.bottom .blog_posts a.view_archives {
+	display: block;
+	text-decoration: none;
+	color: #006084;
+	padding-bottom: 10px;
+	width: 100px;
+	padding-left: 150px;
+	padding-top: 8px;
+	background: url(../images/recentblogpost.gif) no-repeat;
+}
+
+#wrapper div.bottom .contact {
+	position: absolute;
+	top: 30px;
+	left: 520px;
 }
 
 .quote {
@@ -96,8 +162,16 @@ body {
 
 #wrapper .main .featured {
 	text-align: left;
+	height: 140px;
 }
-#wrapper .main .featured a {
+
+#wrapper .main .featured .featured_work {
+	float: left;
+	border: 5px solid #acd8df;
+	margin: 3px 7px 5px 8px;
+}
+
+#wrapper .main .featured a.view_all {
 	display: block;
 	text-decoration: none;
 	color: #006084;

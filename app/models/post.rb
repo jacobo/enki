@@ -31,6 +31,10 @@ class Post < ActiveRecord::Base
     published_at?
   end
 
+  def self.recent
+    Post.find(:all, :order => "created_at DESC", :limit => 5)
+  end
+
   attr_accessor :published_at_natural
   def published_at_natural
     @published_at_natural ||= published_at.send_with_default(:strftime, 'now', "%Y-%m-%d %H:%M")

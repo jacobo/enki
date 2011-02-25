@@ -11,21 +11,21 @@
 
 <p><label>Featured Image:</label>
 	<% if @work.featuredview.file? %>
-		<%= image_tag @work.featuredview.url(:preview) %> OR
+		<%= image_tag @work.featuredview.url(:original) %> OR
 	<% end %>
 	<%= form.file_field :featuredview %>
 </p>
 
 <p><label>Large Image:</label>
 	<% if @work.largeview.file? %>
-		<%= image_tag @work.largeview.url(:preview) %> OR
+		<%= image_tag @work.largeview.url(:original) %> OR
 	<% end %>
 	<%= form.file_field :largeview %>
 </p>
 
 <p>
 	<% if @work.fullsizeview.file? %>
-		<%= image_tag @work.fullsizeview.url(:preview) %> OR
+		<%= image_tag @work.fullsizeview.url(:original) %> OR
 	<% end %>
 		Full Size Image: <%= form.file_field :fullsizeview %>
 		<br/>
