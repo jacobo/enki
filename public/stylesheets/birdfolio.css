@@ -136,6 +136,23 @@ a img {
 	position: absolute;
 	top: 30px;
 	left: 520px;
+	width: 240px;
+}
+
+#wrapper div.bottom .contact p.first {
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+#wrapper div.bottom .contact p {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 5px;
+}
+
+#wrapper div.bottom .contact label{
+	color: #297b97;
+	font-weight: bold;
 }
 
 .quote {
