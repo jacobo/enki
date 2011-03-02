@@ -15,4 +15,11 @@ class WorksController < ApplicationController
     # end
   end
 
+  def show_work
+    category = params[:category].humanize
+    @works = Work.find(:all, :conditions => ["category = ?", category], :order => "sort_number ASC")
+    @work = Work.find(params[:id])
+    # render :text => "ok"
+  end
+
 end

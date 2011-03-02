@@ -15,8 +15,8 @@ a img {
 #wrapper .top {
 	padding: 5px 0 5px 0;
 	height: 120px; /* actual height 140 */
-	background: url(../images/canvas.gif);
-	color: #331256;
+	background: #daddcf url(../images/canvas.gif);
+	color: #5e4574;
 	font-size: 17px;
 	margin-bottom: 0;
 }
@@ -25,19 +25,27 @@ a img {
 	border-top: 1px dashed #00658b;
 }
 #wrapper .top .logocaption {
-	color: #422460;
+	color: #5e4574;
 	border-bottom: 1px dashed #00658b;	
 }
 
-#wrapper ul.top_nav {
+#wrapper div.tippy_top {
 	padding: 10px;
 	margin: 0;
 	height: 25px; /* actual height 45 */
-	width: 910px; /* actual width 910 */
+	width: 890px;
 	text-align: left;
 	font-weight: none;
 	margin-left: auto;
 	margin-right: auto;
+	position: relative;
+}
+
+#wrapper ul.top_nav {
+	margin:0;
+	padding:0;
+	left: 0px;
+	position: absolute;
 	list-style-image:none;
 	list-style-position:outside;
 	list-style-type:none;
@@ -57,6 +65,28 @@ a img {
 	color: #fff;
 }
 
+
+#wrapper ul.connect_links {
+	margin: 0;
+	margin-top: 5px;
+	padding: 0;
+	padding-left: 73px;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background: url(../images/connect.gif) 0px 2px no-repeat;
+}
+
+#wrapper ul.connect_links li{
+	margin:0;
+	margin-left: 3px;
+	padding:0;
+	display: inline;
+}
+
 #wrapper .main {
 	width: 910px;
 	margin: 0;
@@ -65,16 +95,22 @@ a img {
 	margin-right: auto;
 	min-height: 400px;
 	background: #fff;
+	text-align: center;
 }
 
 #wrapper div.bottom {
 	padding: 5px 0 5px 0;
 	height: 270px;
-	background: url(../images/canvas.gif);
-	color: #331256;
+	background: #daddcf url(../images/canvas.gif);
+	color: #5e4574;
 	font-size: 19px;
 	margin-bottom: 0;
 	text-align: center;
+}
+
+#wrapper div.bottom a {
+	color: #5e4574;
+	text-decoration: none;
 }
 
 #wrapper div.bottom_stuff {
@@ -90,7 +126,6 @@ a img {
 	position: absolute;
 	bottom: 10px;
 	left: 350px;
-	color: #422460;
 }
 
 #wrapper div.bottom .blog_posts {
@@ -114,11 +149,6 @@ a img {
 #wrapper div.bottom .blog_posts ul li {
 	padding: 5px 0px 5px 0px;
 	border-bottom: 1px dashed #00658B;
-}
-
-#wrapper div.bottom .blog_posts ul li a {
-	color: #422460;
-	text-decoration: none;
 }
 
 #wrapper div.bottom .blog_posts a.view_archives {
@@ -150,19 +180,22 @@ a img {
 	padding-bottom: 5px;
 }
 
+#wrapper div.bottom .contact p a {
+	
+}
+
 #wrapper div.bottom .contact label{
 	color: #297b97;
 	font-weight: bold;
 }
 
 .quote {
-	padding: 55px;
+/*	padding: 55px;*/
 	margin: auto;
-	width: 717px; /* actual width 827*/
-	height: 104px; /* actual height 214 */
-	background: url(../images/quotebox.gif) no-repeat;
-	text-align: left;
-	font-size: 18px;
+	width: 827px; /* actual width 827*/
+	height: 214px; /* actual height 214 */
+/*	background: url(../images/quotebox.gif) no-repeat;*/
+	text-align: center;
 }
 .quote h1 {
 	margin: 0;
@@ -170,11 +203,6 @@ a img {
 	font-size: 32px;
 	color: #006084;
 	font-weight: none;
-}
-.quote p {
-	margin: 10px 0 0 0;
-	color: #331256;
-	padding: 0;
 }
 
 #wrapper .main .featured {

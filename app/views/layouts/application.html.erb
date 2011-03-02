@@ -10,22 +10,28 @@
 
 
 	<div id="wrapper">
+		<div class="tippy_top">
+			<ul class="top_nav">
+				<li><%= link_to("home", "/") %></li>
 
-		<ul class="top_nav">
-			<li><%= link_to("home", "/") %></li>
-
-			<% page_links_for_navigation.each do |link|
-				link_class = if (@page && @page.title == link.name) ||
-					request.path.to_s.index(link.url.to_s) ||
-					(controller_name == "posts" && link.name == "blog")
-					"selected"
-				else
-					""
-				end %>
-			<li><%= link_to(h(link.name), link.url, :class => link_class) %></li>
-			<% end -%>
-		</ul>
-
+				<% page_links_for_navigation.each do |link|
+					link_class = if (@page && @page.title == link.name) ||
+						request.path.to_s.index(link.url.to_s) ||
+						(controller_name == "posts" && link.name == "blog")
+						"selected"
+					else
+						""
+					end %>
+				<li><%= link_to(h(link.name), link.url, :class => link_class) %></li>
+				<% end -%>
+			</ul>
+			<ul class="connect_links">
+				<li><a href="http://www.linkedin.com/in/julieannburkhart"><img src="/images/linkedin.gif" height="29" width="29" /></a></li>
+				<li><a href="/julieannburkhart_resume.pdf"><img src="/images/resume.gif" height="29" width="29" /></a></li>
+				<li><a href="http://twitter.com/jotapajaro"><img src="/images/twitter.gif" height="29" width="29" /></a></li>
+				<li><a href="http://www.facebook.com/julieannburkhart"><img src="/images/facebook.gif" height="29" width="29" /></a></li>
+			</ul>
+		</div>
 		<div class="top">
 			<div class="logo">
 				<a href="/"><img src="/images/logo.gif" width="382" height="90"/></a>
@@ -36,17 +42,6 @@
 		</div>
 		<div class="main">
 			<%= yield %>
-			<br class="clear"/>
-			
-			<div class="featured">
-				<a class="view_all" href="/works/">view all &gt;</a>
-				<% Work.featured.each do |work| %>
-					<div class="featured_work">
-						<%= link_to(image_tag(work.featuredview.url(:original)), work_path(work)) %>
-					</div>
-				<% end %>
-			</div>
-			<br class="clear"/>
 			
 		</div>
 		<div class="bottom">
@@ -63,8 +58,14 @@
 				<div class="contact">
 					<img src="/images/intouch.gif" />
 					<p class="first">job inquiries? contact me today!</p>
-					<p><label>mobile:</label> 603-303-3189 </p>
-					<p><label>email:</label> jburkhart@jotapajaro.com </p>
+					<p>
+						<label>mobile:</label> 
+						603-303-3189
+					</p>
+					<p>
+						<label>email:</label>
+						<a href="mailto:jburkhart@jotapajaro.com">jburkhart@jotapajaro.com</a>
+					</p>
 					<br/>
 					<p>i live and surf in Pacifica CA, but i design for people all over the world.</p>
 				</div>

@@ -36,8 +36,9 @@ Enki::Application.routes.draw do
   end
 
   match '/works', :controller => "works", :action => 'index'
-  match '/works/:category', :to => 'works#show', :as => "works_in_category"
-  resources :works
+  match '/works/:category', :to => 'works#show_category', :as => "category"
+  match '/works/:category/:id', :to => 'works#show_work', :as => "work_in_category"
+  # resources :works
 
   # map.root :controller => 'pages', :action => 'show', :id => "home"
   # map.resources :posts
@@ -48,5 +49,5 @@ Enki::Application.routes.draw do
   # 
   # map.resources :pages
 
-  root :to => 'pages#show', :id => "home"
+  root :to => 'pages#home'
 end

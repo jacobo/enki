@@ -1,4 +1,6 @@
 class Work < ActiveRecord::Base
+  validates_presence_of :category
+  
   has_attached_file :featuredview
   # , :styles => { :preview => "200x86", :display => "399x171" }
   has_attached_file :largeview

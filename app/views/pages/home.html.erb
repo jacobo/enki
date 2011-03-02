@@ -1,0 +1,15 @@
+<div class="quote">
+	<img src="/images/quotebox.gif" width="827" height="214" alt="hello, my name is julie-ann burkhart. my mission is to create clean and creative web, print, and brand identity design. you can count on me to take a personal approach to ensure all your needs are met from concept to completion."/>
+</div>
+<br class="clear"/>
+
+<div class="featured">
+	<a class="view_all" href="/works/">view all &gt;</a>
+	<% Work.featured.each do |work| %>
+		<div class="featured_work">
+			<%= link_to(image_tag(work.featuredview.url(:original)), 
+			work_in_category_path(work.category, work.id)) %>
+		</div>
+	<% end %>
+</div>
+<br class="clear"/>
