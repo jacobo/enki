@@ -12,11 +12,21 @@ body {
 a img {
 	border: none;
 }
+#wrapper {
+	color: #5e4574;
+}
+#wrapper a {
+	color: #5e4574;
+	text-decoration: none;
+}
+#wrapper a:hover {
+	text-decoration: underline;
+}
+
 #wrapper .top {
 	padding: 5px 0 5px 0;
 	height: 120px; /* actual height 140 */
 	background: #daddcf url(../images/canvas.gif);
-	color: #5e4574;
 	font-size: 17px;
 	margin-bottom: 0;
 }
@@ -25,7 +35,6 @@ a img {
 	border-top: 1px dashed #00658b;
 }
 #wrapper .top .logocaption {
-	color: #5e4574;
 	border-bottom: 1px dashed #00658b;	
 }
 
@@ -98,21 +107,70 @@ a img {
 	text-align: center;
 }
 
+#wrapper .main .content {
+	border: 1px solid #fff;
+	margin: 0;
+	padding: 19px 0px 19px 19px;
+	text-align: left;
+	position: relative;
+}
+#wrapper .main .content h1.pagetitle {
+	margin: 0;
+	margin-left: 10px;
+	padding: 0;
+	width: 890px;
+}
+#wrapper .main .content .profile {
+	float: left;
+}
+#wrapper .main .content .profile img {
+	border: 2px solid #331256;
+	margin-left: 10px;
+}
+#wrapper .main .content .illustration {
+	float: left;
+	margin-left: 50px;
+}
+#wrapper .main .content .right_side {
+	float: right;
+	width: 180px;
+}
+#wrapper .main .content .right_side ul {
+	margin: 0;
+	padding: 0;
+	list-style-image:none;
+	list-style-position:inside;
+	list-style-type: circle;
+	font-size: 14px;
+}
+#wrapper .main .content .specialities {
+}
+#wrapper .main .content .selected_clients {
+}
+#wrapper .main .content .blurb {
+	width: 630px;
+	margin-left: 10px;
+	font-size: 14px;
+}
+
 #wrapper div.bottom {
-	padding: 5px 0 5px 0;
-	height: 270px;
+/*	padding: 5px 0 5px 0;*/
+/*	height: 270px;*/
 	background: #daddcf url(../images/canvas.gif);
-	color: #5e4574;
 	font-size: 19px;
-	margin-bottom: 0;
-	text-align: center;
+/*	margin-bottom: 0;*/
+/*	text-align: center;*/
 }
-
-#wrapper div.bottom a {
-	color: #5e4574;
-	text-decoration: none;
+#wrapper div.bottom_spacer {
+	margin: 0;
+	padding: 0;
+	height: 7px;
+	line-height: 7px;
+	font-size: 7px;
 }
-
+#wrapper div.bottom_dasher {
+	border-top: 1px dashed #00658B;
+}
 #wrapper div.bottom_stuff {
 	position: relative;	
 	text-align: left;
