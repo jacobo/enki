@@ -1,0 +1,41 @@
+<% content_for(:page_title) { %><%="work - #{config[:title]}"%><% } %>
+
+<div class="works_right_nav">
+	<ul>
+		<% @works.each_with_index do |other_work, index|
+			css_classes = []
+			if index == @works.size - 1
+				css_classes << "last"
+			end
+			if @work == other_work
+				css_classes << "selected"
+			end
+			%>
+			<li class="<%=css_classes.join(' ')%>">
+				<%=link_to other_work.title, work_path(other_work)%>
+			</li>
+		<% end %>
+	</ul>
+</div>
+
+<div class="work">
+
+	<h3><%=@work.title%></h3>
+
+
+	<div class="explanation">
+		<%=raw @work.explanation_html%>
+	</div>
+
+	responsible for
+	<div class="responsibilities">
+		<%=raw @work.responsibilities_html%>
+	</div>
+
+</div>
+
+<div class="images">
+	<%= image_tag @work.largeview.url(:original), :class => "workimage" %>
+</div>
+
+	<br style="clear: both;"/>

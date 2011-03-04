@@ -35,10 +35,10 @@ Enki::Application.routes.draw do
     get 'blog/(:tag)', :as => :posts
   end
 
-  match '/works', :controller => "works", :action => 'index'
-  match '/works/:category', :to => 'works#show_category', :as => "category"
-  match '/works/:category/:id', :to => 'works#show_work', :as => "work_in_category"
-  # resources :works
+  # match '/works', :controller => "works", :action => 'index'
+  # match '/works/:category', :to => 'works#show_category', :as => "category"
+  # match '/works/:category/:id', :to => 'works#show_work', :as => "work_in_category"
+  resources :works
 
   # map.root :controller => 'pages', :action => 'show', :id => "home"
   # map.resources :posts

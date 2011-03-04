@@ -1,6 +1,4 @@
 class Work < ActiveRecord::Base
-  validates_presence_of :category
-  
   has_attached_file :featuredview
   # , :styles => { :preview => "200x86", :display => "399x171" }
   has_attached_file :largeview
@@ -20,18 +18,6 @@ class Work < ActiveRecord::Base
 
   def self.featured
     Work.find(:all, :conditions => ["featured = ?", true], :order => "featured_sort ASC")
-  end
-
-  def self.all_in_category(category)
-    Work.find(:all, :conditions => ["category = ?", category], :order => "sort_number")
-  end
-
-  def self.all_categories
-    @@all_categories ||= Work.find(:all).collect{ |w| w.category }.reject(&:blank?).uniq
-  end
-
-  def anchor_in_category
-    Work.all_in_category(self.category).index(self) + 1
   end
 
 end

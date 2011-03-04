@@ -285,3 +285,18 @@ a img {
 	margin-left: 10px;
 	background: url(../images/featuredwork.gif) no-repeat;
 }
+
+.works_right_nav {
+	float: right;
+	text-align: left;
+}
+
+.main .work {
+	padding: 10px;
+	text-align: left;
+}
+
+.main .work h3 {
+	margin: 0;
+	padding: 0;
+}

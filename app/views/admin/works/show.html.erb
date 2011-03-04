@@ -1,5 +1,5 @@
 <% object_name = current_object.respond_to?(:title) ? current_object.title : "#{object.id}" %>
-<h1>Editing <%=current_model.name%> - <%= link_to(h(object_name), work_in_category_path(current_object.category, current_object.id)) %></h1>
+<h1>Editing <%=current_model.name%> - <%= link_to(h(object_name), work_path(current_object.id)) %></h1>
 
 <% semantic_form_for([:admin, current_object], :html => { :multipart => true }) do |form| -%>
   <%= render :partial => 'form', :locals => {:form => form} %>

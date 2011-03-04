@@ -9,7 +9,6 @@
 
 				<th>Created At</th>
 			    <th>Title</th>
-			    <th>Category</th>
 			    <th>Featured</th>
 			    <th>Sort</th>
 			<th>Actions</th>
@@ -29,7 +28,6 @@
 			%>
 			<td><%= work.created_at.strftime('%d %b, %Y') %></td>
 			<td><%= link_to(h(work.title), admin_work_path(work)) %></td>
-			<td><%= work.category %></td>
 			<td><%= work.featured ? "Yes" : "No" %>
 				<% if work.featured_sort %>
 					(<%= work.featured_sort %>)
