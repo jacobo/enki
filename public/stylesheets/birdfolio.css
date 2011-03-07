@@ -300,3 +300,27 @@ a img {
 	margin: 0;
 	padding: 0;
 }
+
+.main .entrybody {
+	margin: 20px;
+	width: 700px; /*actual width 700 */
+	padding: 0;
+	background: white url(../images/blog_mid.gif) repeat;
+	text-align: left;
+}
+
+.main .entrybody h2 {
+	margin: 0;
+}
+
+.main .entrybody .blog {
+	width: 600px; /*actual width 700 */
+	padding: 50px 25px 25px 75px;
+	background: url(../images/blog_top.gif) no-repeat;
+}
+
+.main .entrybody .blog_butt {
+	width: 700px;
+	height: 23px;
+	background: white url(../images/blog_butt.gif) repeat;
+}
