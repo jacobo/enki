@@ -5,7 +5,9 @@
 <% content_for(:page_title) do -%>
 <%= post_title(@post) -%>
 <% end -%>
-<%= render :partial => 'posts/post', :locals => {:post => @post} %>
+<div class="blogposts">
+	<%= render :partial => 'posts/post', :locals => {:post => @post} %>
+</div>
 
 <div class="below_post">
 

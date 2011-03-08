@@ -301,6 +301,11 @@ a img {
 	padding: 0;
 }
 
+.main .blogposts {
+	padding-top: 33px;
+	background: white url(../images/musings.gif) 32px 28px no-repeat;
+}
+
 .main .entrybody {
 	margin: 20px;
 	width: 700px; /*actual width 700 */
