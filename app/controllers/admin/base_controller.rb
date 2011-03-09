@@ -33,6 +33,7 @@ class Admin::BaseController < ApplicationController
   end
 
   def require_login
+    puts session.inspect
     return redirect_to(admin_session_path) unless session[:logged_in]
   end
 

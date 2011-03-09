@@ -1,3 +1,10 @@
+/*
+* COLORS:
+* teal: #00658b
+* purple: #331256
+* maybe alt-purple? 5e4574
+*/
+
 html {
 }
 body {
@@ -7,7 +14,7 @@ body {
 	position: relative;
 	background: #331256;
 /*	url(../images/bgcanvas.jpg) repeat-x 0 -109px;*/
-	font-size: 13px;
+	font-size: 14px;
 }
 a img {
 	border: none;
@@ -35,6 +42,9 @@ a img {
 	border-top: 1px dashed #00658b;
 }
 #wrapper .top .logocaption {
+	padding: 0;
+	padding-bottom: 3px;
+	margin: 0;
 	border-bottom: 1px dashed #00658b;	
 }
 
@@ -289,16 +299,61 @@ a img {
 .works_right_nav {
 	float: right;
 	text-align: left;
+	padding-top: 30px;
+	padding-left: 10px;
+	margin-right: 10px;
+	width: 175px;
+}
+
+.works_right_nav h3 {
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+}
+
+.works_right_nav ul {
+	margin:0;
+	padding:0;
+	list-style-image:none;
+	list-style-position:inside;
+	list-style-type:circle;	
+	color: #00658b;
+}
+
+.works_right_nav ul li {
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper .works_right_nav ul li.selected a {
+	list-style-type: none;
+}
+
+#wrapper .works_right_nav ul li.selected a {
+	color: #331256;
+}
+
+#wrapper .works_right_nav ul li a {
+	color: #00658b;
 }
 
 .main .work {
-	padding: 10px;
+	padding: 30px;
+	width: 660px;
 	text-align: left;
 }
 
 .main .work h3 {
+	color: #00658b;
+	font-size: 18px;
 	margin: 0;
 	padding: 0;
+}
+
+#wrapper .main .work .viewfull a {
+	font-weight: normal;
+	font-size: 13px;
+	color: #00658b;
 }
 
 .main .blogposts {

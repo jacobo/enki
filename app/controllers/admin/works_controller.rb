@@ -68,7 +68,8 @@ class Admin::WorksController < Admin::BaseController
 
   def destroy
     @work.destroy
-
+    puts "Destrouyed #{@work.inspect}"
+    
     respond_to do |format|
       format.html do
         flash[:notice] = "Deleted work '#{@work.title}'"

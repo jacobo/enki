@@ -1,6 +1,7 @@
 <% content_for(:page_title) { %><%="work - #{config[:title]}"%><% } %>
 
 <div class="works_right_nav">
+	<h3>projects</h3>
 	<ul>
 		<% @works.each_with_index do |other_work, index|
 			css_classes = []
@@ -20,9 +21,13 @@
 
 <div class="work">
 
-	<h3><%=@work.title%></h3>
-
-
+	<h3>
+		<%=@work.title%>
+		<% unless @work.fullsizeview_url.blank? %>
+			<span class="viewfull"><%=link_to "view full size >", @work.fullsizeview_url %></span>
+		<% end %>
+	</h3>
+	
 	<div class="explanation">
 		<%=raw @work.explanation_html%>
 	</div>
@@ -32,10 +37,12 @@
 		<%=raw @work.responsibilities_html%>
 	</div>
 
-</div>
+	<div class="images">
+		<% @work.work_images.each do |image| %>
+			<%= image_tag image.url(:original), :class => "workimage" %>
+		<% end %>
+	</div>
 
-<div class="images">
-	<%= image_tag @work.largeview.url(:original), :class => "workimage" %>
 </div>
 
 	<br style="clear: both;"/>

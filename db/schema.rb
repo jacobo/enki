@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110304053857) do
+ActiveRecord::Schema.define(:version => 20110308050202) do
 
   create_table "authorized_users", :force => true do |t|
     t.string   "username"
@@ -120,18 +120,30 @@ ActiveRecord::Schema.define(:version => 20110304053857) do
     t.string   "featuredview_file_name"
     t.string   "featuredview_content_type"
     t.datetime "featuredview_updated_at"
-    t.integer  "largeview_file_size"
-    t.string   "largeview_file_name"
-    t.string   "largeview_content_type"
-    t.datetime "largeview_updated_at"
-    t.integer  "fullsizeview_file_size"
-    t.string   "fullsizeview_file_name"
-    t.string   "fullsizeview_content_type"
-    t.datetime "fullsizeview_updated_at"
     t.string   "fullsizeview_url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "featured_sort"
+    t.integer  "first_file_size"
+    t.string   "first_file_name"
+    t.string   "first_content_type"
+    t.datetime "first_updated_at"
+    t.integer  "second_file_size"
+    t.string   "second_file_name"
+    t.string   "second_content_type"
+    t.datetime "second_updated_at"
+    t.integer  "third_file_size"
+    t.string   "third_file_name"
+    t.string   "third_content_type"
+    t.datetime "third_updated_at"
+    t.integer  "fourth_file_size"
+    t.string   "fourth_file_name"
+    t.string   "fourth_content_type"
+    t.datetime "fourth_updated_at"
+    t.integer  "fifth_file_size"
+    t.string   "fifth_file_name"
+    t.string   "fifth_content_type"
+    t.datetime "fifth_updated_at"
   end
 
 end

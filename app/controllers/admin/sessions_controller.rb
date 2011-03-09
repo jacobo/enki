@@ -1,4 +1,5 @@
 class Admin::SessionsController < ApplicationController
+  protect_from_forgery
   layout 'login'
 
   def show

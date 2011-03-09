@@ -15,21 +15,21 @@
 	<%= form.file_field :featuredview %>
 </p>
 
-<p><label>Large Image:</label>
-	<% if @work.largeview.file? %>
-		<%= image_tag @work.largeview.url(:original) %> OR
+<%
+Work.attached_file_names.each do |attached_file_name|
+	img = @work.send(attached_file_name)
+%>
+<p><label><%=attached_file_name.to_s.capitalize%> Image:</label>
+	<% if img.file? %>
+		<%= image_tag img.url(:original) %> OR
 	<% end %>
-	<%= form.file_field :largeview %>
+	<%= form.file_field attached_file_name %>
 </p>
+<%
+end
+%>
 
-<p>
-	<% if @work.fullsizeview.file? %>
-		<%= image_tag @work.fullsizeview.url(:original) %> OR
-	<% end %>
-		Full Size Image: <%= form.file_field :fullsizeview %>
-		<br/>
-		OR
-		<br/>
-		External Link: <%= form.text_field :fullsizeview_url %></p>
 
-<% end -%>
+<p>External Link: <%= form.text_field :fullsizeview_url %></p>
+
+<% end %>

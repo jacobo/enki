@@ -1,12 +1,22 @@
 class Work < ActiveRecord::Base
   has_attached_file :featuredview
-  # , :styles => { :preview => "200x86", :display => "399x171" }
-  has_attached_file :largeview
-  # , :styles => { :preview => "278x141", :display => "556x282" }
-  has_attached_file :fullsizeview
-  # , :styles => { :preview => "300x300>" }
 
+  has_attached_file :first
+  has_attached_file :second
+  has_attached_file :third
+  has_attached_file :fourth
+  has_attached_file :fifth
+  
+  def self.attached_file_names
+    [:first, :second, :third, :fourth, :fifth]
+  end
   # default_scope :order => 'sort_number ASC'
+
+  def work_images
+    Work.attached_file_names.collect do |image_name|
+      self.send image_name
+    end
+  end
 
   def next
     Work.find(:first, :conditions => ["sort_number > ?", self.sort_number], :order => "sort_number ASC")
