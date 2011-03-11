@@ -23,6 +23,7 @@ Enki::Application.routes.draw do
 
   resources :archives, :only => [:index]
   resources :pages, :only => [:show]
+  get '/contact', :to => "pages#contact", :as => :contact
 
   constraints :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/ do
     post ':year/:month/:day/:slug/comments' => 'comments#index'

@@ -14,7 +14,7 @@ module NavigationHelper
       page_link.call("bio"),
       link.new("work", works_path),
       link.new("blog", posts_path),
-      page_link.call("contact")
+      link.new("contact", contact_path)
     ]
     # [link.new("Home", posts_path),
     # link.new("Archives", archives_path)] +

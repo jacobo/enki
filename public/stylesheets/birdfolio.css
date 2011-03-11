@@ -384,3 +384,24 @@ a img {
 	height: 23px;
 	background: white url(../images/blog_butt.gif) repeat;
 }
+
+#wrapper .contact {
+	text-align: left;
+	padding: 20px;
+}
+
+.contact .how_can_i_help {
+}
+
+.contact .form {
+	width: 587px;
+	height: 464px;
+	padding: 20px;
+	background: url(../images/contact/contactform_box.gif) no-repeat;
+}
+.contact .details {
+	float: right;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+}
