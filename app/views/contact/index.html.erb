@@ -1,0 +1,45 @@
+<div class="contact">
+<img src="/images/contact/contact_form.gif" alt="how can i help you?" class="how_can_i_help" />
+<br/>
+Please feel free to contact me with any inquiries you may have
+
+<div class="details">
+mobile:
+<br/>
+603.303.3189
+<br/>
+e-mail:
+<br/>
+<a href="mailto:jburkhart@jotapajaro.com">jburkhart@jotapajaro.com</a>
+<br/>
+address:
+<br/>
+62 Santa Maria Avenue
+<br/>
+Pacifica, CA 94044
+
+</div>
+
+<div class="form">
+	<%= form_for(:contact) do |form| -%>
+	
+	<label for="contact_name"><img src="/images/contact/name.gif" atl="name" /></label>
+	<%= form.text_field :name, :class => 'contact_input' %>
+
+	
+	<label for="contact_email"><img src="/images/contact/email.gif" atl="email" /></label>
+	<%= form.text_field :email, :class => 'contact_input' %>
+
+	
+	<label for="contact_message"><img src="/images/contact/message.gif" atl="the details" /></label>
+	<%= form.text_area :message, :class => 'contact_input' %>
+
+	<br/>
+
+    <%= image_submit_tag("/images/contact/message_button.gif", :alt => "Save", :class => "contact_submit") -%>
+	
+<% end -%>
+
+</div>
+
+</div>

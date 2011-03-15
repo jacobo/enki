@@ -394,10 +394,26 @@ a img {
 }
 
 .contact .form {
-	width: 587px;
+	width: 567px;
 	height: 464px;
-	padding: 20px;
+	padding: 5px 20px;
 	background: url(../images/contact/contactform_box.gif) no-repeat;
+}
+.contact .form label{
+	display: block;
+	padding-top: 5px;
+}
+.contact .form input.contact_input {
+	width: 540px;
+	height: 20px;
+}
+.contact .form textarea.contact_input {
+	width: 540px;
+	height: 240px;
+}
+.contact .form input.contact_submit{
+	float: right;
+	margin: 5px 20px;
 }
 .contact .details {
 	float: right;
