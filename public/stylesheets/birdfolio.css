@@ -16,6 +16,17 @@ body {
 /*	url(../images/bgcanvas.jpg) repeat-x 0 -109px;*/
 	font-size: 14px;
 }
+p {
+	padding: 4px 0 10px 0;
+	margin: 0;	
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-image:none;
+	list-style-position:inside;
+	list-style-type: circle;
+}
 a img {
 	border: none;
 }
@@ -154,11 +165,6 @@ a img {
 	width: 180px;
 }
 #wrapper .main .content .right_side ul {
-	margin: 0;
-	padding: 0;
-	list-style-image:none;
-	list-style-position:inside;
-	list-style-type: circle;
 	font-size: 14px;
 }
 #wrapper .main .content .specialities {
@@ -233,11 +239,7 @@ a img {
 }
 
 #wrapper div.bottom .blog_posts ul {
-	margin-left: 0px;
-	padding-left: 0px;
-	margin-top: 0px;
 	padding-top: 5px;
-	list-style-image:none;
 	list-style-position:outside;
 	list-style-type:none;	
 }
@@ -340,21 +342,18 @@ a img {
 }
 
 .works_right_nav ul {
-	margin:0;
-	padding:0;
-	list-style-image:none;
-	list-style-position:inside;
-	list-style-type:circle;	
 	color: #00658b;
 }
 
 .works_right_nav ul li {
 	margin: 0;
-	padding: 0;
+	padding: 3px 0px;
+	font-size: 15px;
 }
 
 #wrapper .works_right_nav ul li.selected a {
 	list-style-type: none;
+	font-weight: bold;
 }
 
 #wrapper .works_right_nav ul li.selected a {
@@ -377,13 +376,29 @@ a img {
 	margin: 0;
 	padding: 0;
 }
-
+.main .work h4 {
+	color: #00658b;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+}
+.main .work .responsibilities ul {
+	height: 20px;
+	list-style-position: inside;
+}
+.main .work .responsibilities ul li {
+	float: left;
+	padding: 0;
+	margin-right: 10px;
+}
 #wrapper .main .work .viewfull a {
 	font-weight: normal;
 	font-size: 13px;
 	color: #00658b;
 }
-
+.main .work .images {
+	margin: 20px 0px;
+}
 .main .blogposts {
 	padding-top: 33px;
 	background: white url(../images/musings.gif) 32px 28px no-repeat;

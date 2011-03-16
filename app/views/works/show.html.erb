@@ -32,17 +32,22 @@
 		<%=raw @work.explanation_html%>
 	</div>
 
-	responsible for
+<% unless @work.responsibilities_html.blank? %>
+	<h4>responsible for</h4>
 	<div class="responsibilities">
 		<%=raw @work.responsibilities_html%>
 	</div>
+<% end %>
 
 	<div class="images">
 		<% @work.work_images.each do |image| %>
-			<%= image_tag image.url(:original), :class => "workimage" %>
+			<% if image.exists? %>
+				<%= image_tag image.url(:original), :class => "workimage" %>
+			<% end %>
 		<% end %>
 	</div>
 
 </div>
 
-	<br style="clear: both;"/>
+	<br class="clear"/>
+	<br class="clear"/>
