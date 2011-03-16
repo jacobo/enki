@@ -1,0 +1,21 @@
+Please feel free to contact me with any inquiries you may have
+<div class="form">
+	<%= form_for(:contact) do |form| -%>
+
+	<label for="contact_name"><img src="/images/contact/name.gif" atl="name" /></label>
+	<%= form.text_field :name, :class => 'contact_input' %>
+
+
+	<label for="contact_email"><img src="/images/contact/email.gif" atl="email" /></label>
+	<%= form.text_field :email, :class => 'contact_input' %>
+
+
+	<label for="contact_message"><img src="/images/contact/message.gif" atl="the details" /></label>
+	<%= form.text_area :message, :class => 'contact_input' %>
+
+	<br/>
+
+	<%= image_submit_tag("/images/contact/message_button.gif", :alt => "Save", :class => "contact_submit") -%>
+
+	<% end -%>
+</div>
