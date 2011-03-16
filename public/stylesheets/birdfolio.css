@@ -133,6 +133,10 @@ a img {
 #wrapper .main .content .profile {
 	float: left;
 }
+#wrapper .main .content .profile p {
+	padding: 5px 0 0 0;
+	margin: 0;
+}
 #wrapper .main .content .profile img {
 	border: 2px solid #331256;
 	margin-left: 10px;
@@ -140,6 +144,10 @@ a img {
 #wrapper .main .content .illustration {
 	float: left;
 	margin-left: 50px;
+}
+#wrapper .main .content .illustration p {
+	padding: 0 0 5px 0;
+	margin: 0;
 }
 #wrapper .main .content .right_side {
 	float: right;
@@ -154,15 +162,35 @@ a img {
 	font-size: 14px;
 }
 #wrapper .main .content .specialities {
+	background: url(../images/bio/specialties.gif) no-repeat;
+	padding: 25px 0px 10px 3px;
+}
+#wrapper .main .content .specialities h3 {
+	margin: 0;
+	padding: 6px 0px;
+	font-weight: normal;
+	color: #00658b;
 }
 #wrapper .main .content .selected_clients {
+	background: url(../images/bio/selectedclients.gif) no-repeat;
+	padding: 25px 0px 10px 3px;
 }
 #wrapper .main .content .blurb {
 	width: 630px;
 	margin-left: 10px;
 	font-size: 14px;
+	float: left;
 }
 
+#wrapper .main .content .blurb h3 {
+	color: #00658b;
+	padding: 10px 0 0 0;
+	margin: 0;
+}
+#wrapper .main .content .blurb p {
+	padding: 4px 0 10px 0;
+	margin: 0;
+}
 #wrapper div.bottom {
 /*	padding: 5px 0 5px 0;*/
 /*	height: 270px;*/
@@ -433,4 +461,7 @@ a img {
 }
 .contact .details .address {
 	background: url(../images/contact/snailmail.gif) no-repeat;
+}
+.clear {
+	clear: both;
 }
