@@ -5,20 +5,22 @@
 <% content_for(:page_title) do -%>
 <%= post_title(@post) -%>
 <% end -%>
+<%= render :partial => 'posts/side_bar', :locals => {:post => @post} %>
 <div class="blogposts">
 	<%= render :partial => 'posts/post', :locals => {:post => @post} %>
 </div>
 
+<br/>
 <div class="below_post">
-
-	<ol class="commentlist">
+	
+	<a name="comments"/>
+	<ul class="commentlist">
 	  <% @post.approved_comments.each do |comment| -%>
 	  <li<%= cycle ' class="alt"', '' %> id="comment-<%= comment.id %>">
 	    <%= render :partial => 'comments/comment', :locals => {:comment => comment} %>
 	  </li>
 	  <% end -%>
-	</ol>
-	<div class="related">Looking for more? Head on over to the <%= link_to("archives", archives_path) %>.</div>
+	</ul>
 	<h2>Post a comment</h2>
 	  <% unless @comment.errors.empty? -%>
 	  <div class="errors">
@@ -35,8 +37,9 @@
 	    <p><%= form.text_field 'author' %><label for="comment_author"> <small>Name (required)</small></label></p>
 	    <p><%= form.text_area 'body' %></p>
 
-	    <p><%= submit_tag "Add Comment" %></p>
+	    <p><%= submit_tag "Add Comment", :class => 'submit' %></p>
 	  </div>
 	<% end -%>
-
+	<br class="clear"/>
+	
 </div>

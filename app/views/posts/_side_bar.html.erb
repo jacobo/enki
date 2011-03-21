@@ -1,0 +1,10 @@
+<div class="recent_posts">
+	<h2>recent posts</h2>
+	<ul>
+		<% Post.recent.each do |post| %>
+		<li><%=link_to post.title, post_path(post) %></li>
+		<% end %>
+	</ul>
+	<br/>
+	<a class="view_archives" href="/archives/">archives &gt;</a>
+</div>

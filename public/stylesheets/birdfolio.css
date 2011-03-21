@@ -311,6 +311,7 @@ a img {
 #wrapper .main .featured .featured_work {
 	float: left;
 	border: 5px solid #acd8df;
+	height: 144px;
 	margin: 3px 7px 5px 8px;
 }
 
@@ -403,7 +404,54 @@ a img {
 	padding-top: 33px;
 	background: white url(../images/musings.gif) 32px 28px no-repeat;
 }
-
+#wrapper .main .below_post {
+	text-align: left;
+	margin-left: 35px;
+	width: 670px;
+}
+#wrapper .main .below_post ul.commentlist {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+#wrapper .main .below_post ul.commentlist li {
+	display: list-item;
+}
+#wrapper .main .below_post textarea {
+	width: 600px;
+	height: 100px;
+}
+#wrapper .main .below_post input.submit {
+	float: right;
+	margin-right: 60px;
+}
+.main .recent_posts {
+	float: right;
+	text-align: left;
+	width: 155px;
+	margin: 76px 20px 0 0;
+	padding: 0;
+}
+.main .recent_posts h2 {
+	padding: 0;
+	margin: 0;
+}
+.main .recent_posts ul {
+	padding-top: 5px;
+	list-style-position:outside;
+	list-style-type:none;	
+}
+.main .recent_posts ul li {
+	padding: 5px 0px 5px 0px;
+	border-bottom: 1px dashed #00658B;
+}
+#wrapper .main .recent_posts ul li a {
+	color: #00658b;
+}
+#wrapper .main .recent_posts a.view_archives {
+	text-decoration: none;
+	color: #006084;
+}
 .main .entrybody {
 	margin: 20px;
 	width: 700px; /*actual width 700 */
@@ -421,7 +469,24 @@ a img {
 	padding: 50px 25px 25px 75px;
 	background: url(../images/blog_top.gif) no-repeat;
 }
-
+.main .entrybody .meta {
+	background: #fff;
+}
+.main .entrybody .meta ul {
+	margin: 0 20px;
+	padding:0;
+	float: right;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+}
+.main .entrybody .meta ul li {
+	display: inline;
+	color: #00658b;
+}
+#wrapper .main .entrybody .meta ul li a {
+	color: #00658b;
+}
 .main .entrybody .blog_butt {
 	width: 700px;
 	height: 23px;
