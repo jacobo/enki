@@ -12,7 +12,7 @@
 	<div id="wrapper">
 		<div class="tippy_top">
 			<ul class="top_nav">
-				<li><%= link_to("home", "/") %></li>
+				<li><%= link_to("home", "/", :class => ['/',''].include?(request.path.to_s) ? "selected" : "") %></li>
 
 				<% page_links_for_navigation.each do |link|
 					link_class = if (@page && @page.title == link.name) ||

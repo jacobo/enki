@@ -2,6 +2,7 @@
 * COLORS:
 * teal: #00658b
 * purple: #331256
+* light-purple: #b2a4bd
 * maybe alt-purple? 5e4574
 */
 
@@ -87,15 +88,15 @@ a img {
 	font-size: 20px;
 	display: inline;
 }
-
-#wrapper ul.top_nav li a{
+#wrapper ul.top_nav li a {
 	margin-right: 5px;
 	text-decoration: none;
 	padding: 8px 15px 10px 15px;
 	color: #fff;
 }
-
-
+#wrapper ul.top_nav li a.selected {
+	color: #b2a4bd;
+}
 #wrapper ul.connect_links {
 	margin: 0;
 	margin-top: 5px;
@@ -219,6 +220,7 @@ a img {
 	position: relative;	
 	text-align: left;
 	margin: auto;
+	margin-top: 25px;
 	width: 910px;
 	height: 250px;
 	font-size: 13px;
@@ -262,6 +264,8 @@ a img {
 
 #wrapper div.bottom .contact {
 	position: absolute;
+	margin: 0;
+	padding: 0;
 	top: 30px;
 	left: 520px;
 	width: 240px;
@@ -459,15 +463,19 @@ a img {
 	background: white url(../images/blog_mid.gif) repeat;
 	text-align: left;
 }
-
 .main .entrybody h2 {
 	margin: 0;
 }
-
 .main .entrybody .blog {
-	width: 600px; /*actual width 700 */
-	padding: 50px 25px 25px 75px;
+/*	width: 600px; */
+	/*actual width 700 */
+	padding: 50px 35px 25px 75px;
 	background: url(../images/blog_top.gif) no-repeat;
+}
+.main .entrybody .blog h2 {
+	border-bottom: solid 2px #b2a4bd;
+	padding-bottom: 4px;
+	margin-bottom: 10px;
 }
 .main .entrybody .meta {
 	background: #fff;
