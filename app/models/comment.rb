@@ -38,10 +38,6 @@ class Comment < ActiveRecord::Base
     false
   end
 
-  def approved?
-    true
-  end
-
   def denormalize
     self.post.denormalize_comments_count!
   end

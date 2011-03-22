@@ -60,6 +60,10 @@ class CommentsController < ApplicationController
       end
     end
   end
+  
+  def approve
+    render :text => "wrong one"
+  end
 
   protected
 

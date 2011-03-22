@@ -1,5 +1,5 @@
 class Admin::CommentsController < Admin::BaseController
-  before_filter :find_comment, :only => [:show, :update, :destroy]
+  before_filter :find_comment, :only => [:show, :update, :approve, :destroy]
 
   def index
     @comments = Comment.paginate(
@@ -42,6 +42,12 @@ class Admin::CommentsController < Admin::BaseController
         }.to_json
       }
     end
+  end
+
+  def approve
+    @comment.approved = !@comment.approved
+    @comment.save!
+    redirect_to :action => "index"
   end
 
   protected

@@ -1,6 +1,23 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
 describe Admin::CommentsController do
+  it "recognizes the path" do
+    rts = ActionController::Routing::Routes
+    rts.recognize_path("/admin/comments")
+    puts rts.generate(:controller=>'admin/comments',:action=>'approve', :id => 1).inspect
+    rts.recognize_path("/admin/comments/1/approve")
+  end
+  
+  describe 'handling POST to approve' do
+    before(:each) do
+      @post = mock_model(Comment)
+      session[:logged_in] = true
+      post :approve, :id => 1
+    end
+
+    it("is successful")               { response.should be_success }
+  end
+  
   describe 'handling GET to index' do
     before(:each) do
       @posts = [mock_model(Comment), mock_model(Comment)]

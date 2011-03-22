@@ -5,7 +5,11 @@ Enki::Application.routes.draw do
     resources :posts, :pages do
       post 'preview', :on => :collection
     end
-    resources :comments
+    resources :comments do
+      post 'approve', :on => :member
+      get 'approve', :on => :member
+      put 'approve', :on => :member
+    end
     resources :undo_items do
       post 'undo', :on => :member
     end

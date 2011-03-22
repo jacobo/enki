@@ -1,1 +1,8 @@
-$(document).ready(destroyAndUndoBehaviour('comments')); // Defined in admin/common.js
+$(document).ready(function () {
+	destroyAndUndoBehaviour('comments');
+	
+	$('.comment_approve').change(function(){
+		this.parentNode.submit();
+	});
+	
+}); // Defined in admin/common.js

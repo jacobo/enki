@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110308050202) do
+ActiveRecord::Schema.define(:version => 20110321023615) do
 
   create_table "authorized_users", :force => true do |t|
     t.string   "username"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20110308050202) do
     t.text     "body_html",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved"
   end
 
   add_index "comments", ["created_at"], :name => "index_comments_on_created_at"
