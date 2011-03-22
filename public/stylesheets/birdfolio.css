@@ -2,7 +2,7 @@
 * COLORS:
 * teal: #00658b
 * purple: #331256
-* light-purple: #b2a4bd #876bab
+* light-purple: #b2a4bd #876bab #977bbb
 * maybe alt-purple? 5e4574
 */
 
@@ -52,6 +52,7 @@ a img {
 
 #wrapper .top .logo {
 	border-top: 1px dashed #00658b;
+	padding-top: 1px;
 }
 #wrapper .top .logocaption {
 	padding: 0;
@@ -95,7 +96,7 @@ a img {
 	color: #fff;
 }
 #wrapper ul.top_nav li a.selected {
-	color: #b2a4bd;
+	color: #977bbb;
 }
 #wrapper ul.connect_links {
 	margin: 0;
@@ -164,9 +165,13 @@ a img {
 #wrapper .main .content .right_side {
 	float: right;
 	width: 180px;
+	margin: 0 10px 0 0;
+	padding: 0;
 }
 #wrapper .main .content .right_side ul {
 	font-size: 14px;
+	margin: 0;
+	padding: 0 0 10px 0;
 }
 #wrapper .main .content .specialities {
 	background: url(../images/bio/specialties.gif) no-repeat;
@@ -336,7 +341,7 @@ a img {
 	text-align: left;
 	padding-top: 30px;
 	padding-left: 10px;
-	margin-right: 10px;
+	margin-right: 20px;
 	width: 175px;
 }
 
@@ -353,7 +358,7 @@ a img {
 .works_right_nav ul li {
 	margin: 0;
 	padding: 3px 0px;
-	font-size: 15px;
+	font-size: 14px;
 }
 
 #wrapper .works_right_nav ul li.selected a {
@@ -473,7 +478,7 @@ a img {
 	background: url(../images/blog_top.gif) no-repeat;
 }
 .main .entrybody .blog h2 {
-	border-bottom: solid 2px #b2a4bd;
+	border-bottom: solid 1px #977bbb;
 	padding-bottom: 4px;
 	margin-bottom: 10px;
 }
