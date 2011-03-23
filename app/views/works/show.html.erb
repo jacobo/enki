@@ -24,7 +24,7 @@
 	<h3>
 		<%=@work.title%>
 		<% unless @work.fullsizeview_url.blank? %>
-			<span class="viewfull"><%=link_to "view full size >", @work.fullsizeview_url %></span>
+			<span class="viewfull"><%=link_to "view full size >", @work.fullsizeview_url, :target => 'new' %></span>
 		<% end %>
 	</h3>
 	

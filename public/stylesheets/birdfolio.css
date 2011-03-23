@@ -96,6 +96,9 @@ a img {
 	padding: 8px 15px 10px 15px;
 	color: #fff;
 }
+#wrapper ul.top_nav li a:hover {
+	text-decoration: underline;
+}
 #wrapper ul.top_nav li a.selected {
 	color: #977bbb;
 }
@@ -342,7 +345,7 @@ a img {
 	text-align: left;
 	padding-top: 30px;
 	padding-left: 10px;
-	margin-right: 20px;
+	margin-right: 6px;
 	width: 175px;
 }
 
@@ -377,7 +380,7 @@ a img {
 
 .main .work {
 	padding: 30px;
-	width: 660px;
+	width: 650px;
 	text-align: left;
 }
 

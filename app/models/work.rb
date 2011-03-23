@@ -30,4 +30,8 @@ class Work < ActiveRecord::Base
     Work.find(:all, :conditions => ["featured = ?", true], :order => "featured_sort ASC")
   end
 
+  def self.first
+    Work.find(:first, :order => "sort_number ASC")
+  end
+
 end
