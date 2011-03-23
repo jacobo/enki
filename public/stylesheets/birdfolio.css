@@ -412,6 +412,10 @@ a img {
 }
 .main .work .images {
 	margin: 20px 0px;
+	text-align: center;
+}
+.main .work .images img {
+	margin-bottom: 25px;
 }
 .main .blogposts {
 	padding-top: 33px;
