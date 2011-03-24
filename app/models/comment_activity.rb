@@ -23,8 +23,10 @@ class CommentActivity
         :limit  => 5
       ).collect {|post|
         CommentActivity.new(post)
+      }.select{ |activity|
+        activity.most_recent_comment
       }.sort_by {|activity|
-        activity.most_recent_comment && activity.most_recent_comment.created_at || Time.now
+        activity.most_recent_comment.created_at
       }.reverse
     end
   end
