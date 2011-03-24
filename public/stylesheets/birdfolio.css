@@ -396,6 +396,12 @@ a img {
 	margin: 0;
 	padding: 0;
 }
+.main .work .explanation {
+	font-size: 14px;
+}
+.main .work .responsibilities {
+	font-size: 14px;
+}
 .main .work .responsibilities ul {
 	height: 20px;
 	list-style-position: inside;
