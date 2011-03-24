@@ -169,13 +169,16 @@ a img {
 #wrapper .main .content .right_side {
 	float: right;
 	width: 180px;
-	margin: 0 10px 0 0;
+	margin: 0 23px 0 0;
 	padding: 0;
 }
 #wrapper .main .content .right_side ul {
 	font-size: 14px;
 	margin: 0;
 	padding: 0 0 10px 0;
+}
+#wrapper .main .content .right_side ul li {
+	padding: 0 0 2px 0;
 }
 #wrapper .main .content .specialities {
 	background: url(../images/bio/specialties.gif) no-repeat;
@@ -185,6 +188,7 @@ a img {
 	margin: 0;
 	padding: 6px 0px;
 	font-weight: normal;
+	font-size: 14px;
 	color: #00658b;
 }
 #wrapper .main .content .selected_clients {
