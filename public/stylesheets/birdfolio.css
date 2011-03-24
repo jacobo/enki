@@ -526,6 +526,7 @@ a img {
 	width: 567px;
 	height: 464px;
 	padding: 5px 20px;
+	margin-top: 10px;
 	background: url(../images/contact/contactform_box.gif) no-repeat;
 }
 .contact .form label{
@@ -548,7 +549,7 @@ a img {
 	float: right;
 	width: 250px;
 	margin: 0;
-	padding: 15px 0px;
+	padding: 25px 0px;
 }
 .contact .details div {
 	padding-left: 40px;
