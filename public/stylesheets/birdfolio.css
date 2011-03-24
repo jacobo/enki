@@ -201,7 +201,6 @@ a img {
 	font-size: 14px;
 	float: left;
 }
-
 #wrapper .main .content .blurb h3 {
 	color: #00658b;
 	padding: 10px 0 0 0;
@@ -210,6 +209,28 @@ a img {
 #wrapper .main .content .blurb p {
 	padding: 4px 0 10px 0;
 	margin: 0;
+}
+#wrapper .main .content .testimonials h3 {
+	color: #00658b;
+	padding: 10px 0 10px 0;
+	margin: 0;
+}
+#wrapper .main .content .testimonials {
+	margin: 0 100px 0 10px;
+}
+#wrapper .main .content .testimonials p {
+	padding: 6px 0 6px 0;
+	margin: 0;
+}
+#wrapper .main .content .testimonials hr {
+	border-top: none;
+	border-bottom: 1px dashed #00658b;
+}
+#wrapper .main .content .testimonials span.author {
+	padding: 4px 0 6px 0;
+	display: block;
+	font-style: italic;
+	color: #00658b;
 }
 #wrapper div.bottom {
 /*	padding: 5px 0 5px 0;*/

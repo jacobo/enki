@@ -13,6 +13,7 @@ module NavigationHelper
     [
       page_link.call("bio"),
       link.new("work", works_path),
+      page_link.call("testimonials"),
       link.new("blog", posts_path),
       link.new("contact", contact_path)
     ]
