@@ -132,6 +132,7 @@ a img {
 	min-height: 400px;
 	background: #fff;
 	text-align: center;
+	overflow: hidden;
 }
 
 #wrapper .main .content {
