@@ -12,7 +12,7 @@ module PageTitleHelper
   end
 
   def page_title(page)
-    compose_title(page.title)
+    compose_title(page.title.capitalize)
   end
 
   def html_title(content)
@@ -26,6 +26,6 @@ module PageTitleHelper
   private
 
   def compose_title(*parts)
-    (parts << enki_config[:title]).reject(&:blank?).join(" - ")
+    (parts << enki_config[:title]).reject(&:blank?).join(" | ")
   end
 end
