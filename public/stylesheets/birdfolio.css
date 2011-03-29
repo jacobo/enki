@@ -134,6 +134,9 @@ a img {
 	text-align: center;
 	overflow: hidden;
 }
+#wrapper .main.home {
+	overflow: visible;
+}
 
 #wrapper .main .content {
 	border: 1px solid #fff;
