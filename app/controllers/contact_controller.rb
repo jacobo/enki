@@ -9,7 +9,7 @@ class ContactController < ApplicationController
   end
 
   def create
-    Rails.logger.info("TODO: " + params.inspect)
+    email = ContactForm.contact(params).deliver
     redirect_to :action => 'index', :message => "thank_you"
   end
 
