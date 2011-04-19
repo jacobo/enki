@@ -1,0 +1,22 @@
+
+<% form.inputs do -%>
+  <%= form.input :title %>
+
+
+<%
+	img = @image.image
+%>
+<p><label>Image:</label>
+	<% if img.file? %>
+		
+		<%=text_field_tag :url, img.url(:original), :size => 50 %>
+		
+		<br/>
+	
+		<%= image_tag img.url(:original) %> OR
+	<% end %>
+	<%= form.file_field :image %>
+</p>
+<%
+end
+%>

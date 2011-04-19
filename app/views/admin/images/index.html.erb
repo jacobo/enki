@@ -1,0 +1,53 @@
+	<script>
+		$(document).ready(destroyAndUndoBehaviour('<%=current_model.name.underscore.pluralize%>'));
+	</script>
+
+<h1>Your <%=current_model.name.pluralize%></h1>
+<table cellspacing="0" cellpadding="0">
+  <thead>
+	    <tr>
+
+				<th>Created At</th>
+			    <th>URL</th>
+			    <th>Title</th>
+			<th>Actions</th>
+		</tr>
+  </thead>
+
+  <tbody>
+    <% if current_objects.empty? -%>
+      <tr><td colspan="5">There are no <%=current_model.name.pluralize%> at this time.</td></tr>
+    <% else -%>
+		<%- current_objects.each do |obj| %>
+		<tr class="<%= cycle('', 'alt') %>">
+			<% object_url = url_for(:action => 'show', :id => obj) %>
+
+			<%
+				image = obj
+			%>
+			<td><%= image.created_at.strftime('%d %b, %Y') %></td>
+			<td><%=text_field_tag :image, image.image.url(:original), :size => 100 %></td>
+			<td><%= link_to(h(image.title), admin_image_path(image)) %></td>
+
+				<td>
+				    <%- form_for(current_model.name.underscore.to_sym, obj,
+						:url => object_url,
+						:html => {:class => 'delete-item', :method => :delete}) do |form| -%>
+				      <%= image_submit_tag("silk/delete.png", :confirm => "Are you sure you want to delete?") %>
+				    <% end -%>
+				</td>
+		</tr>
+		<% end -%>
+    <% end -%>
+  </tbody>
+
+  <tfoot>
+    <% if current_objects.total_pages > 1 -%>
+      <tr class="pagination">
+        <td colspan="5">
+          <%= will_paginate(current_objects, :previous_label => '« Newer', :next_label => 'Older »') %>
+        </td>
+      </tr>
+    <% end -%>
+  </tfoot>
+</table>
