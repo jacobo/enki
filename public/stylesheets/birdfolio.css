@@ -525,6 +525,10 @@ a img {
 	padding-bottom: 4px;
 	margin-bottom: 10px;
 }
+.main .entrybody .blog img{
+  display: block;
+  margin: auto;
+}
 .main .entrybody .meta {
 	background: #fff;
 }
