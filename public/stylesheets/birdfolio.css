@@ -13,8 +13,7 @@ body {
 	padding: 0;
 	text-align: center;
 	position: relative;
-	background: #331256;
-/*	url(../images/bgcanvas.jpg) repeat-x 0 -109px;*/
+	background: #e5e5e5;
 	font-size: 14px;
 	font-family: georgia;
 }
@@ -44,22 +43,44 @@ a img {
 }
 
 #wrapper .top {
-	padding: 5px 0 5px 0;
-	height: 120px; /* actual height 140 */
-	background: #daddcf url(../images/canvas.gif);
-	font-size: 17px;
-	margin-bottom: 0;
+	width: 910px;
+	margin: 0;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	background: #fff;
+	text-align: center;
+	overflow: hidden;
+	background: #fff;
+	color: #3399b1;
 }
 
 #wrapper .top .logo {
-	border-top: 1px dashed #00658b;
-	padding-top: 1px;
+	padding-top: 10px;
 }
 #wrapper .top .logocaption {
 	padding: 0;
 	padding-bottom: 3px;
 	margin: 0;
-	border-bottom: 1px dashed #00658b;	
+  font-size: 28px;
+  border-top: 1px solid #aae2e0;
+  margin: 5px;
+  padding-top: 10px;
+}
+#wrapper .top .logocaption .emphasize {
+	color: #674399;
+}
+#wrapper .top .logocaptionalso {
+  font-size: 22px;
+  border-bottom: 1px solid #aae2e0;
+  margin: 5px;
+  padding-bottom: 10px;
+}
+
+#wrapper div.wrap_tippy_top {
+  width: 100%;
+	background: #3399b1;
+	margin: 0;
 }
 
 #wrapper div.tippy_top {
@@ -87,7 +108,7 @@ a img {
 #wrapper ul.top_nav li{
 	margin:0;
 	padding:0;
-	font-size: 20px;
+	font-size: 16px;
 	display: inline;
 }
 #wrapper ul.top_nav li a {
@@ -100,7 +121,7 @@ a img {
 	text-decoration: underline;
 }
 #wrapper ul.top_nav li a.selected {
-	color: #977bbb;
+  color: #674399;
 }
 #wrapper ul.connect_links {
 	margin: 0;

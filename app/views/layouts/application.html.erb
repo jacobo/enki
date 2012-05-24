@@ -26,6 +26,7 @@
 
 
 	<div id="wrapper">
+		<div class="wrap_tippy_top">
 		<div class="tippy_top">
 			<ul class="top_nav">
 			  <li><%= link_to("home", "/", :class => (request.path.to_s.index("/works") || ['/',''].include?(request.path.to_s)) ? "selected" : "") %></li>
@@ -47,11 +48,18 @@
 				<li><a href="http://www.facebook.com/julieannburkhart" target="new"><img src="/images/facebook.gif" height="29" width="29" /></a></li>
 			</ul>
 		</div>
+		</div>
 		<div class="top">
 			<div class="logo">
-				<a href="/"><img src="/images/logo.gif" width="382" height="90"/></a>
+				<a href="/"><img src="/creations/jbirdcreations_logo.jpg" width="421" height="111"/></a>
 				<div class="logocaption">
-					web : print : brand identity : illustration
+				  clean &amp; creative design for
+				  <span class="emphasize">
+				    web, print, brand identity &amp; illustration
+				  </span>
+				</div>
+				<div class="logocaptionalso">
+				  I take a personal approach to ensure all your needs are met from concept to completion
 				</div>
 			</div>
 		</div>
