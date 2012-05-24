@@ -1,8 +1,15 @@
 <% content_for(:page_title) { %><%="Work | #{@work.title}"%><% } %>
 
-<div class="works_right_nav">
-	<h3>projects</h3>
-	<ul>
+<div class="works_nav">
+	<table>
+		<tr>
+		<td class="nav">
+		<% if @previous_work %>
+		  <%=link_to "prev", work_path(@previous_work), "data-pjax" => '#main'%>
+		<% else %>
+		  &nbsp; &nbsp; &nbsp;
+		<% end %>
+	</td>
 		<% @works.each_with_index do |other_work, index|
 			css_classes = []
 			if index == @works.size - 1
@@ -12,11 +19,21 @@
 				css_classes << "selected"
 			end
 			%>
-			<li class="<%=css_classes.join(' ')%>">
-				<%=link_to other_work.title, work_path(other_work)%>
-			</li>
+			<td valign="middle" class="<%=css_classes.join(' ')%>">
+			  <div>
+				  <%=link_to other_work.title, work_path(other_work), "data-pjax" => '#main'%>
+				</div>
+			</td>
 		<% end %>
-	</ul>
+		<td class="nav">
+		<% if @next_work %>
+		  <%=link_to "next", work_path(@next_work), "data-pjax" => '#main'%>
+		<% else %>
+		  &nbsp; &nbsp; &nbsp;
+		<% end %>
+	</td>
+	  </tr>
+	</table>
 </div>
 
 <div class="work">

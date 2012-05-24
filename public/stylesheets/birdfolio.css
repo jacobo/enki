@@ -369,42 +369,61 @@ a img {
 	background: url(../images/featuredwork.gif) no-repeat;
 }
 
-.works_right_nav {
-	float: right;
+.works_nav {
 	text-align: left;
 	padding-top: 30px;
 	padding-left: 10px;
 	margin-right: 6px;
-	width: 175px;
+	overflow: hidden;
 }
 
-.works_right_nav h3 {
+.works_nav h3 {
 	font-size: 18px;
 	padding: 0;
 	margin: 0;
 }
 
-.works_right_nav ul {
-	color: #00658b;
+.works_nav table {
+	border-collapse: separate;
+	border-spacing:10px;
 }
 
-.works_right_nav ul li {
+.works_nav table td {
 	margin: 0;
-	padding: 3px 0px;
-	font-size: 14px;
+	padding: 0;
+	text-align: center;
+	height: 60px;
+	background: #2d9aaf;
 }
 
-#wrapper .works_right_nav ul li.selected a {
+.works_nav table td.nav {
+  background: #bbb;
+}
+.works_nav table td.nav a {
+  color: #000;
+}
+
+.works_nav table td.selected {
+  background: #aae2e0;
+}
+
+.works_nav table td div {
+	font-size: 14px;
+	width: 70px;
+}
+
+#wrapper .works_nav table td.selected a {
 	list-style-type: none;
 	font-weight: bold;
+  color: ;#2d9aaf
 }
 
-#wrapper .works_right_nav ul li.selected a {
+#wrapper .works_nav table td.selected a {
 	color: #331256;
 }
 
-#wrapper .works_right_nav ul li a {
-	color: #00658b;
+#wrapper .works_nav table td a {
+	color: #fff;
 }
 
 .main .work {

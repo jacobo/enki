@@ -4,6 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<title><%= yield(:page_title) || h(enki_config[:title]) %></title>
 	<%= stylesheet_link_tag 'birdfolio' %>
+	<%= javascript_include_tag 'jquery' %>
+	<%= javascript_include_tag 'jquery.pjax' %>
+	<%= javascript_include_tag 'birdfolio' %>
 	<%= yield(:head) %>
 	<script type="text/javascript">
 
@@ -25,8 +28,7 @@
 	<div id="wrapper">
 		<div class="tippy_top">
 			<ul class="top_nav">
-				<li><%= link_to("home", "/", :class => ['/',''].include?(request.path.to_s) ? "selected" : "") %></li>
-
+			  <li><%= link_to("home", "/", :class => (request.path.to_s.index("/works") || ['/',''].include?(request.path.to_s)) ? "selected" : "") %></li>
 				<% page_links_for_navigation.each do |link|
 					link_class = if (@page && @page.title == link.name) ||
 						request.path.to_s.index(link.url.to_s) ||
@@ -53,7 +55,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="main<%=' home' if @home%>">
+		<div id="main" class="main<%=' home' if @home%>">
 			<%= yield %>
 		</div>
 		<div class="bottom">

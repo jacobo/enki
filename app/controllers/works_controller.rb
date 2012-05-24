@@ -1,12 +1,33 @@
 class WorksController < ApplicationController
 
   def index
-    redirect_to url_for(:id => Work.first.id, :action => 'show')
+    fetch_works
+    render :show
   end
 
   def show
-    @works = Work.find(:all, :order => "sort_number ASC")
-    @work = Work.find(params[:id])
+    fetch_works
+    if request.headers['X-PJAX']
+      render :layout => false
+    end
+  end
+
+  private
+
+  def fetch_works
+    @works = Work.find(:all, :order => "sort_number ASC", :limit => 9)
+    if params[:id]
+      @work = Work.find(params[:id])
+    else
+      @work = Work.first
+    end
+    index = @works.index(@work)
+    if index > 0
+      @previous_work = @works[index - 1]
+    end
+    if index < @works.size
+      @next_work = @works[index + 1]
+    end
   end
 
 end

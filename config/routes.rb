@@ -57,5 +57,5 @@ Enki::Application.routes.draw do
   # 
   # map.resources :pages
 
-  root :to => 'pages#home'
+  root :to => 'works#index'
 end
