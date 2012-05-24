@@ -51,7 +51,7 @@
 		</div>
 		<div class="top">
 			<div class="logo">
-				<a href="/"><img src="/creations/jbirdcreations_logo.jpg" width="421" height="111"/></a>
+				<a href="/"><img src="/creations/jbirdcreations_logo.gif" width="421" height="111"/></a>
 				<div class="logocaption">
 				  clean &amp; creative design for
 				  <span class="emphasize">
@@ -63,39 +63,33 @@
 				</div>
 			</div>
 		</div>
-		<div id="main" class="main<%=' home' if @home%>">
+		<div id="main" class="main">
 			<%= yield %>
 		</div>
-		<div class="bottom">
-			<div class="bottom_spacer"></div>
-			<div class="bottom_dasher">
-			<div class="bottom_stuff">
-				<div class="blog_posts">
-					<a class="view_archives" href="/archives/">archives &gt;</a>
-					<ul>
-						<% Post.recent.each do |post| %>
-							<li><%=link_to post.title, post_path(post) %></li>
-						<% end %>
-					</ul>
-				</div>
-				<div class="contact">
-					<img src="/images/intouch.gif" />
-					<p class="first">job inquiries? contact me today!</p>
-					<p>
-						<label>mobile:</label> 
-						603-303-3189
-					</p>
-					<p>
-						<label>email:</label>
-						<a href="mailto:jburkhart@jotapajaro.com">jburkhart@jotapajaro.com</a>
-					</p>
-					<br/>
-					<p>i live and surf in Pacifica CA, but i design for people all over the world.</p>
-				</div>
-				<div class="copyright">
-					&copy; 2011 JotaPajaro Studios. All rights reserved.
-				</div>
+		<div class="bottom_stuff">
+			<div class="bio">
+			  <h3>Julie-Ann Burkhart</h3>
+			  <img src="/creations/jbird_home.jpg" width="166" height="190"/>
+			  <% if @bio = Page.find_by_slug("bio") %>
+			  <%=raw @bio.body_html%>
+			  <% end %>
 			</div>
+			<div class="contact">
+				<img src="/images/intouch.gif" />
+				<p class="first">job inquiries? contact me today!</p>
+				<p>
+					<label>mobile:</label>
+					603-303-3189
+				</p>
+				<p>
+					<label>email:</label>
+					<a href="mailto:jburkhart@jotapajaro.com">jburkhart@jotapajaro.com</a>
+				</p>
+				<br/>
+				<p>i live and surf in Pacifica CA, but i design for people all over the world.</p>
+			</div>
+			<div class="copyright">
+				&copy; 2011 JotaPajaro Studios. All rights reserved.
 			</div>
 		</div>
 	</div>

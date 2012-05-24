@@ -151,13 +151,9 @@ a img {
 	padding: 0;
 	margin-left: auto;
 	margin-right: auto;
-	min-height: 400px;
 	background: #fff;
 	text-align: center;
 	overflow: hidden;
-}
-#wrapper .main.home {
-	overflow: visible;
 }
 
 #wrapper .main .content {
@@ -258,14 +254,6 @@ a img {
 	font-style: italic;
 	color: #00658b;
 }
-#wrapper div.bottom {
-/*	padding: 5px 0 5px 0;*/
-/*	height: 270px;*/
-	background: #daddcf url(../images/canvas.gif);
-	font-size: 19px;
-/*	margin-bottom: 0;*/
-/*	text-align: center;*/
-}
 #wrapper div.bottom_spacer {
 	margin: 0;
 	padding: 0;
@@ -273,17 +261,30 @@ a img {
 	line-height: 7px;
 	font-size: 7px;
 }
-#wrapper div.bottom_dasher {
-	border-top: 1px dashed #00658B;
-}
 #wrapper div.bottom_stuff {
-	position: relative;	
-	text-align: left;
-	margin: auto;
-	margin-top: 25px;
 	width: 910px;
-	height: 250px;
-	font-size: 13px;
+	margin: 0;
+	padding: 10px 0;
+	margin-left: auto;
+	margin-right: auto;
+	background: #fff;
+	text-align: left;
+  position: relative;
+}
+
+#wrapper div.bottom_stuff .bio{
+  width: 500px;
+  padding: 10px;
+}
+
+#wrapper div.bottom_stuff .bio img {
+  float: left;
+  border: 3px solid #3399b1;
+  margin: 5px;
+}
+
+#wrapper div.bottom_stuff .bio h3 {
+  border-bottom: 1px solid #aae2e0;
 }
 
 #wrapper div.bottom_stuff .copyright{
@@ -292,37 +293,7 @@ a img {
 	left: 350px;
 }
 
-#wrapper div.bottom .blog_posts {
-	position: absolute;
-	top: 30px;
-	left: 110px;
-	text-align: left;
-	font-size: 13px;
-}
-
-#wrapper div.bottom .blog_posts ul {
-	padding-top: 5px;
-	list-style-position:outside;
-	list-style-type:none;	
-}
-
-#wrapper div.bottom .blog_posts ul li {
-	padding: 5px 0px 5px 0px;
-	border-bottom: 1px dashed #00658B;
-}
-
-#wrapper div.bottom .blog_posts a.view_archives {
-	display: block;
-	text-decoration: none;
-	color: #006084;
-	padding-bottom: 10px;
-	width: 100px;
-	padding-left: 150px;
-	padding-top: 8px;
-	background: url(../images/recentblogpost.gif) no-repeat;
-}
-
-#wrapper div.bottom .contact {
+#wrapper div.bottom_stuff .contact {
 	position: absolute;
 	margin: 0;
 	padding: 0;
@@ -331,22 +302,18 @@ a img {
 	width: 240px;
 }
 
-#wrapper div.bottom .contact p.first {
+#wrapper div.bottom_stuff .contact p.first {
 	font-weight: bold;
 	padding-bottom: 10px;
 }
 
-#wrapper div.bottom .contact p {
+#wrapper div.bottom_stuff .contact p {
 	margin: 0;
 	padding: 0;
 	padding-bottom: 5px;
 }
 
-#wrapper div.bottom .contact p a {
-	
-}
-
-#wrapper div.bottom .contact label{
+#wrapper div.bottom_stuff .contact label{
 	color: #297b97;
 	font-weight: bold;
 }
@@ -393,10 +360,9 @@ a img {
 
 .works_nav {
 	text-align: left;
-	padding-top: 30px;
-	padding-left: 10px;
-	margin-right: 6px;
-	overflow: hidden;
+	padding-top: 20px;
+	padding-bottom: 10px;
+  margin-left: 40px;
 }
 
 .works_nav h3 {
@@ -406,8 +372,8 @@ a img {
 }
 
 .works_nav table {
-	border-collapse: separate;
-	border-spacing:10px;
+	border-collapse: collapse;
+	border-spacing:0px;
 }
 
 .works_nav table td {
@@ -419,7 +385,16 @@ a img {
 }
 
 .works_nav table td.nav {
-  background: #bbb;
+  background: #fff;
+  width: 40px;
+}
+.works_nav table td.spacer {
+  background: #fff;
+  width: 9px;
+}
+.works_nav table td.lilspacer {
+  background: #fff;
+  width: 6px;
 }
 .works_nav table td.nav a {
   color: #000;
@@ -431,7 +406,7 @@ a img {
 
 .works_nav table td div {
 	font-size: 14px;
-	width: 70px;
+	width: 74px;
 }
 
 #wrapper .works_nav table td.selected a {
@@ -445,16 +420,20 @@ a img {
 }
 
 .main .work {
-	padding: 30px;
-	width: 650px;
+  margin-left: 42px;
+	padding: 0px;
+	width: 819px;
+	min-height: 400px;
 	text-align: left;
+	border: 2px solid #aaaaaa;
 }
 
 .main .work h3 {
-	color: #00658b;
+	color: #fff;
+	background: #aaaaaa;
 	font-size: 18px;
+	padding: 10px;
 	margin: 0;
-	padding: 0;
 }
 .main .work h4 {
 	color: #00658b;
