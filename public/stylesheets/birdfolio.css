@@ -121,7 +121,7 @@ a img {
 	text-decoration: underline;
 }
 #wrapper ul.top_nav li a.selected {
-  color: #674399;
+  color: #aae2d0;
 }
 #wrapper ul.connect_links {
 	margin: 0;
@@ -134,7 +134,6 @@ a img {
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	background: url(../images/connect.gif) 0px 2px no-repeat;
 }
 
 #wrapper ul.connect_links li{
@@ -142,6 +141,8 @@ a img {
 	margin-left: 3px;
 	padding:0;
 	display: inline;
+	color: #fff;
+	font-size: 18px;
 }
 
 #wrapper .main {
@@ -436,11 +437,7 @@ a img {
 #wrapper .works_nav table td.selected a {
 	list-style-type: none;
 	font-weight: bold;
-  color: ;#2d9aaf
-}
-
-#wrapper .works_nav table td.selected a {
-	color: #331256;
+  color: #2d9aaf;
 }
 
 #wrapper .works_nav table td a {

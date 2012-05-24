@@ -29,7 +29,6 @@
 		<div class="wrap_tippy_top">
 		<div class="tippy_top">
 			<ul class="top_nav">
-			  <li><%= link_to("home", "/", :class => (request.path.to_s.index("/works") || ['/',''].include?(request.path.to_s)) ? "selected" : "") %></li>
 				<% page_links_for_navigation.each do |link|
 					link_class = if (@page && @page.title == link.name) ||
 						request.path.to_s.index(link.url.to_s) ||
@@ -42,10 +41,11 @@
 				<% end -%>
 			</ul>
 			<ul class="connect_links">
-				<li><a href="http://www.linkedin.com/in/julieannburkhart" target="new"><img src="/images/linkedin.gif" height="29" width="29" /></a></li>
-				<li><a href="/julieannburkhart_resume.pdf" target="new"><img src="/images/resume.gif" height="29" width="29" /></a></li>
-				<li><a href="http://twitter.com/jotapajaro" target="new"><img src="/images/twitter.gif" height="29" width="29" /></a></li>
-				<li><a href="http://www.facebook.com/julieannburkhart" target="new"><img src="/images/facebook.gif" height="29" width="29" /></a></li>
+			  <li>connect</li>
+				<li><a href="http://www.linkedin.com/in/julieannburkhart" target="new"><img src="/creations/linkedin.gif" height="31" width="31" /></a></li>
+				<li><a href="http://www.facebook.com/julieannburkhart" target="new"><img src="/creations/facebook.gif" height="31" width="31" /></a></li>
+				<li><a href="http://twitter.com/jotapajaro" target="new"><img src="/creations/twitter.gif" height="31" width="31" /></a></li>
+				<li><a href="https://plus.google.com/109377097153758320107" target="new"><img src="/creations/googleplus.gif" height="31" width="31" /></a></li>
 			</ul>
 		</div>
 		</div>
