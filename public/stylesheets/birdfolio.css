@@ -15,7 +15,7 @@ body {
 	position: relative;
 	background: #e5e5e5;
 	font-size: 14px;
-	font-family: georgia;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 p {
 	padding: 4px 0 10px 0;
@@ -32,7 +32,7 @@ a img {
 	border: none;
 }
 #wrapper {
-	color: #000;
+	color: #515151;
 }
 #wrapper a {
 	color: #3399b1;
@@ -62,7 +62,7 @@ a img {
 	padding: 0;
 	padding-bottom: 3px;
 	margin: 0;
-  font-size: 28px;
+  font-size: 27px;
   border-top: 1px solid #aae2e0;
   margin: 5px;
   padding-top: 10px;
@@ -71,7 +71,7 @@ a img {
 	color: #674399;
 }
 #wrapper .top .logocaptionalso {
-  font-size: 22px;
+  font-size: 21px;
   border-bottom: 1px solid #aae2e0;
   margin: 5px;
   padding-bottom: 10px;
@@ -168,7 +168,7 @@ a img {
 	position: relative;
 }
 #wrapper .main .blogposts {
-  width: 600px;
+  width: 630px;
 }
 #wrapper .main .content h1.pagetitle{
 	padding: 0;
@@ -246,7 +246,7 @@ a img {
 	margin: 0;
 }
 #wrapper .main .content .testimonials {
-	margin: 0 100px 0 50px;
+	margin: 0 60px 0 35px;
 }
 #wrapper .main .content .testimonials p {
 	padding: 6px 0 6px 0;
@@ -403,7 +403,7 @@ a img {
   width: 6px;
 }
 .works_nav table td.nav a {
-  color: #000;
+  color: #515151;
 }
 
 .works_nav table td.selected {
@@ -520,7 +520,7 @@ a img {
 	border-bottom: 1px solid #AAE2E0;
 }
 #wrapper .main .recent_posts ul li a {
-	color: #000;
+	color: #515151;
 }
 #wrapper .main .recent_posts a.view_archives {
 	text-decoration: none;
@@ -531,7 +531,7 @@ a img {
 .main .entrybody {
 	margin-left: 10px;
 	margin-bottom: 20px;
-	width: 600px;
+	width: 630px;
 	padding: 0;
 	text-align: left;
 }
@@ -543,7 +543,7 @@ a img {
   border: 1px solid #AAE2E0;
 }
 .main .entrybody .blog p {
-  padding: 5px 10px 5px 10px;
+  padding: 5px 30px 5px 18px;
 }
 .main .entrybody .blog h2 {
 	border-bottom: solid 1px #AAE2E0;
