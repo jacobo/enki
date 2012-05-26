@@ -15,6 +15,7 @@ class WorksController < ApplicationController
   private
 
   def fetch_works
+    @show_bottom_stuff = true
     @works = Work.find(:all, :order => "sort_number ASC", :limit => 9)
     if params[:id]
       @work = Work.find(params[:id])

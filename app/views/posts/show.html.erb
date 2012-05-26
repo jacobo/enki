@@ -6,7 +6,8 @@
 <%= post_title(@post) -%>
 <% end -%>
 <%= render :partial => 'posts/side_bar', :locals => {:post => @post} %>
-<div class="blogposts">
+<div class="content blogposts">
+  <h1 class="pagetitle"><img src="/creations/musings.gif" width="111" height="45" /></h1>
 	<%= render :partial => 'posts/post', :locals => {:post => @post} %>
 </div>
 
@@ -21,7 +22,6 @@
 	  </li>
 	  <% end -%>
 	</ul>
-	<h2>Post a comment</h2>
 	  <% unless @comment.errors.empty? -%>
 	  <div class="errors">
 	    <h3>Comment not added!</h3>
@@ -37,7 +37,7 @@
 	    <p><%= form.text_field 'author' %><label for="comment_author"> <small>Name (required)</small></label></p>
 	    <p><%= form.text_area 'body' %></p>
 
-	    <p><%= submit_tag "Add Comment", :class => 'submit' %></p>
+	    <p><%= image_submit_tag "/creations/comment_button.gif", :class => 'submit' %></p>
 	  </div>
 	<% end -%>
 	<br class="clear"/>

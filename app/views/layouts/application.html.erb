@@ -66,6 +66,7 @@
 		<div id="main" class="main">
 			<%= yield %>
 		</div>
+		<% if @show_bottom_stuff %>
 		<div class="bottom_stuff">
 			<div class="bio">
 			  <h3>Julie-Ann Burkhart</h3>
@@ -92,6 +93,8 @@
 				&copy; 2011 JotaPajaro Studios. All rights reserved.
 			</div>
 		</div>
+	<% end %>
+    <div class="bottom_border"></div>
 	</div>
 
 </body>
