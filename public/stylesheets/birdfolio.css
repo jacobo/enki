@@ -13,7 +13,7 @@ body {
 	padding: 0;
 	text-align: center;
 	position: relative;
-	background: #e5e5e5;
+  background: #3399b1;
 	font-size: 14px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
@@ -32,6 +32,7 @@ a img {
 	border: none;
 }
 #wrapper {
+	background: #e5e5e5;
 	color: #515151;
 }
 #wrapper a {
@@ -110,6 +111,10 @@ a img {
 	padding:0;
 	font-size: 16px;
 	display: inline;
+}
+#wrapper ul.top_nav li span.bullet {
+  color: #fff;
+  font-size: 20px;
 }
 #wrapper ul.top_nav li a {
 	margin-right: 5px;
@@ -269,8 +274,8 @@ a img {
 }
 #wrapper div.bottom_stuff {
 	width: 910px;
+	height: 320px;
 	margin: 0;
-	padding: 10px 0;
 	margin-left: auto;
 	margin-right: auto;
 	background: #fff;
@@ -279,17 +284,19 @@ a img {
 }
 
 #wrapper div.bottom_stuff .bio{
-  width: 500px;
+  width: 440px;
+  margin-left: 34px;
   padding: 10px;
 }
 
 #wrapper div.bottom_stuff .bio img {
   float: left;
   border: 3px solid #3399b1;
-  margin: 5px;
+  margin: 0 5px 0 0;
 }
 
 #wrapper div.bottom_stuff .bio h3 {
+  color: #674399;
   border-bottom: 1px solid #aae2e0;
 }
 
@@ -303,9 +310,9 @@ a img {
 	position: absolute;
 	margin: 0;
 	padding: 0;
-	top: 30px;
-	left: 520px;
-	width: 240px;
+	top: 10px;
+	right: 46px;
+	width: 350px;
 }
 
 #wrapper div.bottom_stuff .contact p.first {
@@ -317,12 +324,18 @@ a img {
 	margin: 0;
 	padding: 0;
 	padding-bottom: 5px;
+	color: #3399B1;
 }
 
 #wrapper div.bottom_stuff .contact label{
-	color: #297b97;
-	font-weight: bold;
+	color: #515151;
 }
+
+#wrapper div.bottom_stuff .contact h3 {
+  color: #674399;
+  border-bottom: 1px solid #aae2e0;
+}
+
 
 .quote {
 /*	padding: 55px;*/
@@ -580,29 +593,29 @@ a img {
 
 .contact .how_can_i_help {
 }
-
-.contact .form {
-	width: 567px;
-	height: 464px;
-	padding: 5px 20px;
-	margin-top: 10px;
-	background: url(../images/contact/contactform_box.gif) no-repeat;
-}
-.contact .form label{
-	display: block;
-	padding-top: 5px;
-}
 .contact .form input.contact_input {
-	width: 540px;
-	height: 20px;
+	width: 340px;
+	margin-bottom: 5px;
+	padding: 4px;
+	border: 1px solid #999;
+  color: #515151;
 }
 .contact .form textarea.contact_input {
-	width: 540px;
-	height: 240px;
+	width: 340px;
+	padding: 4px;
+	height: 80px;
+	border: 1px solid #999;
+  color: #515151;
+}
+#wrapper .contact .form input.defaultTextActive {
+  color: #3399B1;
+}
+#wrapper .contact .form textarea.defaultTextActive {
+  color: #3399B1;
 }
 .contact .form input.contact_submit{
 	float: right;
-	margin: 5px 20px;
+	margin: 5px 5px;
 }
 .contact .details {
 	float: right;

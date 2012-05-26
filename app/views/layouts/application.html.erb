@@ -29,6 +29,7 @@
 		<div class="wrap_tippy_top">
 		<div class="tippy_top">
 			<ul class="top_nav">
+        <li><%= link_to("home", "/", :class => (request.path.to_s.index("/works") || ['/',''].include?(request.path.to_s)) ? "selected" : "") %></li>
 				<% page_links_for_navigation.each do |link|
 					link_class = if (@page && @page.title == link.name) ||
 						request.path.to_s.index(link.url.to_s) ||
@@ -37,7 +38,7 @@
 					else
 						""
 					end %>
-				<li><%= link_to(h(link.name), link.url, :class => link_class) %></li>
+				<li><span class="bullet">&bull;</span><%= link_to(h(link.name), link.url, :class => link_class) %></li>
 				<% end -%>
 			</ul>
 			<ul class="connect_links">
@@ -76,8 +77,7 @@
 			  <% end %>
 			</div>
 			<div class="contact">
-				<img src="/images/intouch.gif" />
-				<p class="first">job inquiries? contact me today!</p>
+			  <h3>message me</h3>
 				<p>
 					<label>mobile:</label>
 					603-303-3189
@@ -86,11 +86,7 @@
 					<label>email:</label>
 					<a href="mailto:jburkhart@jotapajaro.com">jburkhart@jotapajaro.com</a>
 				</p>
-				<br/>
-				<p>i live and surf in Pacifica CA, but i design for people all over the world.</p>
-			</div>
-			<div class="copyright">
-				&copy; 2011 JotaPajaro Studios. All rights reserved.
+				<%= render :partial => 'contact/form' %>
 			</div>
 		</div>
 	<% end %>
