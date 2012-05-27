@@ -16,6 +16,7 @@ body {
   background: #3399b1;
 	font-size: 14px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
+  height: 100%;
 }
 p {
 	padding: 4px 0 10px 0;
@@ -34,6 +35,10 @@ a img {
 #wrapper {
 	background: #e5e5e5;
 	color: #515151;
+	position: relative;
+	height: auto !important;
+	height: 100%;
+  min-height: 100%;
 }
 #wrapper a {
 	color: #3399b1;
@@ -599,6 +604,7 @@ a img {
 	padding: 4px;
 	border: 1px solid #999;
   color: #515151;
+  font-size: 14px;
 }
 .contact .form textarea.contact_input {
 	width: 340px;
@@ -606,6 +612,7 @@ a img {
 	height: 80px;
 	border: 1px solid #999;
   color: #515151;
+  font-size: 14px;
 }
 #wrapper .contact .form input.defaultTextActive {
   color: #3399B1;
