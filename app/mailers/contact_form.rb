@@ -5,7 +5,7 @@ class ContactForm < ActionMailer::Base
     ActionMailer::Base.smtp_settings[:user_name] = creds.user_name
     ActionMailer::Base.smtp_settings[:password] = creds.password
     @params = params[:contact].to_hash
-    mail :from => creds.user_name, :to => "jburkhart@jotapajaro.com"
+    mail :from => creds.user_name, :to => "jburkhart@jbirdcreations.com"
   end
 
 end

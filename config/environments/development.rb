@@ -21,7 +21,7 @@ Enki::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587,
-    :domain => 'jotapajaro.com',
+    :domain => 'jbirdcreations.com',
     :authentication => 'plain',
     :enable_starttls_auto => true }
 

@@ -1,10 +1,10 @@
 # Configuration options for your blog - customise to taste
 # This file contains no secret information, so can be stored in source control (unlike database.yml)
-title: Jotapajaro Studios - Graphic and Interactive Design
-url:   http://jotapajaro.com
+title: JBird Creations - Graphic and Interactive Design
+url:   http://jbirdcreations.com
 author: 
   name:    Julie-Ann Burkhart        # For copyright notice and ATOM feeds
-  email:   jburkhart@jotapajaro.com # Exception emails will go here, and it is used in ATOM feeds
+  email:   jburkhart@jbirdcreations.com # Exception emails will go here, and it is used in ATOM feeds
 
 # Delete the following section if your site will not be acting as an OpenID delegate (http://wiki.openid.net/Delegation)
 # If you're deploying with mongrel, make sure you read http://rhnh.net/2008/04/13/nginx-openid-delegation-and-yadis

@@ -23,7 +23,8 @@ body {
 }
 p {
 	padding: 4px 0 10px 0;
-	margin: 0;	
+	margin: 0;
+  line-height: 18px;
 }
 ul {
 	margin: 0;
@@ -74,6 +75,10 @@ a img {
 	padding: 0;
 	margin: 0;
 	padding-top: 10px;
+}
+#wrapper .top .logo a {
+  display: block;
+  padding: 0 0 14px 0;
 }
 #wrapper .top .logocaption {
 	padding: 0;
@@ -162,7 +167,7 @@ a img {
 
 #wrapper ul.connect_links li{
 	margin:0;
-	margin-left: 3px;
+	margin-left: 1px;
 	padding:0;
 	display: inline;
 	color: #fff;
@@ -197,13 +202,24 @@ a img {
 	text-align: left;
 	position: relative;
 }
+#wrapper .main .archives {
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+#wrapper .main .archives ul li {
+  margin: 4px;
+}
+#wrapper .main .archives h2, #wrapper .main .archives h3{
+  font-weight: normal;
+  color: #674399;
+}
 #wrapper .main .blogposts {
   width: 630px;
 }
 #wrapper .main .content h1.pagetitle{
-	padding: 0;
-  margin: 0 0 10px 10px;
-  width: 840px;
+	padding: 0 0 2px 0;
+  margin: 0 0 10px 22px;
+  width: 886px;
 	text-align: left;
 	border-bottom: 1px solid #AAE2E0;
 }
@@ -249,7 +265,7 @@ a img {
 	padding: 6px 0px;
 	font-weight: normal;
 	font-size: 14px;
-	color: #00658b;
+	color: #3399B1;
 }
 #wrapper .main .content .selected_clients {
 	background: url(../images/bio/selectedclients.gif) no-repeat;
@@ -262,7 +278,7 @@ a img {
 	float: left;
 }
 #wrapper .main .content .blurb h3 {
-	color: #00658b;
+	color: #3399B1;
 	padding: 10px 0 0 0;
 	margin: 0;
 }
@@ -271,7 +287,7 @@ a img {
 	margin: 0;
 }
 #wrapper .main .content .testimonials h3 {
-	color: #00658b;
+	color: #3399B1;
 	padding: 10px 0 10px 0;
 	margin: 0;
 }
@@ -279,7 +295,7 @@ a img {
 	margin: 0 60px 0 35px;
 }
 #wrapper .main .content .testimonials p {
-	padding: 6px 0 6px 0;
+	padding: 6px 0 15px 11px;
 	margin: 0;
 }
 #wrapper .main .content .testimonials hr {
@@ -303,7 +319,7 @@ a img {
 	margin: 0;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 25px;
+	margin-top: 15px;
 	background: #fff;
 	text-align: left;
   position: relative;
@@ -317,6 +333,7 @@ a img {
 #wrapper div.bottom_stuff .bio p {
   padding: 0 4px;
   font-size: 14px;
+  line-height: 17px;
   width: 437px;
 }
 
@@ -351,7 +368,6 @@ a img {
 }
 
 #wrapper div.bottom_stuff .contact p.first {
-	font-weight: bold;
 	padding-bottom: 10px;
 }
 
@@ -384,7 +400,6 @@ a img {
 	margin: 0;
 	padding: 0;
 	font-size: 32px;
-	color: #006084;
 	font-weight: none;
 }
 
@@ -403,7 +418,6 @@ a img {
 #wrapper .main .featured a.view_all {
 	display: block;
 	text-decoration: none;
-	color: #006084;
 	padding-bottom: 10px;
 	width: 150px;
 	padding-left: 130px;
@@ -415,7 +429,7 @@ a img {
 .works_nav {
 	text-align: left;
 	padding-top: 20px;
-	padding-bottom: 10px;
+	padding-bottom: 21px;
   margin-left: 48px;
 }
 
@@ -478,7 +492,6 @@ a img {
 
 #wrapper .works_nav table td.selected a {
 	list-style-type: none;
-	font-weight: bold;
   color: #2d9aaf;
 }
 
@@ -501,9 +514,10 @@ a img {
 	font-size: 18px;
 	padding: 10px;
 	margin: 0;
+	font-weight: normal;
 }
 .main .work h4 {
-	color: #00658b;
+	color: #3399B1;
 	font-size: 15px;
 	margin: 0;
 	padding: 0;
@@ -526,7 +540,7 @@ a img {
 #wrapper .main .work .viewfull a {
 	font-weight: normal;
 	font-size: 13px;
-	color: #00658b;
+	color: #3399B1;
 }
 .main .work .images {
 	margin: 20px 0px;
@@ -537,7 +551,7 @@ a img {
 }
 #wrapper .main .below_post {
 	text-align: left;
-	margin-left: 35px;
+	margin-left: 46px;
 	width: 660px;
 	margin-bottom: 30px;
 }
@@ -561,7 +575,7 @@ a img {
 	float: right;
 	text-align: left;
 	width: 185px;
-	margin: 85px 40px 0 0;
+	margin: 89px 46px 0 0;
 	padding: 0;
 }
 .main .recent_posts h2 {
@@ -569,15 +583,16 @@ a img {
 	margin: 0;
 	border-bottom: 1px solid #AAE2E0;
 	font-size: 14px;
+	font-weight: normal;
   color: #3399b1;
 }
 .main .recent_posts ul {
-	padding-top: 5px;
+	padding-top: 0px;
 	list-style-position:outside;
 	list-style-type:none;	
 }
 .main .recent_posts ul li {
-	padding: 5px 0px 5px 0px;
+	padding: 9px 0px 9px 0px;
 	border-bottom: 1px solid #AAE2E0;
 }
 #wrapper .main .recent_posts ul li a {
@@ -585,13 +600,13 @@ a img {
 }
 #wrapper .main .recent_posts a.view_archives {
 	text-decoration: none;
-	color: #006084;
+	color: #3399B1;
 	padding-top: 10px;
 	display: block;
 }
 .main .entrybody {
-	margin-left: 10px;
-	margin-bottom: 20px;
+	margin-left: 22px;
+	margin-bottom: 60px;
 	width: 630px;
 	padding: 0;
 	text-align: left;
@@ -610,6 +625,7 @@ a img {
 	border-bottom: solid 1px #AAE2E0;
 	padding-bottom: 4px;
 	margin-bottom: 6px;
+	font-weight: normal;
 }
 .main .entrybody .blog img{
   display: block;
@@ -619,7 +635,7 @@ a img {
 	background: #fff;
 }
 .main .entrybody .meta ul {
-	margin: 0 20px;
+	margin: 5px 0px 10px;
 	padding:0;
 	float: right;
 	list-style-image:none;
@@ -628,15 +644,20 @@ a img {
 }
 .main .entrybody .meta ul li {
 	display: inline;
-	color: #00658b;
+	color: #3399B1;
 }
 #wrapper .main .entrybody .meta ul li a {
-	color: #00658b;
+	color: #3399B1;
 }
 
 #wrapper .contact {
 	text-align: left;
 	padding: 20px;
+}
+.contactpage {
+  color: #674399;
+  font-size: 18px;
+  padding: 30px;
 }
 
 .contact .how_can_i_help {
