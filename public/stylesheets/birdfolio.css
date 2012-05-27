@@ -339,7 +339,7 @@ a img {
 
 #wrapper div.bottom_stuff .bio img {
   float: left;
-  border: 3px solid #3399b1;
+  border: 2px solid #3399b1;
   margin: 2px 12px 0 0;
 }
 
@@ -449,7 +449,7 @@ a img {
 	padding: 0;
 	text-align: center;
 	height: 70px;
-	background: #2d9aaf;
+	background: #3399B1;
 }
 
 .works_nav table td.nav {
@@ -492,7 +492,7 @@ a img {
 
 #wrapper .works_nav table td.selected a {
 	list-style-type: none;
-  color: #2d9aaf;
+  color: #3399B1;
 }
 
 #wrapper .works_nav table td a {
