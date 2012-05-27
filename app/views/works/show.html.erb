@@ -3,9 +3,9 @@
 <div class="works_nav">
 	<table>
 		<tr>
-		<td class="nav">
+		<td class="nav leftslide">
 		<% if @previous_work %>
-		  <%=link_to image_tag('/creations/left_slide_on.gif', :alt => 'prev'), work_path(@previous_work), "data-pjax" => '#main'%>
+		  <%=link_to image_tag('/creations/left_slide_off.gif', :alt => 'prev'), work_path(@previous_work), "data-pjax" => '#main'%>
 		<% else %>
 		  <%= image_tag('/creations/left_slide_off.gif', :alt => 'prev') %>
 		<% end %>
@@ -31,9 +31,9 @@
 	      <td class="spacer"></td>
 	  <% end %>
 		<% end %>
-		<td class="nav">
+		<td class="nav rightslide">
 		<% if @next_work %>
-		  <%=link_to image_tag('/creations/right_slide_on.gif', :alt => 'next'), work_path(@next_work), "data-pjax" => '#main'%>
+		  <%=link_to image_tag('/creations/right_slide_off.gif', :alt => 'next'), work_path(@next_work), "data-pjax" => '#main'%>
 		<% else %>
 	    <%= image_tag('/creations/right_slide_off.gif', :alt => 'prev') %>
 		<% end %>

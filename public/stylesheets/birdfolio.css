@@ -43,7 +43,7 @@ a img {
   height: 100%;
 }
 #wrapper #innerwrap {
-	width: 910px;
+	width: 975px;
 	background: #fff;
 	margin: 0;
 	padding: 0;
@@ -60,26 +60,26 @@ a img {
 }
 
 #wrapper .top {
-	width: 910px;
+	width: 960px;
 	margin: 0;
 	padding: 50px 0 0 0;
 	margin-left: auto;
 	margin-right: auto;
 	background: #fff;
 	text-align: center;
-	overflow: hidden;
-	background: #fff;
 	color: #3399b1;
 }
 
 #wrapper .top .logo {
+	padding: 0;
+	margin: 0;
 	padding-top: 10px;
 }
 #wrapper .top .logocaption {
 	padding: 0;
 	padding-bottom: 3px;
 	margin: 0;
-  font-size: 27px;
+  font-size: 29px;
   border-top: 1px solid #aae2e0;
   margin: 5px;
   padding-top: 10px;
@@ -88,7 +88,7 @@ a img {
 	color: #674399;
 }
 #wrapper .top .logocaptionalso {
-  font-size: 21px;
+  font-size: 22px;
   border-bottom: 1px solid #aae2e0;
   margin: 5px;
   padding-bottom: 10px;
@@ -106,7 +106,7 @@ a img {
 	padding: 10px;
 	margin: 0;
 	height: 25px; /* actual height 45 */
-	width: 890px;
+	width: 946px;
 	text-align: left;
 	font-weight: none;
 	margin-left: auto;
@@ -127,17 +127,18 @@ a img {
 #wrapper ul.top_nav li{
 	margin:0;
 	padding:0;
-	font-size: 16px;
+	font-size: 17px;
+  line-height: 24px;
 	display: inline;
 }
 #wrapper ul.top_nav li span.bullet {
   color: #fff;
-  font-size: 20px;
+  font-size: 12px;
 }
 #wrapper ul.top_nav li a {
-	margin-right: 5px;
+	margin-right: 4px;
 	text-decoration: none;
-	padding: 8px 15px 10px 15px;
+	padding: 8px 1px 10px 9px;
 	color: #fff;
 }
 #wrapper ul.top_nav li a:hover {
@@ -165,9 +166,14 @@ a img {
 	padding:0;
 	display: inline;
 	color: #fff;
-	font-size: 18px;
+	font-size: 17px;
 }
-
+#wrapper ul.connect_links li.connect{
+  display: block;
+  float: left;
+  margin-top: 7px;
+  margin-right: 4px;
+}
 #wrapper .main {
 	margin: 0;
 	padding: 0;
@@ -292,11 +298,12 @@ a img {
 	font-size: 7px;
 }
 #wrapper div.bottom_stuff {
-	width: 910px;
-	height: 320px;
+	width: 964px;
+	height: 350px;
 	margin: 0;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 25px;
 	background: #fff;
 	text-align: left;
   position: relative;
@@ -307,15 +314,24 @@ a img {
   margin-left: 34px;
   padding: 10px;
 }
+#wrapper div.bottom_stuff .bio p {
+  padding: 0 4px;
+  font-size: 14px;
+  width: 437px;
+}
 
 #wrapper div.bottom_stuff .bio img {
   float: left;
   border: 3px solid #3399b1;
-  margin: 0 5px 0 0;
+  margin: 2px 12px 0 0;
 }
 
-#wrapper div.bottom_stuff .bio h3 {
+#wrapper div.bottom_stuff .bio h3, #wrapper div.bottom_stuff .contact h3 {
   color: #674399;
+  font-size: 20px;
+  font-weight: normal;
+  padding-bottom: 4px;
+  margin-bottom: 11px;
   border-bottom: 1px solid #aae2e0;
 }
 
@@ -400,7 +416,7 @@ a img {
 	text-align: left;
 	padding-top: 20px;
 	padding-bottom: 10px;
-  margin-left: 40px;
+  margin-left: 48px;
 }
 
 .works_nav h3 {
@@ -418,13 +434,25 @@ a img {
 	margin: 0;
 	padding: 0;
 	text-align: center;
-	height: 60px;
+	height: 70px;
 	background: #2d9aaf;
 }
 
 .works_nav table td.nav {
   background: #fff;
   width: 40px;
+}
+.works_nav table td.rightslide {
+  background: url("/creations/right_slide_on.gif") 0 13px no-repeat;;
+}
+.works_nav table td.leftslide {
+  background: url("/creations/left_slide_on.gif") 0 13px no-repeat;;
+}
+.works_nav table td.leftslide a, .works_nav table td.rightslide a {
+  display: block;
+}
+.works_nav table td.leftslide a:hover img, .works_nav table td.rightslide a:hover img {
+  visibility:hidden;
 }
 .works_nav table td.spacer {
   background: #fff;
@@ -443,8 +471,9 @@ a img {
 }
 
 .works_nav table td div {
-	font-size: 14px;
-	width: 74px;
+	font-size: 13px;
+	padding: 0 5px 0 5px;
+	width: 70px;
 }
 
 #wrapper .works_nav table td.selected a {
@@ -458,12 +487,12 @@ a img {
 }
 
 .main .work {
-  margin-left: 42px;
+  margin-left: 48px;
 	padding: 0px;
-	width: 819px;
+	width: 881px;
 	min-height: 400px;
 	text-align: left;
-	border: 2px solid #aaaaaa;
+	border: 1px solid #aaaaaa;
 }
 
 .main .work h3 {
@@ -636,7 +665,7 @@ a img {
 }
 .contact .form input.contact_submit{
 	float: right;
-	margin: 5px 5px;
+	margin: 5px -1px;
 }
 .contact .details {
 	float: right;
