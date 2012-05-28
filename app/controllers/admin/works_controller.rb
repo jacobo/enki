@@ -5,7 +5,7 @@ class Admin::WorksController < Admin::BaseController
     respond_to do |format|
       format.html {
         @works = Work.paginate(
-          :order => "created_at DESC",
+          :order => "sort_number ASC, created_at DESC",
           :page  => params[:page]
         )
       }
