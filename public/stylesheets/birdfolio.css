@@ -509,12 +509,56 @@ a img {
 }
 
 .main .work h3 {
-	color: #fff;
-	background: #aaaaaa;
-	font-size: 18px;
-	padding: 10px;
-	margin: 0;
-	font-weight: normal;
+  color: #fff;
+  background: #aaaaaa;
+  font-size: 18px;
+  height: 30px;
+  padding: 5px;
+  margin: 0;
+  font-weight: normal;
+  position: relative;
+}
+.main .work h3 ul.work_image_nav {
+  list-style-image: none;
+  list-style-type: none;
+}
+.main .work h3 ul.work_image_nav li {
+  float: left;
+  padding: 0 3px 0 3px;
+}
+.main .work h3 ul.work_image_nav li.title {
+  padding: 5px 10px 0 10px;
+}
+#wrapper .main .work h3 ul.work_image_nav li a {
+  color: #AAA;
+  display: block;
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 20px;
+  height: 25px;
+  cursor: pointer;
+}
+#wrapper .main .work h3 ul.work_image_nav li a:hover {
+  text-decoration: none;
+}
+#wrapper .main .work h3 ul.work_image_nav li a {
+  background: url("/creations/on_rollover_slideshow.gif");
+}
+#wrapper .main .work h3 ul.work_image_nav li a.current {
+  background: url("/creations/off_rollover_slideshow.gif");
+}
+#wrapper .main .work h3 ul.work_image_nav li a:hover {
+  background: url("/creations/off_rollover_slideshow.gif");
+}
+#wrapper .main .work h3 .previousnext {
+  float: right;
+}
+#wrapper .main .work h3 .previousnext a {
+  cursor: pointer;
+  color: #fff;
+}
+#wrapper .main .work h3 .previousnext a.disabled {
+  color: #dbdbdb;
 }
 .main .work h4 {
 	color: #3399B1;
@@ -548,6 +592,9 @@ a img {
 }
 .main .work .images img {
 	margin-bottom: 25px;
+}
+.main .work .images img.hidden {
+	display: none;
 }
 #wrapper .main .below_post {
 	text-align: left;

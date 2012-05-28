@@ -13,9 +13,9 @@ class Work < ActiveRecord::Base
   # default_scope :order => 'sort_number ASC'
 
   def work_images
-    Work.attached_file_names.collect do |image_name|
+    @work_images ||= Work.attached_file_names.collect do |image_name|
       self.send image_name
-    end
+    end.select(&:exists?)
   end
 
   def next

@@ -45,29 +45,40 @@
 <div class="work">
 
 	<h3>
-		<%=@work.title%>
-		<% unless @work.fullsizeview_url.blank? %>
-			<span class="viewfull"><%=link_to "view full size >", @work.fullsizeview_url, :target => 'new' %></span>
-		<% end %>
+		<ul class="work_image_nav">
+		  <li class="title">
+		    <%=@work.title%>
+  		</li>
+  		<% @work.work_images.each_with_index do |image, index| %>
+  		  <% extra_class = (index == 0) ? "current" : ""%>
+  		  <li><a data-image="workimage<%=index%>" class="<%=extra_class%>"><%=index + 1%></a></li>
+  		<% end %>
+  		<div class="previousnext">
+    		<a class="previous disabled">previous</a>
+    		|
+    		<a class="next">next</a>
+    	</div>
+  	</ul>
 	</h3>
-	
-	<div class="explanation">
-		<%=raw @work.explanation_html%>
-	</div>
-
-<% unless @work.responsibilities_html.blank? %>
-	<h4>responsible for</h4>
-	<div class="responsibilities">
-		<%=raw @work.responsibilities_html%>
-	</div>
-<% end %>
 
 	<div class="images">
-		<% @work.work_images.each do |image| %>
-			<% if image.exists? %>
-				<%= image_tag image.url(:original), :class => "workimage" %>
-			<% end %>
+		<% @work.work_images.each_with_index do |image, index| %>
+		  <% extra_class = (index == 0) ? " current" : " hidden" %>
+			<%= image_tag image.url(:original), :id => "workimage#{index}", :class => "workimage#{extra_class}" %>
 		<% end %>
 	</div>
+
+  <div class="image_describe">
+    <div class="explanation">
+      <%=raw @work.explanation_html%>
+    </div>
+
+    <% unless @work.responsibilities_html.blank? %>
+      <h4>responsible for</h4>
+      <div class="responsibilities">
+        <%=raw @work.responsibilities_html%>
+      </div>
+    <% end %>
+  </div>
 
 </div>
