@@ -1,15 +1,13 @@
 class Work < ActiveRecord::Base
   has_attached_file :featuredview
 
-  has_attached_file :first
-  has_attached_file :second
-  has_attached_file :third
-  has_attached_file :fourth
-  has_attached_file :fifth
-  
   def self.attached_file_names
-    [:first, :second, :third, :fourth, :fifth]
+    [:first, :second, :third, :fourth, :fifth, :sixth, :seventh, :eigth, :ninth, :tenth, :eleventh, :twelth, :thirteenth, :fourteenth, :fifteenth]
   end
+  attached_file_names.each do |attached_file_name|
+    has_attached_file attached_file_name
+  end
+
   # default_scope :order => 'sort_number ASC'
 
   def work_images

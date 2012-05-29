@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110419042841) do
+ActiveRecord::Schema.define(:version => 20120529025852) do
 
   create_table "authorized_users", :force => true do |t|
     t.string   "username"
@@ -162,6 +162,46 @@ ActiveRecord::Schema.define(:version => 20110419042841) do
     t.string   "fifth_file_name"
     t.string   "fifth_content_type"
     t.datetime "fifth_updated_at"
+    t.integer  "sixth_file_size"
+    t.string   "sixth_file_name"
+    t.string   "sixth_content_type"
+    t.datetime "sixth_updated_at"
+    t.integer  "seventh_file_size"
+    t.string   "seventh_file_name"
+    t.string   "seventh_content_type"
+    t.datetime "seventh_updated_at"
+    t.integer  "eigth_file_size"
+    t.string   "eigth_file_name"
+    t.string   "eigth_content_type"
+    t.datetime "eigth_updated_at"
+    t.integer  "ninth_file_size"
+    t.string   "ninth_file_name"
+    t.string   "ninth_content_type"
+    t.datetime "ninth_updated_at"
+    t.integer  "tenth_file_size"
+    t.string   "tenth_file_name"
+    t.string   "tenth_content_type"
+    t.datetime "tenth_updated_at"
+    t.integer  "eleventh_file_size"
+    t.string   "eleventh_file_name"
+    t.string   "eleventh_content_type"
+    t.datetime "eleventh_updated_at"
+    t.integer  "twelth_file_size"
+    t.string   "twelth_file_name"
+    t.string   "twelth_content_type"
+    t.datetime "twelth_updated_at"
+    t.integer  "thirteenth_file_size"
+    t.string   "thirteenth_file_name"
+    t.string   "thirteenth_content_type"
+    t.datetime "thirteenth_updated_at"
+    t.integer  "fourteenth_file_size"
+    t.string   "fourteenth_file_name"
+    t.string   "fourteenth_content_type"
+    t.datetime "fourteenth_updated_at"
+    t.integer  "fifteenth_file_size"
+    t.string   "fifteenth_file_name"
+    t.string   "fifteenth_content_type"
+    t.datetime "fifteenth_updated_at"
   end
 
 end
