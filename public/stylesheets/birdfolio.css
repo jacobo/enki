@@ -585,7 +585,7 @@ a img {
 	padding: 0;
 }
 .main .work .image_describe {
-  padding: 0 50px 30px 50px;
+  padding: 0 50px 20px 50px;
 }
 .main .work .explanation {
 	font-size: 14px;
@@ -611,7 +611,7 @@ a img {
 	text-align: center;
 }
 .main .work .images img {
-	margin-bottom: 25px;
+	margin-bottom: 5px;
 }
 .main .work .images img.hidden {
 	display: none;
@@ -767,10 +767,10 @@ a img {
   color: #515151;
   font-size: 14px;
 }
-#wrapper .contact .form input.defaultTextActive {
+#wrapper input.defaultTextActive {
   color: #3399B1;
 }
-#wrapper .contact .form textarea.defaultTextActive {
+#wrapper textarea.defaultTextActive {
   color: #3399B1;
 }
 .contact .form input.contact_submit{

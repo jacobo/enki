@@ -34,7 +34,7 @@
 	  <% end -%>
 	<% form_for([@post, @comment]) do |form| -%>
 	  <div>
-	    <p><%= form.text_field 'author' %><label for="comment_author"> <small>Name (required)</small></label></p>
+	    <p><%= form.text_field 'author', :class => 'contact_input defaultText', :title => "name*" %></p>
 	    <p><%= form.text_area 'body' %></p>
 
 	    <p><%= image_submit_tag "/creations/comment_button.gif", :class => 'submit' %></p>

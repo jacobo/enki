@@ -32,6 +32,6 @@ $(function() { // onload
   input_elements.keyup(function () {
     fetch_comment_preview.only_every(1000);
   })
-  if (input_elements.any(function() { return $(this).val().length > 0 }))
+  if (input_elements.any(function() { return ($(this).val().length > 0) && ($(this).val() != $(this).attr('title')) }))
     fetch_comment_preview();
 })
