@@ -26,6 +26,6 @@ module PageTitleHelper
   private
 
   def compose_title(*parts)
-    (parts << enki_config[:title]).reject(&:blank?).join(" | ")
+    ([enki_config[:title]] + parts).reject(&:blank?).join(" | ")
   end
 end

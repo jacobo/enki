@@ -1,4 +1,8 @@
-<% content_for(:page_title) { %><%="Work | #{@work.title}"%><% } %>
+<% if @title %>
+  <% content_for(:page_title) { @title } %>
+<% else %>
+  <% content_for(:page_title) { %><%="Work | #{@work.title}"%><% } %>
+<% end %>
 
 <div class="works_nav">
 	<table>
@@ -7,12 +11,12 @@
 		<% if @previous_work %>
 		  <%=link_to image_tag('/creations/left_slide_off.gif', :alt => 'prev'), work_path(@previous_work), "data-pjax" => '#main'%>
 		<% else %>
-		  <%= image_tag('/creations/left_slide_off.gif', :alt => 'prev') %>
+		  <%= image_tag('/creations/left_slide_on.gif', :alt => 'prev') %>
 		<% end %>
 	  </td>
 	  <td class="lilspacer"></td>
 		<% @works.each_with_index do |other_work, index|
-			css_classes = []
+			css_classes = ["workitem"]
 			if index == @works.size - 1
 				css_classes << "last"
 			end
@@ -21,9 +25,13 @@
 			end
 			%>
 			<td valign="middle" class="<%=css_classes.join(' ')%>">
+			<a href="<%=work_path(other_work)%>" data-pjax="#main">
+			  <div></div>
 			  <div>
-				  <%=link_to other_work.title, work_path(other_work), "data-pjax" => '#main'%>
+				  <%=other_work.title%>
 				</div>
+			  <div></div>
+			</a>
 			</td>
 			<% if index+1 == @works.size %>
         <td class="lilspacer"></td>
@@ -35,7 +43,7 @@
 		<% if @next_work %>
 		  <%=link_to image_tag('/creations/right_slide_off.gif', :alt => 'next'), work_path(@next_work), "data-pjax" => '#main'%>
 		<% else %>
-	    <%= image_tag('/creations/right_slide_off.gif', :alt => 'prev') %>
+	    <%= image_tag('/creations/right_slide_on.gif', :alt => 'prev') %>
 		<% end %>
 	</td>
 	  </tr>

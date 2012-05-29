@@ -1,6 +1,7 @@
 class WorksController < ApplicationController
 
   def index
+    @title = 'JBird Creations | Graphic and Interactive Design'
     fetch_works
     render :show
   end

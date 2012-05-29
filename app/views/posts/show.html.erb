@@ -6,7 +6,7 @@
 <%= post_title(@post) -%>
 <% end -%>
 <%= render :partial => 'posts/side_bar', :locals => {:post => @post} %>
-<div class="content blogposts">
+<div class="content blogposts justonepost">
   <h1 class="pagetitle"><img src="/creations/musings.gif" width="111" height="45" /></h1>
 	<%= render :partial => 'posts/post', :locals => {:post => @post} %>
 </div>
@@ -14,7 +14,7 @@
 <br/>
 <div class="below_post">
 	
-	<a name="comments"/>
+	<a name="comments"></a>
 	<ul class="commentlist">
 	  <% @post.approved_comments.each do |comment| -%>
 	  <li<%= cycle ' class="alt"', '' %> id="comment-<%= comment.id %>">

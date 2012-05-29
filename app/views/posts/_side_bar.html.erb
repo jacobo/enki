@@ -2,7 +2,11 @@
 	<h2>Recent Posts</h2>
 	<ul>
 		<% Post.recent.each do |post| %>
-		<li><%=link_to post.title, post_path(post) %></li>
+		  <% if @post == post %>
+		    <li class="selected"><%=link_to post.title, post_path(post) %></li>
+		  <% else %>
+	      <li><%=link_to post.title, post_path(post) %></li>
+		  <% end %>
 		<% end %>
 	</ul>
 	<a class="view_archives" href="/archives/">archives &gt;</a>

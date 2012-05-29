@@ -206,13 +206,24 @@ a img {
   padding-left: 50px;
   padding-bottom: 50px;
 }
+#wrapper .main .archives ul {
+  list-style-position: inside;
+  list-style-type:disc;
+}
 #wrapper .main .archives ul li {
   margin: 4px;
+  color: #AAA;
 }
 #wrapper .main .archives h2, #wrapper .main .archives h3{
   font-weight: normal;
-  color: #674399;
+  color: #515151;
+  margin: 0;
+  padding: 0;
 }
+#wrapper .main .archives h3 {
+  padding-top: 18px;
+}
+
 #wrapper .main .blogposts {
   width: 630px;
 }
@@ -486,8 +497,7 @@ a img {
 
 .works_nav table td div {
 	font-size: 13px;
-	padding: 0 5px 0 5px;
-	width: 70px;
+	width: 80px;
 }
 
 #wrapper .works_nav table td.selected a {
@@ -496,9 +506,14 @@ a img {
 }
 
 #wrapper .works_nav table td a {
-	color: #fff;
+  display: block;
+  color: #fff;
 }
-
+#wrapper .works_nav table td.workitem div {
+  padding: 0 5px 0 5px;
+  width: 70px;
+  display: block;
+}
 .main .work {
   margin-left: 48px;
 	padding: 0px;
@@ -511,7 +526,7 @@ a img {
 .main .work h3 {
   color: #fff;
   background: #aaaaaa;
-  font-size: 18px;
+  font-size: 17px;
   height: 30px;
   padding: 5px;
   margin: 0;
@@ -532,9 +547,9 @@ a img {
 #wrapper .main .work h3 ul.work_image_nav li a {
   color: #AAA;
   display: block;
-  padding-left: 10px;
+  padding-left: 11px;
   padding-top: 5px;
-  width: 20px;
+  width: 19px;
   height: 25px;
   cursor: pointer;
 }
@@ -552,6 +567,8 @@ a img {
 }
 #wrapper .main .work h3 .previousnext {
   float: right;
+  font-size: 14px;
+  padding: 6px 7px 0 0;
 }
 #wrapper .main .work h3 .previousnext a {
   cursor: pointer;
@@ -563,8 +580,12 @@ a img {
 .main .work h4 {
 	color: #3399B1;
 	font-size: 15px;
+	font-weight: normal;
 	margin: 0;
 	padding: 0;
+}
+.main .work .image_describe {
+  padding: 0 50px 30px 50px;
 }
 .main .work .explanation {
 	font-size: 14px;
@@ -573,12 +594,11 @@ a img {
 	font-size: 14px;
 }
 .main .work .responsibilities ul {
-	height: 20px;
 	list-style-position: inside;
+	list-style-type:disc;
 }
 .main .work .responsibilities ul li {
-	float: left;
-	padding: 0;
+	padding: 2px;
 	margin-right: 10px;
 }
 #wrapper .main .work .viewfull a {
@@ -587,7 +607,7 @@ a img {
 	color: #3399B1;
 }
 .main .work .images {
-	margin: 20px 0px;
+	margin: 38px 0px;
 	text-align: center;
 }
 .main .work .images img {
@@ -599,24 +619,41 @@ a img {
 #wrapper .main .below_post {
 	text-align: left;
 	margin-left: 46px;
-	width: 660px;
+	width: 626px;
 	margin-bottom: 30px;
+}
+#wrapper .main .below_post h2 {
+  font-weight: normal;
+  font-size: 14px;
+}
+#wrapper .main .below_post small {
+  font-size: 14px;
 }
 #wrapper .main .below_post ul.commentlist {
 	list-style-image: none;
 	list-style-position: outside;
 	list-style-type: none;
+	padding-top: 0px;
+	padding-bottom: 30px;
 }
 #wrapper .main .below_post ul.commentlist li {
 	display: list-item;
 }
+#wrapper .main .below_post ul.commentlist li {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  border-top: solid 1px #aaa;
+}
+#wrapper .main .below_post ul.commentlist li:first-child {
+  border: none;
+}
 #wrapper .main .below_post textarea {
-	width: 590px;
+	width: 621px;
 	height: 100px;
 }
 #wrapper .main .below_post input.submit {
 	float: right;
-	margin-right: 60px;
+	margin-right: -2px;
 }
 .main .recent_posts {
 	float: right;
@@ -645,11 +682,16 @@ a img {
 #wrapper .main .recent_posts ul li a {
 	color: #515151;
 }
+#wrapper .main .recent_posts ul li.selected a {
+  color: #AAA;
+}
 #wrapper .main .recent_posts a.view_archives {
-	text-decoration: none;
 	color: #3399B1;
 	padding-top: 10px;
 	display: block;
+}
+#wrapper .main .justonepost .entrybody {
+	margin-bottom: 30px;
 }
 .main .entrybody {
 	margin-left: 22px;

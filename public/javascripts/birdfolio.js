@@ -20,14 +20,14 @@ $(document).ready(function() {
   var fixpreviousnext = function(){
     var index = $("ul.work_image_nav li a").index($("ul.work_image_nav li a.current"));
     if(index < ($("ul.work_image_nav li a").length - 1)){
-      $(".previousnext a.previous").removeClass("disabled");
-    }else{
-      $(".previousnext a.previous").addClass("disabled");
-    }
-    if(index > 0){
       $(".previousnext a.next").removeClass("disabled");
     }else{
       $(".previousnext a.next").addClass("disabled");
+    }
+    if(index > 0){
+      $(".previousnext a.previous").removeClass("disabled");
+    }else{
+      $(".previousnext a.previous").addClass("disabled");
     }
   }
   $("ul.work_image_nav li a").live("click", function(){ 
