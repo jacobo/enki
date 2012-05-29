@@ -2,18 +2,8 @@
 <% form.inputs do -%>
   <%= form.input :title %>
   <%= form.input :sort_number %>
-  <%= form.input :featured %>
-  <%= form.input :featured_sort %>
   <%= form.input :explanation_html %>
   <%= form.input :responsibilities_html %>
-
-
-<p><label>Featured Image:</label>
-	<% if @work.featuredview.file? %>
-		<%= image_tag @work.featuredview.url(:original) %> OR
-	<% end %>
-	<%= form.file_field :featuredview %>
-</p>
 
 <%
 Work.attached_file_names.each do |attached_file_name|

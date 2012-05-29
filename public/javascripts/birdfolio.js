@@ -45,14 +45,14 @@ $(document).ready(function() {
   $(".previousnext a.previous").live("click", function(){
     var index = $("ul.work_image_nav li a").index($("ul.work_image_nav li a.current"));
     if(index > 0){
-      $("ul.work_image_nav li a")[index - 1].click();
+      $($("ul.work_image_nav li a")[index - 1]).click();
     }
     return false;
   });
   $(".previousnext a.next").live("click", function(){
     var index = $("ul.work_image_nav li a").index($("ul.work_image_nav li a.current"));
     if(index < ($("ul.work_image_nav li a").length - 1)){
-      $("ul.work_image_nav li a")[index + 1].click();
+      $($("ul.work_image_nav li a")[index + 1]).click();
     }
     return false;
   });
