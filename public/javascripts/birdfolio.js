@@ -56,4 +56,11 @@ $(document).ready(function() {
     }
     return false;
   });
+  $('form').each(function(index,elem){
+    var actualUrl = $(elem).data('i-hate-spammers');
+    if(actualUrl){
+      elem.action = actualUrl;
+    }
+  });
+
 });

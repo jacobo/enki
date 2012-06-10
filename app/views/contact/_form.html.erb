@@ -1,5 +1,5 @@
 <div class="form">
-<%= form_for(:contact, :url => contact_url) do |form| -%>
+<%= form_for(:contact, :url => "#", :html => {'data-i-hate-spammers' => contact_url}) do |form| -%>
 
   <%= form.text_field :name, :class => 'contact_input defaultText', :title => "name*" %>
 
