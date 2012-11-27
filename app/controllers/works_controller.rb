@@ -17,7 +17,7 @@ class WorksController < ApplicationController
 
   def fetch_works
     @show_bottom_stuff = true
-    all_works = Work.find(:all, :order => "sort_number ASC", :limit => 9)
+    all_works = Work.find(:all, :order => "sort_number ASC")
     found = []
     @category_works = all_works.select{|x| use = !found.include?(x.category); found << x.category; use}
     if params[:id]
@@ -26,7 +26,7 @@ class WorksController < ApplicationController
       @work = Work.first
     end
     @category = @work.category
-    @works = Work.find(:all, :order => "sort_number ASC", :limit => 9, :conditions => ["category = ?", @category])
+    @works = Work.find(:all, :order => "sort_number ASC", :conditions => ["category = ?", @category])
     index = @works.index(@work)
     if index > 0
       @previous_work = @works[index - 1]
