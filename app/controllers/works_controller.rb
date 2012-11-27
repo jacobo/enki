@@ -18,7 +18,8 @@ class WorksController < ApplicationController
   def fetch_works
     @show_bottom_stuff = true
     all_works = Work.find(:all, :order => "sort_number ASC", :limit => 9)
-    @category_works = all_works.uniq{|x| x.category}
+    found = []
+    @category_works = all_works.select{|x| use = !found.include?(x.category); found << x.category; use}
     if params[:id]
       @work = Work.find(params[:id])
     else
