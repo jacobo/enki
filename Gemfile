@@ -39,5 +39,4 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'hpricot'
-  gem 'ruby-debug'
 end

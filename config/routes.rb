@@ -16,7 +16,9 @@ Enki::Application.routes.draw do
 
     match 'health(/:action)' => 'health', :action => 'index', :as => :health
     # admin.resources :posts, :new => {:preview => :post}
-    resources :works
+    resources :works do
+      get 'delete_image', :on => :member
+    end
     resources :images
     # admin.resources :pages, :new => {:preview => :post}
     # admin.resources :comments, :member => {:mark_as_spam => :put, :mark_as_ham => :put}

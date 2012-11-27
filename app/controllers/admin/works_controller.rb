@@ -1,5 +1,5 @@
 class Admin::WorksController < Admin::BaseController
-  before_filter :find_work, :only => [:show, :update, :destroy]
+  before_filter :find_work, :only => [:show, :delete_image, :update, :destroy]
 
   def index
     respond_to do |format|
@@ -50,6 +50,13 @@ class Admin::WorksController < Admin::BaseController
         render :partial => 'work', :locals => {:work => @work} if request.xhr?
       }
     end
+  end
+
+  def delete_image
+    img = @work.send(params[:which])
+    img.destroy
+    @work.save!
+    redirect_to :action => 'show'
   end
 
   def new

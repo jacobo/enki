@@ -17,12 +17,15 @@ class WorksController < ApplicationController
 
   def fetch_works
     @show_bottom_stuff = true
-    @works = Work.find(:all, :order => "sort_number ASC", :limit => 9)
+    all_works = Work.find(:all, :order => "sort_number ASC", :limit => 9)
+    @category_works = all_works.uniq{|x| x.category}
     if params[:id]
       @work = Work.find(params[:id])
     else
       @work = Work.first
     end
+    @category = @work.category
+    @works = Work.find(:all, :order => "sort_number ASC", :limit => 9, :conditions => ["category = ?", @category])
     index = @works.index(@work)
     if index > 0
       @previous_work = @works[index - 1]

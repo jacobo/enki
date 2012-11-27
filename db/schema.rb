@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529025852) do
+ActiveRecord::Schema.define(:version => 20121127025704) do
 
   create_table "authorized_users", :force => true do |t|
     t.string   "username"
@@ -202,6 +202,7 @@ ActiveRecord::Schema.define(:version => 20120529025852) do
     t.string   "fifteenth_file_name"
     t.string   "fifteenth_content_type"
     t.datetime "fifteenth_updated_at"
+    t.string   "category"
   end
 
 end

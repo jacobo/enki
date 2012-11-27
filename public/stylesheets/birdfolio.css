@@ -457,6 +457,15 @@ a img {
 	border-spacing:0px;
 }
 
+.works_nav table tr.categorynav td {
+  height: 50px;
+}
+
+.works_nav table tr.categoryspacer td {
+  height: 10px;
+  background: #fff;
+}
+
 .works_nav table td {
 	margin: 0;
 	padding: 0;
@@ -475,6 +484,9 @@ a img {
 .works_nav table td.leftslide {
   background: url("/creations/left_slide_on.gif") 0 13px no-repeat;;
 }
+.works_nav table td.empty {
+  background: #fff;
+}
 .works_nav table td.leftslide a, .works_nav table td.rightslide a {
   display: block;
 }
@@ -488,6 +500,10 @@ a img {
 .works_nav table td.lilspacer {
   background: #fff;
   width: 6px;
+}
+.works_nav table td.missingworkspacer {
+  width: 80px;
+  background: #fff;
 }
 .works_nav table td.nav a {
   color: #515151;
@@ -510,6 +526,9 @@ a img {
 #wrapper .works_nav table td a {
   display: block;
   color: #fff;
+}
+#wrapper .works_nav table td.categoryitem {
+  font-size: 20px;
 }
 #wrapper .works_nav table td.workitem div {
   padding: 0 5px 0 5px;

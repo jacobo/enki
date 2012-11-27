@@ -1,17 +1,18 @@
 
-<% form.inputs do -%>
+<%= form.inputs do -%>
   <%= form.input :title %>
+  <%= form.input :category %>
   <%= form.input :sort_number %>
   <%= form.input :explanation_html %>
   <%= form.input :responsibilities_html %>
 
-<%
-Work.attached_file_names.each do |attached_file_name|
+<% Work.attached_file_names.each do |attached_file_name|
 	img = @work.send(attached_file_name)
 %>
 <p><label><%=attached_file_name.to_s.capitalize%> Image:</label>
 	<% if img.file? %>
-		<%= image_tag img.url(:original) %> OR
+		<%= image_tag img.url(:original) %>
+    <%= link_to "delete image", url_for(:action => 'delete_image', :which => attached_file_name, :id => @work.id)%> OR
 	<% end %>
 	<%= form.file_field attached_file_name %>
 </p>
