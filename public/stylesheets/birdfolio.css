@@ -531,8 +531,8 @@ a img {
   font-size: 17px;
 }
 #wrapper .works_nav table td.workitem div {
-  padding: 0 5px 0 5px;
-  width: 70px;
+  padding: 0 1px 0 1px;
+  width: 78px;
   display: block;
 }
 .main .work {
