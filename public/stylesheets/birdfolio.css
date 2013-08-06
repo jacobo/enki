@@ -37,7 +37,7 @@ a img {
 	border: none;
 }
 #wrapper {
-	background: #e5e5e5;
+	background: #d9e2e2;
 	color: #515151;
 	position: relative;
   min-height: 100%;
@@ -68,7 +68,7 @@ a img {
 	margin-right: auto;
 	background: #fff;
 	text-align: center;
-	color: #3399b1;
+	color: #7e8c8e;
 }
 
 #wrapper .top .logo {
@@ -90,7 +90,7 @@ a img {
   padding-top: 10px;
 }
 #wrapper .top .logocaption .emphasize {
-	color: #674399;
+	color: #3399b1;
 }
 #wrapper .top .logocaptionalso {
   font-size: 22px;
@@ -471,7 +471,7 @@ a img {
 	padding: 0;
 	text-align: center;
 	height: 70px;
-	background: #bcc9c9;
+	background: #c7d1d1;
 }
 
 .works_nav table td.nav {
@@ -510,7 +510,7 @@ a img {
 }
 
 .works_nav table td.selected {
-  background: #aae2e0;
+  background: #929d9e;
 }
 
 .works_nav table td div {
@@ -520,12 +520,12 @@ a img {
 
 #wrapper .works_nav table td.selected a {
 	list-style-type: none;
-  color: #3399B1;
+	color: #fff;
 }
 
 #wrapper .works_nav table td a {
   display: block;
-  color: #fff;
+  color: #7e8c8e;
 }
 #wrapper .works_nav table td.categoryitem {
   font-size: 17px;
@@ -545,8 +545,8 @@ a img {
 }
 
 .main .work h3 {
-  color: #fff;
-  background: #aaaaaa;
+  color: #7e8687;
+  background: #d9e2e2;
   font-size: 17px;
   height: 30px;
   padding: 5px;
@@ -593,10 +593,10 @@ a img {
 }
 #wrapper .main .work h3 .previousnext a {
   cursor: pointer;
-  color: #fff;
+  color: #7e8687;
 }
 #wrapper .main .work h3 .previousnext a.disabled {
-  color: #dbdbdb;
+  color: #a6adad;
 }
 .main .work h4 {
 	color: #3399B1;
