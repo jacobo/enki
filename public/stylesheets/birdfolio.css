@@ -566,7 +566,7 @@ a img {
   padding: 5px 10px 0 10px;
 }
 #wrapper .main .work h3 ul.work_image_nav li a {
-  color: #AAA;
+  color: #7e8c8e;
   display: block;
   text-align: center;
   padding-top: 5px;
@@ -582,6 +582,7 @@ a img {
 }
 #wrapper .main .work h3 ul.work_image_nav li a.current {
   background: url("/creations/off_rollover_slideshow.gif");
+  color: #fff;
 }
 #wrapper .main .work h3 ul.work_image_nav li a:hover {
   background: url("/creations/off_rollover_slideshow.gif");
